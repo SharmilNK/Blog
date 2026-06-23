@@ -79,6 +79,13 @@ Vercel to deploy.
    1. **Scene paragraph.** Open by setting the scene, e.g. "It's a bright
       morning in the office" or "The town square is quiet before the rush."
       Ground the reader in a place and a time before any character speaks.
+      State the actual, concrete task or question the lead character needs
+      answered, not an abstract stand in for it. Use a real, nameable example
+      (an actual sentence, an actual metric, an actual input) that the rest
+      of the story can refer back to by name, e.g. the sentence "The trophy
+      did not fit in the suitcase because it was too big" and the question
+      of what "it" refers to. Don't write "she needed to know what was
+      behind every door" without saying what the door actually contains.
    2. **Character introductions.** Introduce every character from the
       brief in this paragraph. Give each one a name derived from the
       feature/metric/component they represent (not a generic human name),
@@ -93,9 +100,30 @@ Vercel to deploy.
       their tool, method, or mechanism, whatever lets them see, sense,
       fix, fail at, or solve the situation. This is where the technical
       mechanism actually gets dramatized (e.g. a metric "pulls out its
-      checklist," a retriever "casts its net wider").
+      checklist," a retriever "casts its net wider"). When dramatizing
+      scoring or weighting, walk through each option's content and the
+      reasoning for its score using the concrete example from paragraph 1,
+      once. Don't restate the same numbers and reasoning again in the very
+      next paragraph when describing normalization or blending; state a
+      fact once and refer back to it afterward instead of repeating full
+      sentences of reasoning twice in a row, which reads as wordy and
+      repetitive. When a word doubles as both a literal object and a
+      concept (e.g. "content" behind a door, the "prize" at the end), tie
+      it explicitly back to the concrete example so the reader knows what
+      it literally is, not just narratively. For a parallel instances of
+      the same mechanism beat (many copies of the same process running at
+      once), call them "clones" (e.g. "a thousand clones of Query running
+      the same job in parallel"), not generic phrasing like "other
+      Queries."
    5. **Resolution / remaining paragraphs.** Continue the story to its
-      resolution, in flowing prose, following the same dialogue rule.
+      resolution, in flowing prose, following the same dialogue rule. If
+      the story includes a scaling, cost, or complexity blowup beat,
+      dramatize it as a moment of panic among the characters, with
+      dialogue, exclamation, and stakes, not as a flat technical aside. If
+      the story includes mitigation techniques (e.g. local window
+      attention, caching, splitting into parallel sub crews), deliver them
+      as a short verse or poem recited by an authority figure character
+      (a commander, a senior model, a lead), not as a flat prose list.
    6. **Glossary paragraph (last paragraph).** Close with a short glossary:
       each technical term, model, feature, or method used in the story,
       named plainly, followed by a one-line plain-language summary of what
@@ -108,6 +136,11 @@ Vercel to deploy.
      dashes, en dashes, or hyphenated compounds (write "well known" not
      "well-known", "real time" not "real-time", and never use "—" or "-" to
      join a sentence). Rephrase with commas or separate sentences instead.
+   - **Numbers and symbols, not spelled out words**, for anything
+     quantitative: write "3%" not "three percent", "80%" not "eighty
+     percent", "1,000 clones" not "a thousand clones". Use the numeral plus
+     the symbol (`%`, `$`, etc.) every time a score, weight, percentage, or
+     count appears in the prose.
    - **Dialogue always goes on its own line**, never embedded inside a
      paragraph of narration. Any line in quotes is its own line, e.g.:
      ```
