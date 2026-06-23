@@ -54,3 +54,16 @@ resetting every time.
   still works. Don't re-add `sitemap()` without testing a real
   `npm install && npm run build` first — this sandbox can't run npm
   (registry blocked), so it was never verified, only disabled.
+- 2026-06-23: User rejected the free-form prose style and gave a fixed
+  paragraph structure for every story going forward: (1) scene-setting
+  paragraph, (2) introduce every character by a name derived from what
+  they represent plus a matching personality, (3) the situation/conflict,
+  (4) each character reaching for their tool/method to address it,
+  (5) resolution, (6) a closing glossary paragraph mapping each technical
+  term to a one-line plain summary. Also: no hyphens or dashes joining
+  words anywhere in the prose, and every quoted dialogue line must sit on
+  its own line, never embedded inside a narration paragraph. Full detail
+  is in `.claude/skills/new-story/SKILL.md` under "Story structure" and
+  "Writing rules" — this supersedes the earlier "flowing narrative prose"
+  note above; both stories already published predate this rule and have
+  not been retrofitted yet.
