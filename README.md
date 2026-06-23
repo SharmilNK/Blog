@@ -135,8 +135,8 @@ Beehiiv" loop above is now mostly automated:
    generates a branded PNG per story at *build time* from its title and
    description — no manual hero image needed, and the site stays fully
    static.
-5. **SEO/distribution.** `@astrojs/sitemap` generates `sitemap-index.xml`;
-   `src/pages/rss.xml.js` generates an RSS feed; `src/components/SEO.astro`
+5. **SEO/distribution.** `src/pages/rss.xml.js` generates an RSS feed;
+   `src/components/SEO.astro`
    sets canonical/OG/Twitter-card meta tags on every page using the
    auto-generated OG image.
 6. **Cross-post to Beehiiv.** `.github/workflows/beehiiv-crosspost.yml` runs
