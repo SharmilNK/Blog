@@ -81,8 +81,53 @@ Copy to Beehiiv → send to subscribers
 
 First 5 article ideas
 
-The Attention Heist — how transformers decide what to focus on (Concepts)
+The Attention Heist — how transformers decide what to focus on (Concepts) — published as the sample story
 The Model's Trial — BLEU vs ROUGE vs RAGAS in a courtroom (Evaluation)
 Drift Happens — data drift in production and why nobody noticed (MLOps)
 The Embedding Party — how vectors find their nearest neighbors (Concepts)
 The Shadow Deployment — canary releases and A/B testing for ML models (MLOps)
+
+## Running locally
+
+```
+npm install
+npm run dev
+```
+
+`npm run build` produces a static site (Astro `output: 'static'` by
+default) — deploy it on Vercel as-is, no serverless functions required.
+
+## Automated publishing workflow
+
+The manual "pick concept → outline → draft → quiz → push → copy to
+Beehiiv" loop above is now mostly automated:
+
+1. **Brief in, story out.** Run the `/new-story` skill (Claude Code) with a
+   3-6 line brief: track, concept, characters, plot beat. It writes the full
+   `.md` file — story body, an embedded Mermaid diagram where useful, and a
+   3-tier quiz — into the right `src/content/{track}/week-XX-*.md`, then
+   commits and pushes. See `.claude/skills/new-story/SKILL.md`.
+2. **Push = publish.** Vercel auto-deploys on every push to `main` — there is
+   no separate "update the webpage" step.
+3. **Diagram pipeline.** Diagrams are authored as ` ```mermaid ` fenced code
+   blocks directly in the story markdown (the model writes the diagram as
+   part of the text). `StoryLayout.astro` renders them client-side via
+   mermaid.js — no separate image-generation step or manual illustration.
+4. **OG/social image pipeline.** `astro-og-canvas` (`src/pages/open-graph/[...route].png.ts`)
+   generates a branded PNG per story at *build time* from its title and
+   description — no manual hero image needed, and the site stays fully
+   static.
+5. **SEO/distribution.** `@astrojs/sitemap` generates `sitemap-index.xml`;
+   `src/pages/rss.xml.js` generates an RSS feed; `src/components/SEO.astro`
+   sets canonical/OG/Twitter-card meta tags on every page using the
+   auto-generated OG image.
+6. **Cross-post to Beehiiv.** `.github/workflows/beehiiv-crosspost.yml` runs
+   on every push to `main` that adds a story file, and calls
+   `scripts/crosspost-beehiiv.mjs` to create a matching Beehiiv draft via
+   their API (`BEEHIIV_API_KEY` / `BEEHIIV_PUBLICATION_ID` repo secrets
+   required). It creates a draft, not a send — review and hit send in Beehiiv
+   manually for now. Verify field names against Beehiiv's current API docs
+   before relying on this; it hasn't been exercised against a live account.
+
+No feedback loop (quiz analytics, reader tracking) is implemented yet —
+quizzes are reveal-on-click and entirely client-side.

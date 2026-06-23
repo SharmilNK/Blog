@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopicCard from '../components/TopicCard.astro';
+import StoryCard from '../components/StoryCard.astro';
+
+const tracks = [
+  { id: 'concepts', title: 'ML/AI Concepts', description: 'Transformers, embeddings, fine-tuning, RAG — told as origin stories and heists.' },
+  { id: 'evaluation', title: 'Evaluation', description: 'BLEU, ROUGE, RAGAS, LLM-as-judge — told as courtroom dramas and audits.' },
+  { id: 'mlops', title: 'ML/AI Ops', description: 'Drift, CI/CD, observability — told as thrillers and disaster-recovery stories.' },
+] as const;
+
+const allEntries = (
+  await Promise.all(
+    tracks.map(async (t) => {
+      const entries = await getCollection(t.id, ({ data }) => !data.draft);
+      return entries.map((e) => ({ ...e, track: t.id }));
+    })
+  )
+).flat();
+
+const latest = allEntries
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 6);
+
+const counts = Object.fromEntries(
+  tracks.map((t) => [t.id, allEntries.filter((e) => e.track === t.id).length])
+);
+---
+
+<BaseLayout
+  title="MLStories"
+  description="AI/ML concepts taught through storytelling — every model and metric becomes a character."
+>
+  <section>
+    <h1 class="font-serif text-4xl font-bold">AI/ML concepts as stories.</h1>
+    <p class="mt-3 max-w-xl text-slate-600">
+      Every model, algorithm, or system becomes a character. Every concept becomes a scene —
+      with drama, suspense, conflict, and resolution.
+    </p>
+  </section>
+
+  <section class="mt-10 grid gap-4 sm:grid-cols-3">
+    {tracks.map((t) => (
+      <TopicCard title={t.title} description={t.description} href={`/${t.id}`} count={counts[t.id]} />
+    ))}
+  </section>
+
+  <section class="mt-14">
+    <h2 class="font-serif text-2xl font-bold">Latest stories</h2>
+    <div class="mt-4">
+      {latest.map((entry) => (
+        <StoryCard
+          title={entry.data.title}
+          description={entry.data.description}
+          href={`/${entry.track}/${entry.slug}`}
+          track={entry.track}
+          week={entry.data.week}
+          publishDate={entry.data.publishDate}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
