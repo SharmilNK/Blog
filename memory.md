@@ -67,3 +67,35 @@ resetting every time.
   "Writing rules" — this supersedes the earlier "flowing narrative prose"
   note above; both stories already published predate this rule and have
   not been retrofitted yet.
+- 2026-06-24: Refining the "Story structure" paragraphs from a real
+  rewrite (Attention Heist) surfaced more concrete rules, now in
+  `SKILL.md`:
+  - Paragraph 1 (scene) must state the actual task/question the lead
+    character needs answered, not just "she needed to know what was
+    behind every door" in the abstract. Use a concrete example (an actual
+    sentence, an actual metric, an actual input) the whole story can
+    reference by name.
+  - When dramatizing scoring/weighting (the "situation" and "tools"
+    paragraphs), explain each door/option's content and the reasoning for
+    its score using the concrete example once, then move on. Don't restate
+    the same numbers and reasoning again in the very next paragraph when
+    describing normalization or blending; that reads as repetitive and
+    wordy. State a fact once, reuse it by reference afterward.
+  - When the same word doubles as both a literal object and a concept
+    (e.g. "content" behind a door, the "prize" at the end), tie it
+    explicitly back to the concrete example so it's clear what it
+    literally is, not just narratively.
+  - Use "clones" for the parallel-instances-of-the-same-mechanism beat
+    (e.g. "a thousand clones of Query running the same job in parallel"),
+    not generic phrasing like "a thousand other Queries."
+  - The scaling/cost-blowup paragraph should be dramatized as a moment of
+    panic among the characters (dialogue, exclamation, stakes), not stated
+    as a matter-of-fact technical aside.
+  - The mitigation techniques (local-window attention, caching, splitting
+    into parallel sub-crews) should be delivered as a short verse/poem
+    from an authority-figure character, not a flat prose list.
+  - All six refinements above are now also written directly into
+    `SKILL.md`'s "Story structure" section, not just here.
+- 2026-06-24: Numbers and percentages must be written with numerals and
+  symbols in story prose, not spelled out, e.g. "3%" not "three percent",
+  "80%" not "eighty percent". Added to `SKILL.md`'s "Writing rules".
