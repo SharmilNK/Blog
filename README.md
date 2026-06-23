@@ -64,7 +64,6 @@ Folder structure (planned)
 │   ├── components/
 │   │   ├── TopicCard.astro
 │   │   ├── StoryCard.astro
-│   │   ├── CharacterAvatars.astro  ← colored-circle "faces" with initials
 │   │   ├── SubscribeForm.astro     ← placeholder, not wired to Beehiiv yet
 │   │   └── QuizWidget.astro        ← centralized quiz, used on / and /quiz
 │   └── content/
@@ -72,6 +71,7 @@ Folder structure (planned)
 │       ├── evaluation/
 │       └── mlops/
 ├── public/
+│   └── images/<track>/week-XX/  ← per-story images you upload via /new-story
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 └── README.md
@@ -114,17 +114,23 @@ Beehiiv" loop above is now mostly automated:
    article — run the `/new-story` skill in Claude Code chat with a 3-6 line
    brief: track, concept, characters, plot beat. There's no form on the live
    site for this; the site's "subscribe" form is for readers, not for
-   submitting story ideas. The skill writes the full `.md` file — story body
-   as flowing prose with character dialogue, an embedded Mermaid diagram
-   where useful, a 3-tier quiz, and a `tagline`/`icon` for the story card —
-   into the right `src/content/{track}/week-XX-*.md`, then commits and
-   pushes. See `.claude/skills/new-story/SKILL.md`.
+   submitting story ideas. The skill's full prompt — what it asks for, how it
+   structures a story, the validation it runs before finalizing — lives in
+   `.claude/skills/new-story/SKILL.md`; read it to see or change exactly how
+   stories get written. You can also attach images to the same chat message
+   as your brief; the skill copies them into `public/images/{track}/week-XX/`
+   and embeds them in the story where they fit. The skill writes the full
+   `.md` file — story body as flowing prose with character dialogue, an
+   embedded Mermaid diagram where useful, a 3-tier quiz, and a `tagline`/
+   `icon` for the story card — into the right `src/content/{track}/week-XX-*.md`,
+   then commits and pushes.
 2. **Push = publish.** Vercel auto-deploys on every push to `main` — there is
    no separate "update the webpage" step.
-3. **Diagram pipeline.** Diagrams are authored as ` ```mermaid ` fenced code
-   blocks directly in the story markdown (the model writes the diagram as
-   part of the text). `StoryLayout.astro` renders them client-side via
-   mermaid.js — no separate image-generation step or manual illustration.
+3. **Images and diagrams.** Any images you upload with your brief are placed
+   under `public/images/{track}/week-XX/` and referenced directly in the
+   story markdown — nothing is auto-generated. Structural/process diagrams
+   are instead authored as ` ```mermaid ` fenced code blocks in the story
+   markdown and rendered client-side via mermaid.js in `StoryLayout.astro`.
 4. **OG/social image pipeline.** `astro-og-canvas` (`src/pages/open-graph/[...route].png.ts`)
    generates a branded PNG per story at *build time* from its title and
    description — no manual hero image needed, and the site stays fully

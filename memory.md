@@ -36,14 +36,13 @@ resetting every time.
   - Story frontmatter now requires `tagline` (<=40 chars) and `icon` (one
     emoji) in addition to the original fields — used for the gradient story
     cards and header.
-  - Character names must have distinct first letters: each story renders
-    its characters as colored circles with just the initial, so e.g.
-    "Drift"/"The Monitor"/"The Dashboard" was renamed to
-    "Drift"/"Monitor"/"Status" to avoid two characters both showing "T".
-  - No image-generation API is available in this environment — the
-    character "faces" are CSS/SVG colored circles with initials, not actual
-    generated art. If an image-gen tool becomes available later, this is
-    the place to swap it in (`src/components/CharacterAvatars.astro`).
   - When the user shares a mockup/screenshot and later says "I don't see
     the PR," that means: don't just push to the feature branch and stop —
     open an actual PR via the GitHub MCP tools once changes are pushed.
+- 2026-06-23: Removed the auto-generated `CharacterAvatars` (colored circles
+  with initials) — the user wants to upload their own images per story
+  instead. `new-story` now copies any user-uploaded images into
+  `public/images/<track>/week-<NN>/` and references them with markdown
+  `![alt](/images/...)` syntax in the body. Never generate or invent images;
+  if the user doesn't provide any, just skip images for that story (a
+  mermaid diagram still covers structural concepts where useful).
