@@ -52,11 +52,8 @@ Vercel to deploy.
      frontmatter even though it's no longer rendered inline on the story
      page; the site's centralized `/quiz` page pulls questions from every
      story's frontmatter automatically, so no extra step is needed here).
-   - Body: 800-1200 words, written as **flowing narrative prose with
-     dialogue between characters** — no `## Scene` headings. Let the concept
-     come out through what the characters say to each other and what
-     happens, paragraph by paragraph, the way a short story reads, not a
-     slide deck with section breaks.
+   - Body: 800-1200 words, structured as a fixed sequence of paragraphs
+     (see "Story structure" below). No `## Scene` headings.
    - **Diagram**: if the concept has a structure, flow, or sequence worth
      visualizing (most do), include one ` ```mermaid ` fenced code block
      using `flowchart`, `sequenceDiagram`, or similar — written as part of
@@ -65,14 +62,67 @@ Vercel to deploy.
    - Do not reuse character names or plot devices from existing stories in
      the same track unless the brief explicitly asks for a sequel.
 
+   ### Story structure
+
+   Write the body as exactly this sequence of paragraphs, in order:
+
+   1. **Scene paragraph.** Open by setting the scene, e.g. "It's a bright
+      morning in the office" or "The town square is quiet before the rush."
+      Ground the reader in a place and a time before any character speaks.
+   2. **Character introductions.** Introduce every character from the
+      brief in this paragraph. Give each one a name derived from the
+      feature/metric/component they represent (not a generic human name),
+      and one clear personality trait that reflects how that
+      feature/metric/component actually behaves (e.g. a metric that only
+      checks one thing is "literal" or "narrow"; a cache is "forgetful" or
+      "impatient"). This paragraph is introductions only, not plot.
+   3. **The situation.** Lay out the conflict or problem, either as
+      narration or as dialogue between the characters (per the dialogue
+      rule below).
+   4. **Tools paragraph.** Describe each character reaching for or using
+      their tool, method, or mechanism, whatever lets them see, sense,
+      fix, fail at, or solve the situation. This is where the technical
+      mechanism actually gets dramatized (e.g. a metric "pulls out its
+      checklist," a retriever "casts its net wider").
+   5. **Resolution / remaining paragraphs.** Continue the story to its
+      resolution, in flowing prose, following the same dialogue rule.
+   6. **Glossary paragraph (last paragraph).** Close with a short glossary:
+      each technical term, model, feature, or method used in the story,
+      named plainly, followed by a one-line plain-language summary of what
+      it actually is. Format as a short list, e.g.:
+      `**BLEU** — counts overlapping words between an answer and a reference.`
+
+   ### Writing rules
+
+   - **No dashes or hyphens between words anywhere in the prose** — no em
+     dashes, en dashes, or hyphenated compounds (write "well known" not
+     "well-known", "real time" not "real-time", and never use "—" or "-" to
+     join a sentence). Rephrase with commas or separate sentences instead.
+   - **Dialogue always goes on its own line**, never embedded inside a
+     paragraph of narration. Any line in quotes is its own line, e.g.:
+     ```
+     Query walked in and looked around the room.
+
+     "I need to know what's behind every door in this building."
+
+     Nobody answered right away.
+     ```
+     Don't write `Query said, "I need to know..." and then turned to leave`
+     as one inline sentence; break the quoted part onto its own line.
+
 5. **Validate before moving on**: quiz has exactly 3 entries with one of
    each tier, `answer` indices are in range, `description`, `tagline`, and
    `socialSnippet` are under their length limits, every uploaded image is
-   referenced somewhere in the body. **Count the body's words** (frontmatter
-   excluded) — if it's under 800, expand the prose with more concrete detail
-   and dialogue rather than padding; don't finalize a short draft and call
-   it done. (A first real run of this skill produced 442 words by stopping
-   once the plot beats were covered — see `memory.md`.)
+   referenced somewhere in the body, the paragraph order matches the "Story
+   structure" above (scene, then characters, then situation, then tools,
+   then resolution, then glossary), no dialogue line is embedded inside a
+   narration paragraph, and no hyphen or dash joins two words anywhere in
+   the body (search for `-` and `—` and rewrite any hit). **Count the body's
+   words** (frontmatter excluded) — if it's under 800, expand the prose with
+   more concrete detail and dialogue rather than padding; don't finalize a
+   short draft and call it done. (A first real run of this skill produced
+   442 words by stopping once the plot beats were covered — see
+   `memory.md`.)
 
 6. **Write a LinkedIn summary** (2-4 lines, no hashtags, hook-first — written
    for someone scrolling, not for SEO) and prepend an entry to
