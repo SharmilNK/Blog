@@ -46,3 +46,11 @@ resetting every time.
   `![alt](/images/...)` syntax in the body. Never generate or invent images;
   if the user doesn't provide any, just skip images for that story (a
   mermaid diagram still covers structural concepts where useful).
+- 2026-06-23: `@astrojs/sitemap` (^3.2.1) crashes Vercel builds on
+  `astro:build:done` with "Cannot read properties of undefined (reading
+  'reduce')" — happens regardless of page content, looks like a version
+  mismatch with `astro@^4.16.0` rather than anything in this repo's pages.
+  Disabled the integration in `astro.config.mjs` to unblock deploys; RSS
+  still works. Don't re-add `sitemap()` without testing a real
+  `npm install && npm run build` first — this sandbox can't run npm
+  (registry blocked), so it was never verified, only disabled.

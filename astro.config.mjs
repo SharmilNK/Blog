@@ -1,11 +1,16 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
 
 // TODO: replace with the real domain once it's connected in Vercel settings.
 const site = 'https://mlstories.vercel.app';
 
 export default defineConfig({
   site,
-  integrations: [tailwind(), sitemap()],
+  // @astrojs/sitemap is temporarily disabled: its astro:build:done hook
+  // crashes ("Cannot read properties of undefined (reading 'reduce')")
+  // with this astro/@astrojs/sitemap version combo, unrelated to any page
+  // content. RSS (src/pages/rss.xml.js) still covers feed distribution.
+  // Re-enable once a compatible version pair is verified with a real
+  // `npm install` + `npm run build` (not possible in this sandbox).
+  integrations: [tailwind()],
 });
