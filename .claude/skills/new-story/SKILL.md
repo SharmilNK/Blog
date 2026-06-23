@@ -59,6 +59,16 @@ Vercel to deploy.
      using `flowchart`, `sequenceDiagram`, or similar — written as part of
      the story text. Use this for structural/process diagrams; use the
      user's uploaded images for anything they specifically wanted shown.
+   - refer the below themes for the story, 
+     if AI/ml concept, then theme = fantasy or action
+     if evaluation , then theme = mystery or battleground
+     if ML Ops, then theme = building a city/kingdom
+   - Body: 800-1200 words, written as **flowing narrative prose with
+     dialogue between characters** — no `## Scene` headings. Let the concept
+     come out through what the characters say to each other and what
+     happens, paragraph by paragraph, the way a short story reads, not a
+     slide deck with section breaks.
+   - **Diagram**: use the user's uploaded images for anything they specifically wanted shown.
    - Do not reuse character names or plot devices from existing stories in
      the same track unless the brief explicitly asks for a sequel.
 
