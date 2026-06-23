@@ -1,0 +1,43 @@
+---
+import SEO from '../components/SEO.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+const nav = [
+  { href: '/concepts', label: 'Concepts' },
+  { href: '/evaluation', label: 'Evaluation' },
+  { href: '/mlops', label: 'MLOps' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <SEO title={title} description={description} image={image} />
+  </head>
+  <body class="min-h-screen bg-white text-slate-900 antialiased">
+    <header class="border-b border-slate-200">
+      <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <a href="/" class="font-serif text-xl font-bold">MLStories</a>
+        <nav class="flex gap-5 text-sm">
+          {nav.map((item) => (
+            <a href={item.href} class="hover:underline">{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <slot />
+    </main>
+    <footer class="mx-auto max-w-3xl px-4 py-10 text-sm text-slate-500">
+      <p>MLStories — AI/ML concepts as stories. <a href="/rss.xml" class="underline">RSS</a></p>
+    </footer>
+  </body>
+</html>

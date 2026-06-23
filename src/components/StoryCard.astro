@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  track: 'concepts' | 'evaluation' | 'mlops';
+  week: number;
+  publishDate: Date;
+}
+
+const { title, description, href, track, week, publishDate } = Astro.props;
+const trackLabel = { concepts: 'Concepts', evaluation: 'Evaluation', mlops: 'MLOps' }[track];
+---
+
+<a href={href} class="block border-b border-slate-100 py-5">
+  <p class="text-xs font-medium uppercase tracking-wide text-slate-500">
+    {trackLabel} · Week {week} ·
+    {publishDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+  </p>
+  <h3 class="mt-1 font-serif text-lg font-bold">{title}</h3>
+  <p class="mt-1 text-sm text-slate-600">{description}</p>
+</a>

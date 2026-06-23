@@ -1,0 +1,28 @@
+name: Cross-post new stories to Beehiiv
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content/**/*.md"
+
+jobs:
+  crosspost:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find newly added stories
+        id: diff
+        run: |
+          git diff --name-only --diff-filter=A HEAD^ HEAD -- 'src/content/*/*.md' > new_files.txt
+          cat new_files.txt
+
+      - name: Create Beehiiv draft for each new story
+        if: ${{ hashFiles('new_files.txt') != '' }}
+        env:
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
+        run: node scripts/crosspost-beehiiv.mjs new_files.txt
