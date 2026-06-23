@@ -2,24 +2,31 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
+import { getTrack } from '../../lib/tracks';
 
+const meta = getTrack('concepts');
 const entries = (await getCollection('concepts', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 ---
 
-<BaseLayout title="Concepts" description="Foundational and advanced ML/AI concepts, told as stories.">
-  <h1 class="font-serif text-3xl font-bold">ML/AI Concepts</h1>
-  <div class="mt-8">
-    {entries.map((entry) => (
-      <StoryCard
-        title={entry.data.title}
-        description={entry.data.description}
-        href={`/concepts/${entry.slug}`}
-        track="concepts"
-        week={entry.data.week}
-        publishDate={entry.data.publishDate}
-      />
-    ))}
+<BaseLayout title="Concepts" description={meta.description}>
+  <h1 class="text-3xl font-bold">{meta.heading}</h1>
+  <div class="mt-8 grid gap-4 sm:grid-cols-2">
+    {entries.map((entry) => {
+      const minutes = Math.max(1, Math.round(entry.body.split(/\s+/).length / 200));
+      return (
+        <StoryCard
+          title={entry.data.title}
+          description={entry.data.description}
+          href={`/concepts/${entry.slug}`}
+          track="concepts"
+          week={entry.data.week}
+          tagline={entry.data.tagline}
+          icon={entry.data.icon}
+          minutes={minutes}
+        />
+      );
+    })}
   </div>
 </BaseLayout>

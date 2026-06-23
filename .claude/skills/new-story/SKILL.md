@@ -32,12 +32,24 @@ Vercel to deploy.
    `src/content/<track>/week-<NN>-<kebab-title>.md` matching the schema in
    `src/content/config.ts`:
    - `title`, `track`, `week`, `description` (<=160 chars, SEO-facing),
-     `characters` (array), `publishDate` (next Monday from today, ISO date),
-     `draft: false`, `socialSnippet` (<=280 chars, hook for cross-posting),
+     `tagline` (<=40 chars, short hook shown on the story's gradient card),
+     `icon` (a single emoji, <=8 chars, shown on the card and story header),
+     `characters` (array — pick names whose **first letters are distinct**,
+     since the story page renders each character as a colored circle with
+     just their initial; avoid names that share a first letter, and avoid
+     "The X" naming since it collides with other "The"-prefixed names),
+     `publishDate` (next Monday from today, ISO date), `draft: false`,
+     `socialSnippet` (<=280 chars, hook for cross-posting),
      `quiz` (exactly 3 items: one each of `basic`, `intermediate`, `expert`,
-     each with `options` and a 0-indexed `answer`).
-   - Body: 800-1200 words, 3-5 named `## Scene` headings, the concept
-     dramatized through the characters from the brief.
+     each with `options` and a 0-indexed `answer` — this still lives in
+     frontmatter even though it's no longer rendered inline on the story
+     page; the site's centralized `/quiz` page pulls questions from every
+     story's frontmatter automatically, so no extra step is needed here).
+   - Body: 800-1200 words, written as **flowing narrative prose with
+     dialogue between characters** — no `## Scene` headings. Let the concept
+     come out through what the characters say to each other and what
+     happens, paragraph by paragraph, the way a short story reads, not a
+     slide deck with section breaks.
    - **Diagram**: if the concept has a structure, flow, or sequence worth
      visualizing (most do), include one ` ```mermaid ` fenced code block
      using `flowchart`, `sequenceDiagram`, or similar — written as part of
@@ -47,12 +59,13 @@ Vercel to deploy.
      the same track unless the brief explicitly asks for a sequel.
 
 4. **Validate before moving on**: quiz has exactly 3 entries with one of
-   each tier, `answer` indices are in range, `description` and
-   `socialSnippet` are under their length limits. **Count the body's words**
-   (frontmatter excluded) — if it's under 800, expand existing scenes with
-   more concrete detail rather than padding; don't finalize a short draft
-   and call it done. (A first real run of this skill produced 442 words by
-   stopping once the plot beats were covered — see `memory.md`.)
+   each tier, `answer` indices are in range, `description`, `tagline`, and
+   `socialSnippet` are under their length limits, `characters` have distinct
+   first letters. **Count the body's words** (frontmatter excluded) — if
+   it's under 800, expand the prose with more concrete detail and dialogue
+   rather than padding; don't finalize a short draft and call it done. (A
+   first real run of this skill produced 442 words by stopping once the
+   plot beats were covered — see `memory.md`.)
 
 5. **Write a LinkedIn summary** (2-4 lines, no hashtags, hook-first — written
    for someone scrolling, not for SEO) and prepend an entry to
@@ -71,8 +84,9 @@ Vercel to deploy.
    git push -u origin <current-branch>
    ```
    Vercel auto-deploys on push — no further "update the webpage" step is
-   needed. The OG image and quiz block are generated automatically from the
-   frontmatter at build time.
+   needed. The OG image is generated automatically from the frontmatter at
+   build time, and the new story's quiz questions are picked up automatically
+   by the centralized `/quiz` page and the homepage's quiz preview.
 
 7. **Report back** with: the file path, the track/week, a one-line summary
    of the plot, and the LinkedIn summary text — not the full story again.

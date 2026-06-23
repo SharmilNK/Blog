@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuizWidget from '../../components/QuizWidget.astro';
+---
+
+<BaseLayout title="Quiz" description="Test your understanding across every MLStories article, at three difficulty tiers.">
+  <h1 class="text-3xl font-bold">story quiz</h1>
+  <p class="mt-2 text-slate-600">One question bank, pulled from every story published so far.</p>
+  <div class="mt-8 max-w-2xl">
+    <QuizWidget scope="all" caption="questions from every story" />
+  </div>
+</BaseLayout>
