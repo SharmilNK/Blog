@@ -1,6 +1,5 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import CharacterAvatars from '../components/CharacterAvatars.astro';
 import { getTrack, type TrackId } from '../lib/tracks';
 
 interface Props {
@@ -28,8 +27,6 @@ const meta = getTrack(track);
       {publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
       · Characters: {characters.join(', ')}
     </p>
-
-    <CharacterAvatars characters={characters} />
 
     <div class="prose-story">
       <slot />
