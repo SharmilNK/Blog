@@ -10,7 +10,6 @@ const entries = (await getCollection('evaluation', ({ data }) => !data.draft)).s
 
 <BaseLayout title="Evaluation" description="How we measure whether models actually work, told as stories.">
   <h1 class="font-serif text-3xl font-bold">Evaluation</h1>
-  <p class="mt-2 text-slate-600">BLEU, ROUGE, RAGAS, LLM-as-judge, human eval — as courtroom dramas, audits, and investigations.</p>
   <div class="mt-8">
     {entries.map((entry) => (
       <StoryCard

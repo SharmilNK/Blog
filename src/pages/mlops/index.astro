@@ -10,7 +10,6 @@ const entries = (await getCollection('mlops', ({ data }) => !data.draft)).sort(
 
 <BaseLayout title="ML/AI Ops" description="Keeping models alive in production, told as stories.">
   <h1 class="font-serif text-3xl font-bold">ML/AI Ops</h1>
-  <p class="mt-2 text-slate-600">Drift detection, CI/CD for ML, observability, prompt versioning — as thrillers, disaster-recovery stories, and heist films.</p>
   <div class="mt-8">
     {entries.map((entry) => (
       <StoryCard
