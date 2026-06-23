@@ -1,22 +1,37 @@
 ---
+import { getTrack, type TrackId } from '../lib/tracks';
+
 interface Props {
   title: string;
   description: string;
   href: string;
-  track: 'concepts' | 'evaluation' | 'mlops';
+  track: TrackId;
   week: number;
-  publishDate: Date;
+  tagline: string;
+  icon: string;
+  minutes: number;
 }
 
-const { title, description, href, track, week, publishDate } = Astro.props;
-const trackLabel = { concepts: 'Concepts', evaluation: 'Evaluation', mlops: 'MLOps' }[track];
+const { title, description, href, track, week, tagline, icon, minutes } = Astro.props;
+const meta = getTrack(track);
 ---
 
-<a href={href} class="block border-b border-slate-100 py-5">
-  <p class="text-xs font-medium uppercase tracking-wide text-slate-500">
-    {trackLabel} · Week {week} ·
-    {publishDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-  </p>
-  <h3 class="mt-1 font-serif text-lg font-bold">{title}</h3>
-  <p class="mt-1 text-sm text-slate-600">{description}</p>
+<a href={href} class="block overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-slate-400">
+  <div class:list={['relative flex h-24 items-center justify-center bg-gradient-to-br', meta.cardGradient]}>
+    <span class="absolute left-3 top-3 rounded-full bg-white/90 px-2 py-0.5 text-xs font-medium text-slate-700">
+      {tagline}
+    </span>
+    <span class="text-3xl">{icon}</span>
+  </div>
+  <div class="p-4">
+    <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
+      {meta.navLabel} · week {week}
+    </p>
+    <h3 class="mt-1 font-bold leading-snug">{title}</h3>
+    <p class="mt-1 text-sm text-slate-600">{description}</p>
+    <div class="mt-3 flex items-center justify-between text-xs text-slate-500">
+      <span>⏱ {minutes} min read</span>
+      <span class="font-medium text-violet-600">read story →</span>
+    </div>
+  </div>
 </a>

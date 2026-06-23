@@ -27,7 +27,7 @@ Publishing cadence
 1 article per week, every Monday
 Each article covers exactly one concept
 Story length: 800–1200 words
-Each story has 3–5 named "scenes"
+Each story is flowing prose with dialogue between characters (no scene headers)
 Each character = one model, metric, or system component
 
 
@@ -38,7 +38,10 @@ Basic — can you recall the concept from the story?
 Intermediate — can you apply it to a slightly different scenario?
 Expert — can you reason about edge cases, tradeoffs, or real production situations?
 
-Quizzes are tied to the week's article. Over time they build into a full concept bank.
+Quizzes aren't embedded per-article — every question lives in a single,
+centralized quiz experience (`/quiz`, and a "latest stories" preview on the
+homepage) that pulls from every story's frontmatter. Over time they build
+into a full concept bank.
 
 Tech stack
 LayerToolPurposeSite frameworkAstroStatic site, markdown-native, fastStylingTailwind CSSClean, responsive designDeploymentVercelAuto-deploys on every git pushEmail subscribersBeehiiv (free tier)Subscriber list, email sendsVersion controlGitHubEvery article is a .md fileDomainTBDConnect later via Vercel settings
@@ -48,17 +51,22 @@ Folder structure (planned)
 ├── src/
 │   ├── pages/
 │   │   ├── index.astro          ← homepage
+│   │   ├── about.astro          ← about + subscribe
 │   │   ├── concepts/            ← ML/AI concept stories
 │   │   ├── evaluation/          ← evaluation stories
 │   │   ├── mlops/               ← mlops stories
-│   │   └── quiz/                ← quiz pages per article
+│   │   └── quiz/                ← single centralized quiz page
 │   ├── layouts/
-│   │   ├── BaseLayout.astro     ← nav, footer, head
-│   │   └── StoryLayout.astro    ← article template with scene structure
+│   │   ├── BaseLayout.astro     ← nav, head (no footer)
+│   │   └── StoryLayout.astro    ← article template, flowing prose
+│   ├── lib/
+│   │   └── tracks.ts            ← shared track metadata (colors, icons, copy)
 │   ├── components/
 │   │   ├── TopicCard.astro
 │   │   ├── StoryCard.astro
-│   │   └── QuizBlock.astro
+│   │   ├── CharacterAvatars.astro  ← colored-circle "faces" with initials
+│   │   ├── SubscribeForm.astro     ← placeholder, not wired to Beehiiv yet
+│   │   └── QuizWidget.astro        ← centralized quiz, used on / and /quiz
 │   └── content/
 │       ├── concepts/            ← markdown story files
 │       ├── evaluation/
@@ -102,11 +110,15 @@ default) — deploy it on Vercel as-is, no serverless functions required.
 The manual "pick concept → outline → draft → quiz → push → copy to
 Beehiiv" loop above is now mostly automated:
 
-1. **Brief in, story out.** Run the `/new-story` skill (Claude Code) with a
-   3-6 line brief: track, concept, characters, plot beat. It writes the full
-   `.md` file — story body, an embedded Mermaid diagram where useful, and a
-   3-tier quiz — into the right `src/content/{track}/week-XX-*.md`, then
-   commits and pushes. See `.claude/skills/new-story/SKILL.md`.
+1. **Brief in, story out.** This is where you provide the prompt for the next
+   article — run the `/new-story` skill in Claude Code chat with a 3-6 line
+   brief: track, concept, characters, plot beat. There's no form on the live
+   site for this; the site's "subscribe" form is for readers, not for
+   submitting story ideas. The skill writes the full `.md` file — story body
+   as flowing prose with character dialogue, an embedded Mermaid diagram
+   where useful, a 3-tier quiz, and a `tagline`/`icon` for the story card —
+   into the right `src/content/{track}/week-XX-*.md`, then commits and
+   pushes. See `.claude/skills/new-story/SKILL.md`.
 2. **Push = publish.** Vercel auto-deploys on every push to `main` — there is
    no separate "update the webpage" step.
 3. **Diagram pipeline.** Diagrams are authored as ` ```mermaid ` fenced code

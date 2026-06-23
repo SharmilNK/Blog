@@ -2,25 +2,31 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
+import { getTrack } from '../../lib/tracks';
 
+const meta = getTrack('mlops');
 const entries = (await getCollection('mlops', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 ---
 
-<BaseLayout title="ML/AI Ops" description="Keeping models alive in production, told as stories.">
-  <h1 class="font-serif text-3xl font-bold">ML/AI Ops</h1>
-  <p class="mt-2 text-slate-600">Drift detection, CI/CD for ML, observability, prompt versioning — as thrillers, disaster-recovery stories, and heist films.</p>
-  <div class="mt-8">
-    {entries.map((entry) => (
-      <StoryCard
-        title={entry.data.title}
-        description={entry.data.description}
-        href={`/mlops/${entry.slug}`}
-        track="mlops"
-        week={entry.data.week}
-        publishDate={entry.data.publishDate}
-      />
-    ))}
+<BaseLayout title="ML/AI Ops" description={meta.description}>
+  <h1 class="text-3xl font-bold">{meta.heading}</h1>
+  <div class="mt-8 grid gap-4 sm:grid-cols-2">
+    {entries.map((entry) => {
+      const minutes = Math.max(1, Math.round(entry.body.split(/\s+/).length / 200));
+      return (
+        <StoryCard
+          title={entry.data.title}
+          description={entry.data.description}
+          href={`/mlops/${entry.slug}`}
+          track="mlops"
+          week={entry.data.week}
+          tagline={entry.data.tagline}
+          icon={entry.data.icon}
+          minutes={minutes}
+        />
+      );
+    })}
   </div>
 </BaseLayout>

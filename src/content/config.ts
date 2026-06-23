@@ -12,6 +12,10 @@ const storySchema = z.object({
   track: z.enum(['concepts', 'evaluation', 'mlops']),
   week: z.number().int().positive(),
   description: z.string().max(160),
+  // Short punchy badge for the story card, e.g. "the heist", "production down".
+  tagline: z.string().max(40),
+  // A single emoji used on the story card and as the avatar fallback.
+  icon: z.string().max(8),
   characters: z.array(z.string()).min(1),
   publishDate: z.coerce.date(),
   draft: z.boolean().default(false),

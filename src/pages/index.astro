@@ -3,16 +3,13 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TopicCard from '../components/TopicCard.astro';
 import StoryCard from '../components/StoryCard.astro';
-
-const tracks = [
-  { id: 'concepts', title: 'ML/AI Concepts', description: 'Transformers, embeddings, fine-tuning, RAG — told as origin stories and heists.' },
-  { id: 'evaluation', title: 'Evaluation', description: 'BLEU, ROUGE, RAGAS, LLM-as-judge — told as courtroom dramas and audits.' },
-  { id: 'mlops', title: 'ML/AI Ops', description: 'Drift, CI/CD, observability — told as thrillers and disaster-recovery stories.' },
-] as const;
+import QuizWidget from '../components/QuizWidget.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+import { TRACKS } from '../lib/tracks';
 
 const allEntries = (
   await Promise.all(
-    tracks.map(async (t) => {
+    TRACKS.map(async (t) => {
       const entries = await getCollection(t.id, ({ data }) => !data.draft);
       return entries.map((e) => ({ ...e, track: t.id }));
     })
@@ -21,44 +18,76 @@ const allEntries = (
 
 const latest = allEntries
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-  .slice(0, 6);
-
-const counts = Object.fromEntries(
-  tracks.map((t) => [t.id, allEntries.filter((e) => e.track === t.id).length])
-);
+  .slice(0, 3);
 ---
 
 <BaseLayout
   title="MLStories"
   description="AI/ML concepts taught through storytelling — every model and metric becomes a character."
 >
-  <section>
-    <h1 class="font-serif text-4xl font-bold">AI/ML concepts as stories.</h1>
-    <p class="mt-3 max-w-xl text-slate-600">
-      Every model, algorithm, or system becomes a character. Every concept becomes a scene —
-      with drama, suspense, conflict, and resolution.
+  <section class="py-8 text-center">
+    <span class="inline-flex items-center gap-1 rounded-full bg-violet-100 px-3 py-1 text-xs font-medium text-violet-700">
+      ✦ weekly stories · ml & ai concepts
+    </span>
+    <h1 class="mx-auto mt-6 max-w-2xl text-4xl font-bold leading-tight sm:text-5xl">
+      where machine learning becomes a story worth telling
+    </h1>
+    <p class="mx-auto mt-4 max-w-xl text-slate-600">
+      Every week, a new concept. Told as a story — with characters, drama, and
+      plot twists. No jargon. No fluff. Just ideas that stick.
     </p>
+    <div class="mt-6">
+      <SubscribeForm />
+    </div>
   </section>
 
-  <section class="mt-10 grid gap-4 sm:grid-cols-3">
-    {tracks.map((t) => (
-      <TopicCard title={t.title} description={t.description} href={`/${t.id}`} count={counts[t.id]} />
-    ))}
+  <section class="mt-10">
+    <h2 class="text-xs font-medium uppercase tracking-wide text-slate-400">browse by topic</h2>
+    <div class="mt-4 grid gap-4 sm:grid-cols-3">
+      {TRACKS.map((t) => (
+        <TopicCard
+          heading={t.heading}
+          description={t.description}
+          href={`/${t.id}`}
+          icon={t.icon}
+          badgeBg={t.badgeBg}
+          badgeText={t.badgeText}
+        />
+      ))}
+    </div>
   </section>
 
   <section class="mt-14">
-    <h2 class="font-serif text-2xl font-bold">Latest stories</h2>
+    <h2 class="text-xs font-medium uppercase tracking-wide text-slate-400">latest stories</h2>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      {latest.map((entry) => {
+        const minutes = Math.max(1, Math.round(entry.body.split(/\s+/).length / 200));
+        return (
+          <StoryCard
+            title={entry.data.title}
+            description={entry.data.description}
+            href={`/${entry.track}/${entry.slug}`}
+            track={entry.track}
+            week={entry.data.week}
+            tagline={entry.data.tagline}
+            icon={entry.data.icon}
+            minutes={minutes}
+          />
+        );
+      })}
+      <div class="flex flex-col items-center justify-center rounded-xl border border-dashed border-slate-300 p-6 text-center text-sm text-slate-500">
+        <span class="text-xl">✏️</span>
+        <p class="mt-2 font-medium text-slate-700">your next story</p>
+        <p class="mt-1">drops every monday</p>
+        <a href="/about#subscribe" class="mt-2 font-medium text-violet-600 hover:underline">subscribe to get notified →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-14">
+    <h2 class="text-xs font-medium uppercase tracking-wide text-slate-400">test your knowledge</h2>
     <div class="mt-4">
-      {latest.map((entry) => (
-        <StoryCard
-          title={entry.data.title}
-          description={entry.data.description}
-          href={`/${entry.track}/${entry.slug}`}
-          track={entry.track}
-          week={entry.data.week}
-          publishDate={entry.data.publishDate}
-        />
-      ))}
+      <QuizWidget scope="latest" caption="questions from this week's stories" />
     </div>
   </section>
 </BaseLayout>

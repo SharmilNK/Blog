@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="MLStories is a weekly newsletter where ML/AI concepts are taught through storytelling."
+>
+  <h1 class="text-3xl font-bold">about mlstories</h1>
+  <p class="mt-4 max-w-2xl text-slate-600">
+    Most ML content is either too academic or too shallow. MLStories sits in the
+    middle — rigorous enough to be useful for practitioners brushing up on
+    concepts, engaging enough that a non-technical person can follow the plot.
+    Every model, metric, or system becomes a character. Every concept becomes a
+    story.
+  </p>
+  <p class="mt-4 max-w-2xl text-slate-600">
+    One new story drops every Monday, across three tracks: ML/AI Concepts,
+    Evaluation, and ML/AI Ops. Each one comes with a short quiz to check what
+    stuck.
+  </p>
+
+  <section id="subscribe" class="mt-12 rounded-xl border border-slate-200 bg-white p-8 text-center">
+    <h2 class="text-xl font-bold">get new stories in your inbox</h2>
+    <p class="mt-2 text-sm text-slate-500">One email a week. No spam, no fluff.</p>
+    <div class="mt-6">
+      <SubscribeForm />
+    </div>
+  </section>
+</BaseLayout>
