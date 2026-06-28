@@ -2,7 +2,7 @@
 title: "The Production Relay"
 track: "mlops"
 week: 2
-description: "Archi assembles a team of five to navigate the four hurdles of MLOps: Reproducible Pipelines, Automated Deployment, Continuous Monitoring, and Operational Governance."
+description: "A relay race through the four hurdles of MLOps: reproducible pipelines, automated deployment, continuous monitoring, and operational governance."
 tagline: "the relay race"
 icon: "🏃"
 characters: ["Archi", "Reliability", "Observability", "Infrastructure", "Scalability", "Cost"]
