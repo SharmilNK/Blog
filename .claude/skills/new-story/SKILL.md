@@ -124,11 +124,16 @@ Vercel to deploy.
       attention, caching, splitting into parallel sub crews), deliver them
       as a short verse or poem recited by an authority figure character
       (a commander, a senior model, a lead), not as a flat prose list.
-   6. **Glossary paragraph (last paragraph).** Close with a short glossary:
-      each technical term, model, feature, or method used in the story,
-      named plainly, followed by a one-line plain-language summary of what
-      it actually is. Format as a short list, e.g.:
-      `**BLEU** — counts overlapping words between an answer and a reference.`
+   6. **Glossary paragraph (last paragraph).** Close with a short glossary
+      introduced by a `## Terminology` heading. Under it, list each technical
+      term, model, feature, or method used in the story, named plainly,
+      followed by a one-line plain-language summary of what it actually is.
+      Format as a short list, e.g.:
+      ```
+      ## Terminology
+
+      **BLEU** — counts overlapping words between an answer and a reference.
+      ```
 
    ### Writing rules
 

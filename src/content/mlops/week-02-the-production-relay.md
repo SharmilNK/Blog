@@ -186,7 +186,7 @@ The baton crossed the finish line steady in *Cost's* hand, and the Judge nodded 
 
 They had won.
 
----
+## Terminology
 
 **MLOps** — the discipline of deploying, monitoring, and maintaining ML models in production reliably and at scale.
 
