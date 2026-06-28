@@ -13,4 +13,6 @@ export default defineConfig({
   // Re-enable once a compatible version pair is verified with a real
   // `npm install` + `npm run build` (not possible in this sandbox).
   integrations: [tailwind()],
+  // Hide Astro's dev-only toolbar (the floating pill in local `npm run dev`).
+  devToolbar: { enabled: false },
 });

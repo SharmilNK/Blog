@@ -2,7 +2,7 @@
 title: "The Production Relay"
 track: "mlops"
 week: 2
-description: "Archi assembles a team of five to navigate the four hurdles of MLOps: Reproducible Pipelines, Automated Deployment, Continuous Monitoring, and Operational Governance."
+description: "A relay race through the four hurdles of MLOps: reproducible pipelines, automated deployment, continuous monitoring, and operational governance."
 tagline: "the relay race"
 icon: "🏃"
 characters: ["Archi", "Reliability", "Observability", "Infrastructure", "Scalability", "Cost"]
@@ -58,7 +58,7 @@ One drop, one stall, one moment of latency and the Judge watching that screen wo
 
 *Cost* was the one who counted every meter run and every coin spent doing it. Very careful and watchful with every resource spent.
 
-![The MLOps relay team: Reliability, Scalability, Infrastructure, Observability, and Cost](/images/mlops/week-02/team-sketch.jpg)
+![The MLOps relay team: Reliability, Scalability, Infrastructure, Observability, and Cost](/images/mlops/week-02/MLOps1.jpeg)
 
 The five gathered at the starting line as the Judge's voice echoed over the speakers.
 
