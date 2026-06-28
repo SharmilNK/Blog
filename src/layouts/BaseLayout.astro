@@ -6,45 +6,106 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  wide?: boolean;
 }
 
-const { title, description, image } = Astro.props;
-const nav = [
-  { href: '/concepts', label: 'concepts' },
-  { href: '/evaluation', label: 'evaluation' },
-  { href: '/mlops', label: 'mlops' },
-  { href: '/quiz', label: 'quiz' },
-  { href: '/about', label: 'about' },
-];
+const { title, description, image, wide = false } = Astro.props;
+
+const path = Astro.url.pathname;
+const isHome = path === '/';
+const isQuiz = path.startsWith('/quiz');
+const isFeedback = path.startsWith('/feedback');
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <SEO title={title} description={description} image={image} />
   </head>
-  <body class="min-h-screen bg-stone-50 text-slate-900 antialiased">
-    <header class="border-b border-slate-200">
-      <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
-        <a href="/" class="text-lg font-bold">
-          ml<span class="text-violet-600">stories</span>
+  <body class="min-h-screen bg-white font-sans text-slate-900 antialiased">
+    <header class="sticky top-0 z-20 border-b border-slate-100 bg-white/80 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+        <a href="/" class="flex items-center gap-2.5">
+          <span class="flex h-7 w-7 items-center justify-center">
+            <svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true">
+              <rect x="3" y="11" width="8" height="8" rx="1.5" fill="#7c3aed" />
+              <rect x="13" y="5" width="8" height="8" rx="1.5" fill="#c4b5fd" />
+            </svg>
+          </span>
+          <span class="font-display text-lg font-bold tracking-tight">
+            ml<span class="text-violet-600">stories</span>
+          </span>
         </a>
-        <nav class="hidden gap-6 text-sm font-medium text-slate-600 sm:flex">
-          {nav.map((item) => (
-            <a href={item.href} class="hover:text-slate-900">{item.label}</a>
-          ))}
+
+        <nav class="flex items-center gap-2">
+          <a
+            href="/"
+            aria-label="Home"
+            class:list={[
+              'flex h-10 w-10 items-center justify-center rounded-xl border transition',
+              isHome
+                ? 'border-violet-600 bg-violet-600 text-white'
+                : 'border-slate-200 bg-white text-slate-500 hover:border-violet-300 hover:text-violet-600',
+            ]}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <path d="M3 10.5 12 3l9 7.5" />
+              <path d="M5 9.5V21h14V9.5" />
+            </svg>
+          </a>
+
+          <a
+            href="/quiz"
+            aria-label="Quiz"
+            class:list={[
+              'flex h-10 w-10 items-center justify-center rounded-xl border transition',
+              isQuiz
+                ? 'border-violet-600 bg-violet-600 text-white'
+                : 'border-slate-200 bg-white text-slate-500 hover:border-violet-300 hover:text-violet-600',
+            ]}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <rect x="2" y="7" width="20" height="11" rx="4" />
+              <path d="M7 12h3M8.5 10.5v3" />
+              <circle cx="16" cy="11" r="0.6" fill="currentColor" stroke="none" />
+              <circle cx="18" cy="14" r="0.6" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+
+          <a
+            href="/feedback"
+            aria-label="Feedback"
+            class:list={[
+              'flex h-10 w-10 items-center justify-center rounded-xl border transition',
+              isFeedback
+                ? 'border-violet-600 bg-violet-600 text-white'
+                : 'border-slate-200 bg-white text-slate-500 hover:border-violet-300 hover:text-violet-600',
+            ]}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z" />
+            </svg>
+          </a>
         </nav>
-        <a
-          href="/about#subscribe"
-          class="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold hover:border-slate-900"
-        >
-          subscribe free
-        </a>
       </div>
     </header>
-    <main class="mx-auto max-w-5xl px-4 py-10">
+
+    <main class:list={['mx-auto px-5 py-12', wide ? 'max-w-6xl' : 'max-w-5xl']}>
       <slot />
     </main>
+
+    <footer class="border-t border-slate-100">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-8 text-sm text-slate-400 sm:flex-row">
+        <span class="font-display font-semibold text-slate-500">mlstories</span>
+        <span>AI/ML concepts, told as stories.</span>
+      </div>
+    </footer>
   </body>
 </html>

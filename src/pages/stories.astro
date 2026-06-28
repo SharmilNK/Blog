@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { TRACKS } from '../lib/tracks';
+
+// Simple geometric illustrations per track, drawn with the purple palette.
+const illustrations: Record<string, string> = {
+  concepts: `
+    <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+      <line x1="90" y1="60" x2="160" y2="100" stroke="#a78bfa" stroke-width="3" />
+      <line x1="160" y1="100" x2="230" y2="55" stroke="#a78bfa" stroke-width="3" />
+      <line x1="160" y1="100" x2="120" y2="140" stroke="#a78bfa" stroke-width="3" />
+      <line x1="160" y1="100" x2="220" y2="135" stroke="#a78bfa" stroke-width="3" />
+      <circle cx="90" cy="60" r="16" fill="#7c3aed" />
+      <circle cx="230" cy="55" r="14" fill="#c4b5fd" />
+      <rect x="148" y="88" width="26" height="26" rx="6" fill="#6d28d9" />
+      <circle cx="120" cy="140" r="12" fill="#a78bfa" />
+      <circle cx="220" cy="135" r="13" fill="#8b5cf6" />
+    </svg>`,
+  evaluation: `
+    <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+      <rect x="70" y="110" width="26" height="40" rx="4" fill="#c4b5fd" />
+      <rect x="108" y="86" width="26" height="64" rx="4" fill="#a78bfa" />
+      <rect x="146" y="62" width="26" height="88" rx="4" fill="#8b5cf6" />
+      <rect x="184" y="40" width="26" height="110" rx="4" fill="#7c3aed" />
+      <circle cx="236" cy="64" r="22" fill="none" stroke="#6d28d9" stroke-width="6" />
+      <line x1="251" y1="79" x2="266" y2="94" stroke="#6d28d9" stroke-width="6" stroke-linecap="round" />
+    </svg>`,
+  mlops: `
+    <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+      <rect x="58" y="74" width="34" height="34" rx="7" fill="#818cf8" />
+      <path d="M96 91h22" stroke="#a5b4fc" stroke-width="4" stroke-linecap="round" />
+      <rect x="120" y="74" width="34" height="34" rx="7" fill="#6366f1" />
+      <path d="M158 91h22" stroke="#a5b4fc" stroke-width="4" stroke-linecap="round" />
+      <rect x="182" y="74" width="34" height="34" rx="7" fill="#7c3aed" />
+      <circle cx="252" cy="91" r="20" fill="none" stroke="#6d28d9" stroke-width="6" />
+      <circle cx="252" cy="91" r="6" fill="#6d28d9" />
+      <path d="M252 67v-8M252 123v-8M276 91h8M220 91h8" stroke="#6d28d9" stroke-width="5" stroke-linecap="round" />
+    </svg>`,
+};
+---
+
+<BaseLayout title="Stories" description="Pick a track and start reading." wide={true}>
+  <section class="py-6">
+    <h1 class="font-display text-4xl font-extrabold tracking-tight text-slate-900">Select a Track</h1>
+    <p class="mt-3 text-lg text-slate-500">
+      Three ways in. Each story takes about 5 to 10 minutes.
+    </p>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {TRACKS.map((t) => (
+        <div class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-violet-300 hover:shadow-lg hover:shadow-violet-100">
+          <div class="relative flex h-44 items-center justify-center bg-gradient-to-br from-violet-50 to-indigo-50">
+            <div class="absolute left-4 top-4 h-8 w-8 rounded-lg bg-white/70 shadow-sm" />
+            <div class="h-full w-full p-6" set:html={illustrations[t.id]} />
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <h2 class="font-display text-xl font-bold text-slate-900">{t.heading}</h2>
+            <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{t.description}</p>
+            <a
+              href={`/${t.id}`}
+              class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-violet-700"
+            >
+              Read
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

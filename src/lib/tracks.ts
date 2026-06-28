@@ -2,8 +2,9 @@ export const TRACKS = [
   {
     id: 'concepts',
     navLabel: 'concepts',
-    heading: 'AI/ML Concepts',
-    description:'',
+    heading: 'Core Concepts',
+    description:
+      'Foundational and advanced ideas, told as origin stories and heists: transformers, embeddings, fine-tuning, RAG, and more.',
     icon: '🧠',
     badgeBg: 'bg-violet-100',
     badgeText: 'text-violet-600',
@@ -12,24 +13,24 @@ export const TRACKS = [
   {
     id: 'evaluation',
     navLabel: 'evaluation',
-    heading: 'Evaluation',
+    heading: 'Evaluation & Observability',
     description:
-      '',
-    icon: '✅',
-    badgeBg: 'bg-emerald-100',
-    badgeText: 'text-emerald-600',
-    cardGradient: 'from-emerald-500 to-teal-500',
+      'How we measure and watch models: BLEU, RAGAS, LLM-as-judge, drift, and monitoring, framed as courtroom dramas and audits.',
+    icon: '🔎',
+    badgeBg: 'bg-purple-100',
+    badgeText: 'text-purple-600',
+    cardGradient: 'from-purple-500 to-violet-600',
   },
   {
     id: 'mlops',
     navLabel: 'mlops',
-    heading: 'OPS',
+    heading: 'Design and Operations',
     description:
-      '',
+      'Keeping models alive in production: pipelines, deployment, scaling, and cost, framed as relay races and disaster thrillers.',
     icon: '⚙️',
-    badgeBg: 'bg-amber-100',
-    badgeText: 'text-amber-600',
-    cardGradient: 'from-amber-500 to-orange-500',
+    badgeBg: 'bg-indigo-100',
+    badgeText: 'text-indigo-600',
+    cardGradient: 'from-indigo-500 to-purple-600',
   },
 ] as const;
 
