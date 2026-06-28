@@ -110,3 +110,8 @@ resetting every time.
     separation, narrative beats should be spaced to avoid dense paragraphs.
   - User-provided character sketch images should be integrated after the
     character introduction section to reinforce the visual identity of the team.
+  - When embedding an uploaded image, the markdown `![](...)` path must use the
+    image's ACTUAL filename as uploaded (e.g. `MLOps1.jpeg`), not a guessed or
+    invented name like `team-sketch.jpg`. A mismatch silently renders a broken
+    image. Confirm the real filename in `public/images/<track>/week-<NN>/`
+    before writing the reference.

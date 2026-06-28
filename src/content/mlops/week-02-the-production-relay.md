@@ -58,7 +58,7 @@ One drop, one stall, one moment of latency and the Judge watching that screen wo
 
 *Cost* was the one who counted every meter run and every coin spent doing it. Very careful and watchful with every resource spent.
 
-![The MLOps relay team: Reliability, Scalability, Infrastructure, Observability, and Cost](/images/mlops/week-02/team-sketch.jpg)
+![The MLOps relay team: Reliability, Scalability, Infrastructure, Observability, and Cost](/images/mlops/week-02/MLOps1.jpeg)
 
 The five gathered at the starting line as the Judge's voice echoed over the speakers.
 
