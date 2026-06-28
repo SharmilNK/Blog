@@ -32,12 +32,16 @@ Vercel to deploy.
    that track; use `NN + 1`, zero-padded to 2 digits. Slugify the title for
    the filename: `week-<NN>-<kebab-title>.md`.
 
-3. **Place any uploaded images first.** If the user attached images, copy
-   them into `public/images/<track>/week-<NN>/`, keeping their original
-   filenames (or slugifying if needed). Reference each one in the story body
-   with standard markdown: `![<short alt text>](/images/<track>/week-<NN>/<filename>)`,
-   placed at the point in the prose where it's relevant. Don't generate or
-   invent images — only use what the user provided.
+3. **Reference any uploaded images.** Do NOT create a per article subfolder.
+   The user keeps story images in a single shared folder (currently
+   `public/images/mlops/week-02/`) and will tell you the exact path and
+   filename to use, e.g. `Concepts1.jpeg`. Reference each one in the story body
+   with standard markdown using that exact path:
+   `![<short alt text>](/images/mlops/week-02/<actual-filename>)`, placed at the
+   point in the prose where it's relevant (after the character introductions is
+   the usual spot). Always use the real filename the user gives, never a guessed
+   one, or the image renders broken. Don't generate or invent images, only use
+   what the user provided.
 
 4. **Write the story** directly into
    `src/content/<track>/week-<NN>-<kebab-title>.md` matching the schema in

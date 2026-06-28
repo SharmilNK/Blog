@@ -111,7 +111,12 @@ resetting every time.
   - User-provided character sketch images should be integrated after the
     character introduction section to reinforce the visual identity of the team.
   - When embedding an uploaded image, the markdown `![](...)` path must use the
-    image's ACTUAL filename as uploaded (e.g. `MLOps1.jpeg`), not a guessed or
-    invented name like `team-sketch.jpg`. A mismatch silently renders a broken
-    image. Confirm the real filename in `public/images/<track>/week-<NN>/`
-    before writing the reference.
+    image's ACTUAL filename as uploaded (e.g. `MLOps1.jpeg`, `Concepts1.jpeg`),
+    not a guessed or invented name. A mismatch silently renders a broken image.
+    Confirm the real filename the user gives before writing the reference.
+  - 2026-06-28: User does NOT want a separate image folder per article. Do not
+    create `public/images/<track>/week-<NN>/` subfolders per story. The user
+    keeps images in a single shared folder (currently
+    `public/images/mlops/week-02/`) and will tell you the exact path/filename to
+    reference (e.g. `/images/mlops/week-02/Concepts1.jpeg`). Reference that path
+    directly; do not reorganize images into per-story folders.

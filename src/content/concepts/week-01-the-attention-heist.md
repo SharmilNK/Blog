@@ -52,7 +52,7 @@ This is the puzzle that **self attention** was built to solve.
 
 *Softmax* is the balancer. She is calm and fair, and she turns raw, messy scores into clean shares that always add up to one.
 
-![Query, Key, and Value, the self attention crew](/images/concepts/week-01/attention-qkv.jpeg)
+![Query, Key, and Value, the self attention crew](/images/mlops/week-02/Concepts1.jpeg)
 
 *Query* looks around the room and breaks the silence.
 
