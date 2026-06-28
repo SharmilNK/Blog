@@ -1,5 +1,5 @@
 ---
-title: "The Attention Heist"
+title: "The Attention Question"
 track: "concepts"
 week: 1
 description: "Query, Key, and Value resolve a coreference puzzle using self attention, only to discover an explosive cost when they scale."
@@ -8,7 +8,7 @@ icon: "🔐"
 characters: ["Query", "Key", "Value", "Softmax"]
 publishDate: 2026-01-05
 draft: false
-socialSnippet: "Self attention explained as a heist where Query, Key, and Value blend evidence rather than grab the loudest answer."
+socialSnippet: "Self attention explained as a crew of word detectives, Query, Key, and Value, who blend evidence rather than grab the loudest answer."
 quiz:
   - tier: "basic"
     question: "In the story, what does Query ask Key to label for her?"
@@ -36,13 +36,13 @@ quiz:
     answer: 0
 ---
 
-It is late at night inside the vault, long after the building has gone dark. *Query* stands at the entrance, steady and focused.
+It is late at night. Long after the building has gone dark, *Query* stands inside, steady and focused.
 
-Her task tonight is specific. She holds one sentence in her hand: "The trophy did not fit in the suitcase because it was too big."
+The sentence hovers over them: "The trophy did not fit in the suitcase because it was too big."
 
-The word "it" sits at the end like a trap. Does "it" mean the trophy, the thing that could not fit? Or the suitcase, the container?
+Her task tonight is specific. She holds one word in her hand, "it". The team's task is to find what "it" means. Does "it" mean the trophy, the thing that could not fit? Or the suitcase, the container?
 
-*Query* has to leave this room with a single answer: which word is "it" actually pointing to? This is the puzzle that **self attention** was built to solve.
+This is the puzzle that **self attention** was built to solve.
 
 *Query* is the interrogator of the crew. She is restless and demanding, and she expects every answer to match exactly what she asked.
 
@@ -52,43 +52,49 @@ The word "it" sits at the end like a trap. Does "it" mean the trophy, the thing 
 
 *Softmax* is the balancer. She is calm and fair, and she turns raw, messy scores into clean shares that always add up to one.
 
+![Query, Key, and Value, the self attention crew](/images/concepts/week-01/attention-qkv.jpeg)
+
 *Query* looks around the room and breaks the silence.
 
 "I need to know what is behind every door in this building. Which word does 'it' point to in my sentence?"
 
 *Key* steps forward without hesitation.
 
-"Door one is labeled 'today,' a stray word from a side conversation. Door two is labeled 'trophy,' the object that did not fit. Door three is labeled 'suitcase,' the container that held nothing."
+"Each door is labeled. Door one is labeled 'today,' a stray word from a side conversation. Door two is labeled 'trophy,' the object that did not fit. Door three is labeled 'suitcase,' the container that held nothing."
 
 *Query* scores each label against her question.
 
-"Today" has nothing to do with fitting or size, so it barely registers, 3%.
+"Today has nothing to do with fitting or size, so it barely registers. Let me weight it at 3%.
 
-"Suitcase" scores higher, 17%, since a suitcase is at least a plausible thing for "it" to mean.
+Suitcase scores higher, weight 17%, since a suitcase is at least a plausible thing for 'it' to mean.
 
-But "trophy" matches the actual logic of the sentence. Something did not fit because it was too big, and the trophy is the thing too big to fit. Door two lights up high, 80%, a clear match.
+But trophy matches the actual logic of the sentence. Something did not fit because it was too big, and the trophy is the thing too big to fit. It is a clear match, so weight 80%."
 
 Those three numbers are the **attention weights**, and *Query* is about to learn she cannot simply grab the highest one.
 
-"You cannot take the highest score and walk," *Value* says from her corner.
+"You cannot take the highest number and assume it is the right answer," *Value* says from her corner.
 
 "Why not?" *Query* asks, her hand hovering near door two.
 
-"Because scores are not shares. The contents behind each door are real. Trophy is the strongest answer, but suitcase still carries weight in how the sentence works. You have to blend them."
+"Because they are not shares. The contents behind each door are real. Trophy is the strongest answer, but suitcase still carries weight in how the sentence works. Let me give you the real values and you have to blend them."
 
-*Softmax* steps in. She takes *Query's* raw scores and normalizes them into final weights that sum to one. Trophy stays at 80%. Suitcase holds 17%. Today holds 3%.
+*Softmax* steps in.
+
+"That is my job."
+
+She takes *Query's* raw scores and *Value's* useful context and normalizes them into final weights that sum to one.
 
 *Query* blends the three words by those weights into a single result, mostly trophy with a faint trace of suitcase still folded in. It is richer than picking one door and ignoring the rest.
 
 "That is the whole heist," *Key* says.
 
-"Every word in the room does this, for every other word, on every layer. You are not stealing one thing. You are building a complete picture of what the sentence means, quietly aware of every word around you, weighted by how much each one matters to the question you walked in with."
+"We do this for every word behind every door, on every layer. You need to figure out a complete picture of what the sentence means, quietly aware of every word around you, weighted by how much each one matters to the question you walked in with."
 
 *Query* nods. Somewhere deeper in the building, a thousand clones of *Query* are running the exact same job in parallel. Each one resolves a different word. Each one builds its own answer the same patient way, not by grabbing the loudest word in the room, but by listening to all of them and weighting accordingly.
 
 Then *Query* notices the weakness.
 
-A short sentence with 10 words is nothing. 10 words means 10 questions, 10 labels, 10 weights.
+A short sentence with 10 words is nothing. 10 doors means 10 questions, 10 labels, 10 weights.
 
 But sentences grow into paragraphs, paragraphs into documents, documents into entire books.
 
@@ -104,24 +110,24 @@ But sentences grow into paragraphs, paragraphs into documents, documents into en
 
 *Query* feels the weight of it. Each word has to check itself against every other word. The room is burning money faster than the crew can earn it. This is the **quadratic cost** of attention, and it is the one thing that can sink the whole operation.
 
-So they go to their commander, the old architect of every heist, and they ask for a way out. The commander looks at them for a long moment, then speaks in a voice like stone.
+So they go to their commander, the old architect of every heist, and they ask for a way out. The commander looks at them for a long moment, then speaks in a balanced tone.
 
 "Hear the principles, carved in the bedrock of every heist:
 
 Check only the doors that stand nearby,
 Do not measure every space again,
 Split the crew so many work at once,
-Never leave one soul to check it all.
+Never leave one soul to check the ton.
 
 But hold this truth above the rest:
-The core task never, ever changes,
+The core task never, ever will change,
 Compare what you need to what is named,
 Lock the weights into their place,
-And take the blend, not the single grab."
+And take the blend."
 
 *Query* and her crew take the principles to heart. They split into smaller squads, each one checking only nearby words instead of all of them. They cache old comparisons so the same work is never done twice. They run in parallel, many small crews instead of one exhausted *Query*.
 
-By the end of the night, *Query*, *Key*, *Value*, and *Softmax* have run the job so many times it stops feeling like a heist and starts feeling like breathing. Every layer. Every word. Every question answered the same patient way, built from careful listening and careful weights.
+By the end of the night, *Query*, *Key*, *Value*, and *Softmax* have run the job so many times it starts feeling like breathing. Every layer. Every word. Every question answered the same patient way, built from careful listening and careful weights.
 
 ## Terminology
 

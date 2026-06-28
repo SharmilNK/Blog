@@ -5,7 +5,7 @@ week: 1
 description: "Three witnesses, BLEU, RAGAS, and Judge, put one model answer on trial and cannot agree on whether it is actually good."
 tagline: "objection"
 icon: "⚖️"
-characters: ["BLEU", "RAGAS", "Judge"]
+characters: ["Model", "BLEU", "RAGAS", "Judge"]
 publishDate: 2026-01-12
 draft: false
 socialSnippet: "Evaluation metrics explained as witnesses in a courtroom who cannot agree on whether the model is actually good. New story: The Model on Trial."
@@ -36,9 +36,13 @@ quiz:
     answer: 0
 ---
 
-It is 9 in the morning in a quiet courtroom. The room is plain: a shared dashboard, a few open tabs, one model answer waiting for a verdict.
+It is 9 in the morning in a quiet courtroom.
 
-The case is specific. A user asked, "Did the new onboarding flow improve retention?" The model answered, "Yes, retention improved by 91%," and footnoted the claim to an internal report.
+*Model* is waiting for a verdict.
+
+Last week, his manager asked him, "Did the new process flow improve retention?"
+
+*Model* answered, "Yes, retention improved by 91%," and footnoted the claim to an internal report.
 
 The question on trial today is simple to ask and hard to settle. Is that answer actually good?
 
