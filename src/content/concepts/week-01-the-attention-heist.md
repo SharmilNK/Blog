@@ -1,14 +1,14 @@
 ---
-title: "The Attention Heist"
+title: "The Attention Question"
 track: "concepts"
 week: 1
-description: "Query, Key, and Value resolve a coreference puzzle using self-attention, only to discover an explosive cost when they scale."
+description: "Query, Key, and Value resolve a coreference puzzle using self attention, only to discover an explosive cost when they scale."
 tagline: "who does it refer to?"
 icon: "🔐"
 characters: ["Query", "Key", "Value", "Softmax"]
 publishDate: 2026-01-05
 draft: false
-socialSnippet: "Self-attention explained as a heist where Query, Key, and Value blend evidence rather than grab the loudest answer."
+socialSnippet: "Self attention explained as a crew of word detectives, Query, Key, and Value, who blend evidence rather than grab the loudest answer."
 quiz:
   - tier: "basic"
     question: "In the story, what does Query ask Key to label for her?"
@@ -36,77 +36,111 @@ quiz:
     answer: 0
 ---
 
-The vault room was exactly where the blueprints said it would be: steel walls, no windows, rows of locked doors stretching into the darkness. Query stood in the entrance, her heart steady. Her task tonight was specific and urgent. She held a sentence in her hand: "The trophy did not fit in the suitcase because it was too big." The word "it" sat at the end like a bomb. Did "it" refer to the trophy, the thing that could not fit? Or the suitcase, the container? Query needed to walk out of this room with a single answer: which word was "it" actually pointing to?
+It is late at night. Long after the building has gone dark, *Query* stands inside, steady and focused.
 
-Query was the interrogator of the group, restless and demanding. She asked questions without apology and expected answers that matched her needs exactly. Key was the labeler, methodical and precise, the kind of person who had already catalogued everything in the building before anyone else walked through the door. Value was the safeguard, holding all the actual goods. She did not move until the plan was clear, and she did not split her attention until the weight distribution made sense.
+The sentence hovers over them: "The trophy did not fit in the suitcase because it was too big."
 
-Query looked around the room and broke the silence.
+Her task tonight is specific. She holds one word in her hand, "it". The team's task is to find what "it" means. Does "it" mean the trophy, the thing that could not fit? Or the suitcase, the container?
 
-"I need to know what is behind every single door in this building. Which word does 'it' point to in my sentence?"
+This is the puzzle that **self attention** was built to solve.
 
-Key stepped forward without hesitation.
+*Query* is the interrogator of the crew. She is restless and demanding, and she expects every answer to match exactly what she asked.
 
-"Door one is labeled 'today,' a stray word from a side conversation. Door two is labeled 'trophy,' the object that did not fit. Door three is labeled 'suitcase,' the container that held nothing."
+*Key* is the labeler. He is methodical and precise, the kind who has already catalogued every door in the building before anyone else arrives.
 
-Query scored each label against her question. "Today" had nothing to do with fitting or size, so it barely registered, 3%. "Suitcase" scored higher, 17%, since a suitcase is a plausible thing for "it" to mean grammatically. But "trophy" matched the actual logic of the sentence: something did not fit because it was too big, and the trophy was the thing too big to fit. Door two lit up high, 80%, a clear match.
+*Value* is the safeguard. She holds the real contents, and she refuses to hand anything over until the weights make sense.
 
-"You cannot just take the highest score and walk," Value said from her corner of the room.
+*Softmax* is the balancer. She is calm and fair, and she turns raw, messy scores into clean shares that always add up to one.
 
-"Why not?" Query asked, her hand hovering near door two.
+![Query, Key, and Value, the self attention crew](/images/mlops/week-02/Concepts1.jpeg)
 
-"Because scores are not shares. Those percentages are not permission to grab door two and ignore the others. The content behind each door is real. Trophy is the strongest answer, but suitcase still carries weight in how humans understand this sentence. You need to blend them."
+*Query* looks around the room and breaks the silence.
 
-That was when Softmax stepped in. She was the mediator, the balancer, the one who took raw numbers and turned them into something disciplined. Softmax took Query's scores and normalized them into final weights that summed to one. Trophy stayed at 80%. Suitcase held 17%. Today held 3%.
+"I need to know what is behind every door in this building. Which word does 'it' point to in my sentence?"
 
-Query blended the three words by those weights into a single prize, mostly trophy with a faint trace of suitcase still folded in, richer than picking one door and ignoring the rest.
+*Key* steps forward without hesitation.
 
-"That is the whole heist," Key said, watching Query step back with her prize.
+"Each door is labeled. Door one is labeled 'today,' a stray word from a side conversation. Door two is labeled 'trophy,' the object that did not fit. Door three is labeled 'suitcase,' the container that held nothing."
 
-"Every word in the room does this. For every other word in the room, every single layer. You are not stealing one thing. You are building a complete understanding of what this sentence actually means, quietly aware of every word around you, weighted by how much each one actually matters to the question you walked in with."
+*Query* scores each label against her question.
 
-Query thought about that for a second, then nodded. Somewhere deeper in the building, a thousand clones of Query were running the exact same job in parallel, each one resolving a different ambiguity, each one building their own complete answer the same way. Not by grabbing the loudest word in the room. By listening to everything and weighting accordingly.
+"Today has nothing to do with fitting or size, so it barely registers. Let me weight it at 3%.
 
-The job had a weakness, though. Query noticed it the first time the crew tried to scale it up. A short sentence with ten words was nothing. Ten words meant ten questions to ask, ten labels to check, ten weights to split. But sentences kept growing into paragraphs, into documents, into entire books.
+Suitcase scores higher, weight 17%, since a suitcase is at least a plausible thing for 'it' to mean.
 
-"Wait," Value said, her voice catching. "How many comparisons is that?"
+But trophy matches the actual logic of the sentence. Something did not fit because it was too big, and the trophy is the thing too big to fit. It is a clear match, so weight 80%."
 
-Key pulled out the numbers.
+Those three numbers are the **attention weights**, and *Query* is about to learn she cannot simply grab the highest one.
 
-"A hundred words means ten thousand comparisons. Double the words, and the cost does not double. It quadruples. Oh no. Oh no, the cost just shot up. Every Query checking every word, every single one of them running in parallel, and the compute budget is climbing and climbing. At this rate we will have no finances left."
+"You cannot take the highest number and assume it is the right answer," *Value* says from her corner.
 
-Query felt the weight of it. Each word had to check itself against every other word. The room was burning money faster than they could earn it.
+"Why not?" *Query* asks, her hand hovering near door two.
 
-They gathered in the darkness and made a desperate choice. They went to their commander, the ancient architect of this whole operation, and begged for wisdom. The commander looked at them for a long moment, then spoke in a voice like stone:
+"Because they are not shares. The contents behind each door are real. Trophy is the strongest answer, but suitcase still carries weight in how the sentence works. Let me give you the real values and you have to blend them."
 
-"Hear now the sacred principles, carved in the bedrock of all heists:
+*Softmax* steps in.
+
+"That is my job."
+
+She takes *Query's* raw scores and *Value's* useful context and normalizes them into final weights that sum to one.
+
+*Query* blends the three words by those weights into a single result, mostly trophy with a faint trace of suitcase still folded in. It is richer than picking one door and ignoring the rest.
+
+"That is the whole heist," *Key* says.
+
+"We do this for every word behind every door, on every layer. You need to figure out a complete picture of what the sentence means, quietly aware of every word around you, weighted by how much each one matters to the question you walked in with."
+
+*Query* nods. Somewhere deeper in the building, a thousand clones of *Query* are running the exact same job in parallel. Each one resolves a different word. Each one builds its own answer the same patient way, not by grabbing the loudest word in the room, but by listening to all of them and weighting accordingly.
+
+Then *Query* notices the weakness.
+
+A short sentence with 10 words is nothing. 10 doors means 10 questions, 10 labels, 10 weights.
+
+But sentences grow into paragraphs, paragraphs into documents, documents into entire books.
+
+"Wait," *Value* says, her voice catching. "How many comparisons is that?"
+
+*Key* runs the numbers.
+
+"100 words means 10,000 comparisons. Double the words and the cost does not double. It quadruples."
+
+"Oh no," *Value* says. "The cost just shot up for every single word we check."
+
+"Every clone is comparing itself to every other word, all at once," *Key* says. "The compute budget is climbing and climbing. At this rate we will have nothing left."
+
+*Query* feels the weight of it. Each word has to check itself against every other word. The room is burning money faster than the crew can earn it. This is the **quadratic cost** of attention, and it is the one thing that can sink the whole operation.
+
+So they go to their commander, the old architect of every heist, and they ask for a way out. The commander looks at them for a long moment, then speaks in a balanced tone.
+
+"Hear the principles, carved in the bedrock of every heist:
 
 Check only the doors that stand nearby,
 Do not measure every space again,
 Split the crew so many work at once,
-Not one poor soul checking everything.
+Never leave one soul to check the ton.
 
-But heed this truth above all else:
-The core task never, ever changes,
+But hold this truth above the rest:
+The core task never, ever will change,
 Compare what you need to what is named,
-Lock the weights into their rightful place,
-Take the blend, not the single take."
+Lock the weights into their place,
+And take the blend."
 
-Query and her crew absorbed these principles like soldiers taking orders. They split themselves into smaller squads, each one checking only nearby words instead of everything. They cached old comparisons so the same work was not done twice. They ran in parallel, dozens of smaller crews instead of one exhausted Query.
+*Query* and her crew take the principles to heart. They split into smaller squads, each one checking only nearby words instead of all of them. They cache old comparisons so the same work is never done twice. They run in parallel, many small crews instead of one exhausted *Query*.
 
-By the end of the night, Query, Key, Value, and Softmax had run the job so many times it stopped feeling like a heist and started feeling like breathing, like heartbeat, like the most natural thing in the world. Every layer. Every word. Every question getting answered the same patient way, built from careful listening and careful weights.
+By the end of the night, *Query*, *Key*, *Value*, and *Softmax* have run the job so many times it starts feeling like breathing. Every layer. Every word. Every question answered the same patient way, built from careful listening and careful weights.
 
 ## Terminology
 
 **Self Attention** — a mechanism where each position in a sequence learns to weight every other position by relevance to its own question.
 
-**Query** — the question or request each position asks about what it needs from the rest of the sequence.
+**Query** — the question each position asks about what it needs from the rest of the sequence.
 
-**Key** — the label or descriptor for each position that helps determine how relevant it is to incoming queries.
+**Key** — the label for each position that decides how relevant it is to an incoming query.
 
-**Value** — the actual content or embedding at each position that gets weighted and combined based on attention scores.
+**Value** — the actual content at each position that gets weighted and combined based on attention scores.
 
-**Softmax** — a function that converts raw scores into normalized weights that sum to one, ensuring all positions contribute fairly.
+**Softmax** — a function that turns raw scores into normalized weights that sum to one, so every position contributes a fair share.
 
-**Attention Weight** — the final normalized score determining how much each position influences the output.
+**Attention Weight** — the final normalized score that sets how much each position influences the output.
 
-**Self Attention Scaling** — the quadratic complexity problem: attention computation grows as O(n²) with sequence length, making long sequences expensive to compute.
+**Quadratic Cost** — the scaling problem where compute grows with the square of the sequence length, making long inputs expensive.
