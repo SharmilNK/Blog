@@ -99,3 +99,14 @@ resetting every time.
 - 2026-06-24: Numbers and percentages must be written with numerals and
   symbols in story prose, not spelled out, e.g. "3%" not "three percent",
   "80%" not "eighty percent". Added to `SKILL.md`'s "Writing rules".
+- 2026-06-28: Additional formatting rules for story prose clarity:
+  - Character names (personified concepts) must stay in *italics* throughout
+    the entire story, not just in the introduction paragraph.
+  - Important terminology and technical concepts must be in **bold** throughout,
+    every time they are referenced, not just the first mention.
+  - All questions must end with a question mark, even short interrogatives
+    in dialogue.
+  - Line breaks for readability: dialogue exchanges should have visual
+    separation, narrative beats should be spaced to avoid dense paragraphs.
+  - User-provided character sketch images should be integrated after the
+    character introduction section to reinforce the visual identity of the team.
