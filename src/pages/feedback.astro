@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Feedback" description="Help us improve MLStories.">
+  <section class="mx-auto max-w-xl py-6 text-center">
+    <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-100 text-violet-600">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7">
+        <path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z" />
+      </svg>
+    </span>
+    <h1 class="mt-5 font-display text-4xl font-extrabold tracking-tight text-slate-900">Feedback</h1>
+    <p class="mt-3 text-lg text-slate-500">Help us improve MLStories</p>
+  </section>
+
+  <div class="mx-auto max-w-xl">
+    <form
+      data-feedback-form
+      action="https://formsubmit.co/ajax/sharmilsomaiah@gmail.com"
+      method="POST"
+      class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
+    >
+      <input type="hidden" name="_subject" value="New MLStories feedback" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <!-- honeypot -->
+      <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
+
+      <label class="block">
+        <span class="text-sm font-semibold text-slate-900">Email (optional)</span>
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-200"
+        />
+      </label>
+
+      <label class="mt-5 block">
+        <span class="text-sm font-semibold text-slate-900">Your Feedback</span>
+        <textarea
+          name="message"
+          required
+          rows="6"
+          placeholder="Share your thoughts, report bugs, or suggest improvements…"
+          class="mt-2 w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-200"
+        ></textarea>
+      </label>
+
+      <button
+        type="submit"
+        data-feedback-submit
+        class="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-violet-700 disabled:opacity-60"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+          <path d="m22 2-7 20-4-9-9-4Z" />
+          <path d="M22 2 11 13" />
+        </svg>
+        Send Feedback
+      </button>
+
+      <p data-feedback-status class="mt-4 hidden text-center text-sm font-medium"></p>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector<HTMLFormElement>('[data-feedback-form]');
+    const status = document.querySelector<HTMLParagraphElement>('[data-feedback-status]');
+    const button = document.querySelector<HTMLButtonElement>('[data-feedback-submit]');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form || !status || !button) return;
+
+      button.disabled = true;
+      status.className = 'mt-4 text-center text-sm font-medium text-slate-500';
+      status.textContent = 'Sending…';
+      status.classList.remove('hidden');
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          form.reset();
+          status.className = 'mt-4 text-center text-sm font-medium text-violet-600';
+          status.textContent = 'Thanks! Your feedback was sent.';
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch {
+        status.className = 'mt-4 text-center text-sm font-medium text-red-500';
+        status.textContent = 'Something went wrong. Please try again later.';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</BaseLayout>
