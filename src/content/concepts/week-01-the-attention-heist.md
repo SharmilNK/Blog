@@ -95,6 +95,8 @@ Query and her crew absorbed these principles like soldiers taking orders. They s
 
 By the end of the night, Query, Key, Value, and Softmax had run the job so many times it stopped feeling like a heist and started feeling like breathing, like heartbeat, like the most natural thing in the world. Every layer. Every word. Every question getting answered the same patient way, built from careful listening and careful weights.
 
+## Terminology
+
 **Self Attention** — a mechanism where each position in a sequence learns to weight every other position by relevance to its own question.
 
 **Query** — the question or request each position asks about what it needs from the rest of the sequence.
