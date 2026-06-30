@@ -1,31 +1,24 @@
 ---
-import { getCollection } from 'astro:content';
+interface QuizQuestion {
+  tier: 'basic' | 'intermediate' | 'expert';
+  question: string;
+  options: string[];
+  answer: number;
+}
 
 interface Props {
-  scope?: 'all' | 'latest';
+  questions: QuizQuestion[];
   heading?: string;
   caption?: string;
+  id?: string;
 }
 
-const { scope = 'all', heading = 'story quiz', caption } = Astro.props;
-const instanceId = `quiz-${scope}`;
-
-const trackIds = ['concepts', 'evaluation', 'mlops'] as const;
-const allEntries = (
-  await Promise.all(
-    trackIds.map(async (track) => (await getCollection(track, ({ data }) => !data.draft)))
-  )
-).flat();
-
-let source = allEntries;
-if (scope === 'latest' && allEntries.length > 0) {
-  const latest = Math.max(...allEntries.map((e) => e.data.publishDate.valueOf()));
-  source = allEntries.filter((e) => e.data.publishDate.valueOf() === latest);
-}
+const { questions, heading = 'story quiz', caption, id = 'quiz' } = Astro.props;
+const instanceId = id;
 
 const tiers = ['basic', 'intermediate', 'expert'] as const;
 const questionByTier = Object.fromEntries(
-  tiers.map((tier) => [tier, source.flatMap((e) => e.data.quiz).find((q) => q.tier === tier)])
+  tiers.map((tier) => [tier, questions.find((q) => q.tier === tier)])
 );
 ---
 
