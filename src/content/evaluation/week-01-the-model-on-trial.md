@@ -40,13 +40,19 @@ It is 9 in the morning in a quiet courtroom.
 
 *Model* is waiting for a verdict.
 
-Last week, his manager asked him, "Did the new process flow improve retention?"
+Last week, his manager had asked him, "Did the new process flow improve retention?"
 
-*Model* answered, "Yes, retention improved by 91%," and footnoted the claim to an internal report.
+*Model* answered, "Yes, it increased by 91%," and footnoted the claim to an internal report.
 
-The question on trial today is simple to ask and hard to settle. Is that answer actually good?
+The Auditor questioned it.
 
-*BLEU* is the veteran. He is literal and proud, and he measures one thing only: how many words and phrases in the answer overlap with an approved reference answer.
+"Is that answer actually good?"
+
+And so the case reached the courtroom.
+
+![BLEU, RAGAS, and Judge weigh the model's answer](/images/mlops/week-02/Eval1.png)
+
+*BLEU* is the veteran lawyer. He is literal and proud, and he measures one thing only: how many words and phrases in the answer overlap with an approved reference answer.
 
 *RAGAS* is the investigator. She is skeptical and thorough, and she always pulls up the source documents to check whether the answer is truly grounded in them.
 
@@ -64,11 +70,11 @@ The question on trial today is simple to ask and hard to settle. Is that answer 
 
 *RAGAS* pulls up the retrieval step, the actual documents the model was handed before it answered. She checks three things, and she names each one out loud.
 
-"Faithfulness. Did the answer stay true to the documents?"
+"**Faithfulness**. Did the answer stay true to the documents?"
 
-"Relevance. Did it actually address the question?"
+"**Relevance**. Did it actually address the question?"
 
-"Retrieval quality. Did we even fetch the right documents in the first place?"
+"**Retrieval quality**. Did we even fetch the right documents in the first place?"
 
 She slides a printout across the table. The report the model cited says retention moved by 9%, not 91%. The model invented a digit.
 
@@ -82,19 +88,7 @@ The room goes quiet. *BLEU* stares at his scorecard. 91% overlap, and still a fa
 
 "You are a language model judging a language model," *BLEU* says. "Who checks your math?"
 
-"Nobody, fully," *Judge* admits. "I am not ground truth. I am a fast second opinion, better than either of you at tone and intent, and worse than *RAGAS* at catching one fabricated number. None of us alone is the whole verdict."
-
-```mermaid
-flowchart LR
-    Q[Question] --> R[Retrieval]
-    R --> M[Model Answer]
-    M --> B[BLEU: overlap with reference]
-    M --> G[RAGAS: faithfulness and relevance]
-    M --> J[Judge: coherence and intent]
-    B --> V[Verdict]
-    G --> V
-    J --> V
-```
+"Nobody, fully," *Judge* admits. "I am not **ground truth**. I am a fast second opinion, better than either of you at tone and intent, and worse than *RAGAS* at catching one fabricated number. None of us alone is the whole verdict."
 
 The three of them work the same transcript from three angles for another hour. *BLEU* stays at 91%, accurate and silent on everything that matters. *RAGAS* finds a second invented detail, a date that matches no document. *Judge* keeps circling a softer worry: even setting the fabrication aside, the answer sounds more confident than the thin evidence deserves.
 
@@ -114,9 +108,9 @@ And let no metric stand alone,
 The only verdict worth the name
 Is built from every truth they have shown."
 
-So that becomes the ruling. Not one score stamped on the model's forehead, but three findings the team can act on: a fabricated 91% to fix, a retrieval pipeline that was mostly working, and a tone that oversold the evidence.
+So that becomes the ruling.
 
-Three specific problems instead of one confident, half blind number. Nobody in that courtroom claims to be the whole truth anymore.
+Three findings for the team to act on: a fabricated 91% to fix, a retrieval pipeline that was mostly working, and a confidence that oversold the evidence.
 
 ## Terminology
 
