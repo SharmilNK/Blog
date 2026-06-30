@@ -11,29 +11,29 @@ draft: false
 socialSnippet: "MLOps as a relay race: five operational pillars working together to carry the baton through four hurdles without dropping it on screen."
 quiz:
   - tier: "basic"
-    question: "In Archi's relay team, what does **Reproducible Pipelines** require?"
+    question: "What does a reproducible ML pipeline require?"
     options:
-      - "Every step can be recreated exactly the same way using versioned data, code, and models"
-      - "The team must run at exactly the same speed each time"
-      - "All runners must take the same number of steps"
-      - "The baton must never be dropped"
+      - "Versioning data, code, and models so any result can be recreated exactly"
+      - "Running the model on a single machine only"
+      - "Skipping automated tests so deploys are faster"
+      - "Deleting old model versions to save space"
     answer: 0
   - tier: "intermediate"
-    question: "Why does *Archi* choose to show the Judge a low confidence signal rather than a wrong answer delivered with certainty?"
+    question: "Why is returning a low confidence signal often better than a confident but possibly wrong answer?"
     options:
-      - "A wrong answer delivered with total confidence is worse than admitting uncertainty"
-      - "Low confidence signals are always better than any answer"
-      - "The Judge prefers to see no answers at all"
-      - "It is faster to show uncertainty than to compute a confident answer"
-    answer: 0
+      - "Low confidence answers are always computed faster"
+      - "A confidently wrong answer erodes user trust more than an honest signal of uncertainty"
+      - "Confidence scores have no effect on user experience"
+      - "Users would rather see no answer at all"
+    answer: 1
   - tier: "expert"
-    question: "What does the three layer monitoring from *Observability* track, and why is most teams monitoring incomplete?"
+    question: "Effective continuous monitoring of an ML system tracks which three layers?"
     options:
-      - "System metrics, model metrics, and business metrics. Most teams only monitor the first layer."
-      - "Data quality, model accuracy, and latency. Most teams monitor all three equally."
-      - "User behavior, system performance, and cost. Most teams only care about cost."
-      - "Pipelines, deployments, and governance. Most teams skip governance."
-    answer: 0
+      - "CPU, GPU, and disk usage only"
+      - "Training loss, validation loss, and test loss"
+      - "System metrics, model metrics, and business metrics"
+      - "End to end latency, measured three different ways"
+    answer: 2
 ---
 
 The stadium lights came on early that morning, long before the stands filled. *Archi* stood at the edge of the track, clipboard in hand, eyes steady on the four hurdles ahead of her.

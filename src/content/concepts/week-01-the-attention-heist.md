@@ -11,29 +11,29 @@ draft: false
 socialSnippet: "Self attention explained as a crew of word detectives, Query, Key, and Value, who blend evidence rather than grab the loudest answer."
 quiz:
   - tier: "basic"
-    question: "In the story, what does Query ask Key to label for her?"
+    question: "In self attention, what does a token's Query vector represent?"
     options:
-      - "Which word the pronoun 'it' refers to in a sentence about a trophy and suitcase"
-      - "How many doors are in the building"
-      - "The fastest way to escape the vault"
-      - "Which crew members are trustworthy"
+      - "What that token is looking for in the other tokens"
+      - "The fixed final embedding of the token"
+      - "The model's learning rate"
+      - "The number of tokens in the sequence"
     answer: 0
   - tier: "intermediate"
-    question: "Why does Value insist that Query blend all three answers instead of just taking the highest scoring one?"
+    question: "Why are attention scores passed through a softmax before they weight the Value vectors?"
     options:
-      - "Because suitcase and today still carry weight in how humans understand the sentence"
-      - "Because all answers must be equal in a fair system"
-      - "Because Softmax will fail otherwise"
-      - "Because it makes the heist more dramatic"
-    answer: 0
+      - "To remove the need for Key vectors"
+      - "To turn raw scores into normalized weights that sum to 1"
+      - "To make attention linear in sequence length"
+      - "To convert tokens into one hot vectors"
+    answer: 1
   - tier: "expert"
-    question: "What happens to the cost when you double the number of words in a sentence that Query must process with attention?"
+    question: "Why does self attention scale poorly as the input gets longer?"
     options:
-      - "The cost quadruples because attention is O(n²) in sequence length"
-      - "The cost doubles because each word checks one other word"
-      - "The cost stays the same due to modern optimization"
-      - "The cost becomes logarithmic with better heuristics"
-    answer: 0
+      - "Softmax becomes undefined beyond 512 tokens"
+      - "Positional encodings overflow on long inputs"
+      - "Every token attends to every other token, so compute grows as O(n²)"
+      - "Gradients cannot be computed for long sequences"
+    answer: 2
 ---
 
 It is late at night. Long after the building has gone dark, *Query* stands inside, steady and focused.

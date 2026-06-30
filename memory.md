@@ -120,3 +120,12 @@ resetting every time.
     `public/images/mlops/week-02/`) and will tell you the exact path/filename to
     reference (e.g. `/images/mlops/week-02/Concepts1.jpeg`). Reference that path
     directly; do not reorganize images into per-story folders.
+  - 2026-06-28: Quiz questions must be COMPLETELY TECHNICAL. They test the
+    concept, its real world failure modes, and the fix, never recall of the
+    story. Do not reference characters, plot, or setting (no "what does Query
+    ask Key", no "why did Status stay green", no "in Archi's relay team"). The
+    reader should remember the concept, its issues, and its fixes, not the
+    narrative. Write each question as if it were a plain technical quiz on that
+    topic. Also vary which option is correct across the three tiers rather than
+    always putting the answer first. All four existing stories' quizzes were
+    rewritten this way; same rule now lives in `SKILL.md`.
