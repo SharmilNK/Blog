@@ -11,29 +11,29 @@ draft: false
 socialSnippet: "Evaluation metrics explained as witnesses in a courtroom who cannot agree on whether the model is actually good. New story: The Model on Trial."
 quiz:
   - tier: "basic"
-    question: "What is BLEU primarily measuring in this story?"
+    question: "What does the BLEU metric actually measure?"
     options:
-      - "Word and phrase overlap between the generated text and a reference answer"
-      - "Whether retrieved documents support the generated claims"
-      - "Overall human-perceived quality of a response"
-      - "The model's training loss curve"
+      - "Word and phrase overlap between an output and a reference answer"
+      - "Whether an answer is grounded in retrieved documents"
+      - "The latency of generating a response"
+      - "Human satisfaction with an answer's tone"
     answer: 0
   - tier: "intermediate"
-    question: "Why does RAGAS object to BLEU's verdict even when BLEU's score is high?"
+    question: "Why can an answer score high on BLEU yet still be a serious failure?"
     options:
-      - "A high overlap score doesn't guarantee the answer is actually grounded in the retrieved context"
-      - "RAGAS only works on image models"
-      - "BLEU scores are always wrong by definition"
-      - "RAGAS measures latency, not accuracy"
-    answer: 0
+      - "BLEU only works on images, not text"
+      - "Overlap with a reference says nothing about whether the facts are grounded or true"
+      - "A high BLEU score always means the answer was hallucinated"
+      - "BLEU requires the answer to be longer than the reference"
+    answer: 1
   - tier: "expert"
-    question: "What's the most defensible courtroom strategy this story lands on for evaluating a model?"
+    question: "Why evaluate an answer with overlap, faithfulness, and an LLM judge together instead of one metric alone?"
     options:
-      - "Use multiple complementary metrics together, since each one is blind to a different failure mode"
-      - "Trust whichever metric gives the highest score"
-      - "Always prefer automated metrics over any human or LLM judgment"
-      - "Skip evaluation once BLEU clears a fixed threshold"
-    answer: 0
+      - "Running three metrics is faster than running one"
+      - "An LLM judge is always more accurate than every other metric"
+      - "Each metric is blind to a different failure mode, so together they cover more ground"
+      - "Faithfulness and relevance measure exactly the same thing"
+    answer: 2
 ---
 
 It is 9 in the morning in a quiet courtroom.

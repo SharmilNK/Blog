@@ -52,10 +52,17 @@ Vercel to deploy.
      `characters` (array), `publishDate` (next Monday from today, ISO date),
      `draft: false`, `socialSnippet` (<=280 chars, hook for cross-posting),
      `quiz` (exactly 3 items: one each of `basic`, `intermediate`, `expert`,
-     each with `options` and a 0-indexed `answer` — this still lives in
-     frontmatter even though it's no longer rendered inline on the story
-     page; the site's centralized `/quiz` page pulls questions from every
-     story's frontmatter automatically, so no extra step is needed here).
+     each with `options` and a 0-indexed `answer`). The site's `/quiz` hub
+     renders each story's quiz on its own per week page, so questions are
+     read straight from this frontmatter.
+     **Quiz questions must be purely technical** — they test understanding of
+     the actual concept, the real world failure mode, and the fix, NOT recall
+     of the story. Never reference the characters, plot, or setting (no "what
+     does Query ask Key", no "why did Status stay green", no "in Archi's
+     team"). The reader should walk away remembering the concept and its
+     issues and fixes, not the narrative. Write questions exactly as you would
+     for a plain technical quiz on that topic, and vary which option index is
+     correct across the three tiers (do not always put the answer first).
    - Body: 800-1200 words, structured as a fixed sequence of paragraphs
      (see "Story structure" below). No `## Scene` headings.
    - **Diagram**: if the concept has a structure, flow, or sequence worth

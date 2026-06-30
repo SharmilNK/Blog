@@ -11,29 +11,29 @@ draft: false
 socialSnippet: "Data drift explained as a quiet intruder who walks past a sleeping guard for three weeks straight. New story: Drift Walks the Night Shift."
 quiz:
   - tier: "basic"
-    question: "What does Drift represent in this story?"
+    question: "What is data drift?"
     options:
-      - "A gradual shift in the input data distribution"
-      - "A bug in the training code"
-      - "A new feature added to the model"
-      - "A drop in GPU availability"
+      - "A gradual change in input data so production data no longer matches the training data"
+      - "A bug introduced while training the model"
+      - "A sudden hardware failure in production"
+      - "A deliberate change to the model architecture"
     answer: 0
   - tier: "intermediate"
-    question: "Why did Status stay green for three weeks while Drift was active?"
+    question: "Why can an accuracy dashboard stay green for weeks while a model degrades from drift?"
     options:
-      - "It was tracking output metrics that lag behind the underlying input shift"
-      - "It was broken and not collecting any data"
-      - "Drift only affects training data, never production data"
-      - "Green dashboards mean drift is impossible by definition"
-    answer: 0
+      - "Dashboards only refresh once a month by default"
+      - "Accuracy needs ground truth labels that arrive late, so it lags behind the input shift"
+      - "Drift affects training data only, never production data"
+      - "A green dashboard mathematically proves there is no drift"
+    answer: 1
   - tier: "expert"
-    question: "What's the most reliable fix to stop a Drift-shaped intruder from going unnoticed next time?"
+    question: "What is the most reliable way to catch data drift early?"
     options:
-      - "Monitor input feature distributions directly, not just downstream outcome metrics"
-      - "Retrain the model more frequently regardless of whether drift is detected"
-      - "Increase the alert threshold on the existing dashboard"
+      - "Retrain the model on a fixed schedule regardless of drift"
+      - "Raise the alert threshold on existing outcome metrics"
+      - "Monitor input feature distributions against a rolling baseline, not just downstream outcomes"
       - "Switch to a larger model architecture"
-    answer: 0
+    answer: 2
 ---
 
 It is the night shift in the operations center. The room is quiet, and a lone screen glows as the engineer monitors the recommendation model serving customer traffic.
