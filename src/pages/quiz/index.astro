@@ -1,12 +1,46 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import QuizWidget from '../../components/QuizWidget.astro';
+import { TRACKS } from '../../lib/tracks';
+
+const sections = await Promise.all(
+  TRACKS.map(async (track) => {
+    const entries = (await getCollection(track.id, ({ data }) => !data.draft)).sort(
+      (a, b) => a.data.week - b.data.week
+    );
+    return { track, entries };
+  })
+);
 ---
 
-<BaseLayout title="Quiz" description="Test your understanding">
-  <h1 class="font-display text-4xl font-extrabold tracking-tight text-slate-900">Quiz</h1>
-  <p class="mt-3 text-lg text-slate-500">Test what stuck. Questions pull from every story.</p>
-  <div class="mt-10 max-w-2xl">
-    <QuizWidget scope="all" caption="" />
-  </div>
+<BaseLayout title="Quiz" description="Pick a track and a week to test what stuck." wide={true}>
+  <h1 class="font-display text-4xl font-extrabold tracking-tight text-slate-900">Select a Quiz</h1>
+  <p class="mt-3 text-lg text-slate-500">Pick a track and a week. Each quiz covers just that story.</p>
+
+  {sections.map(({ track, entries }) => (
+    <section class="mt-12">
+      <h2 class="font-display text-2xl font-bold text-slate-900">{track.heading}</h2>
+      {entries.length === 0 ? (
+        <p class="mt-3 text-sm text-slate-400">More quizzes coming soon.</p>
+      ) : (
+        <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {entries.map((entry) => (
+            <a
+              href={`/quiz/${track.id}/${entry.slug}`}
+              class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-violet-300 hover:shadow-lg hover:shadow-violet-100"
+            >
+              <span class:list={['flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl', track.badgeBg]}>
+                {entry.data.icon}
+              </span>
+              <span class="min-w-0">
+                <span class="block text-xs font-medium uppercase tracking-wide text-slate-400">Week {entry.data.week}</span>
+                <span class="block truncate font-display font-bold text-slate-900">{entry.data.title}</span>
+                <span class="mt-1 block text-sm font-semibold text-violet-600">Take quiz →</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      )}
+    </section>
+  ))}
 </BaseLayout>

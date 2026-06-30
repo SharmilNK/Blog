@@ -13,3 +13,15 @@ MLOps isn't one person solving one problem. It's five operational pillars workin
 
 Most model failures don't announce themselves — they walk in quietly through the input data and wait. In this story, an intruder named Drift slips past a sleeping monitor and an all-green dashboard for three weeks, until a downstream metric finally cracks.
 The fix wasn't a bigger model. It was watching the right thing in the first place.
+
+## The Model on Trial (Week 1, evaluation)
+/evaluation/week-01-the-model-on-trial
+
+A model claimed retention jumped 91%. BLEU said case closed: the words matched the reference. RAGAS pulled the source and found the real number was 9%, a fabricated digit hiding inside a fluent sentence. The Judge caught tone and intent but admitted it could miss that one fake number.
+The lesson: no single metric is the whole verdict. Faithfulness, relevance, and overlap each see a different blind spot. Run them together.
+
+## The Attention Question (Week 1, concepts)
+/concepts/week-01-the-attention-heist
+
+"The trophy did not fit in the suitcase because it was too big." What does "it" refer to? That tiny puzzle is exactly what self attention solves: score every word against the question, then blend them by weight instead of grabbing the loudest one.
+Then the catch: double the words and the cost quadruples. A story about how attention actually works, and why long inputs get expensive.
