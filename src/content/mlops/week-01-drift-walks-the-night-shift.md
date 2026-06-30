@@ -5,7 +5,7 @@ week: 1
 description: "An intruder named Drift slips past every dashboard for three weeks while the model quietly decays, until one downstream metric breaks."
 tagline: "production down"
 icon: "⚠️"
-characters: ["Drift", "Monitor", "Status"]
+characters: ["Drift", "Monitor", "Status", "Engineer"]
 publishDate: 2026-06-22
 draft: false
 socialSnippet: "Data drift explained as a quiet intruder who walks past a sleeping guard for three weeks straight. New story: Drift Walks the Night Shift."
@@ -36,49 +36,33 @@ quiz:
     answer: 0
 ---
 
-It is the night shift in the operations center. The screens glow, the room is quiet, and a recommendation model is happily serving traffic.
+It is the night shift in the operations center. The room is quiet, and a lone screen glows as the engineer monitors the recommendation model serving customer traffic.
 
-The trouble is small and specific. Three input features, the ones that describe how long a user browses, have started creeping upward, about 15% above where they sat at training time. The downstream metric everyone actually cares about, conversion rate on recommended items, has not moved yet.
+The issue is small and specific. Three input feature values have started creeping upward. These features describe how long a user browses, and they now sit about 15% above where they were at training time. The downstream metric everyone actually cares about, conversion rate on recommended items, has not moved yet.
 
-That gap, between inputs quietly shifting and the outcome still looking fine, is the whole story.
+The engineer is not worried. There is a shift in some input features, but the outcome still looks fine.
 
-*Drift* is the intruder. He is patient and never dramatic, and he never breaks anything all at once. He only makes today look slightly different from yesterday, again and again.
+Unknown to her, the intruder *Drift* is patient and never dramatic. He never breaks anything all at once. He only makes today look slightly different from yesterday, again and again.
 
 *Monitor* is the guard on duty. He is confident and well meaning, but he only checks lagging accuracy against labels that arrive two weeks late.
 
-*Status* is the dashboard. He is literal and loyal, and he reports exactly the five numbers he was told to watch, nothing more.
+*Status* is tasked with updating the dashboard. He is literal and loyal, and he reports exactly the five numbers he was told to watch, nothing more.
+
+![Drift, Monitor, and Status on the night shift](/images/mlops/week-02/MLOps2.png)
 
 In week one, a wave of new users signs up from a region the model has barely seen. Their sessions run longer. Their taste leans toward categories the training data hardly covered.
 
-"Nothing dramatic," *Drift* would say, if *Drift* ever announced himself, which he never does. "Just Tuesday."
+"Nothing dramatic," the engineer thought, and did not look closer.
 
 *Monitor* does his rounds. Ask him how the model is doing and he answers without hesitation.
 
 "Accuracy is fine. I checked it this morning."
 
-What *Monitor* does not mention is what that check compares: today's predictions against labels from two weeks ago, because ground truth here takes that long to settle. Every morning he answers a question about a version of the world where *Drift* had not arrived yet.
+What *Monitor* does not mention is what that check compares: today's predictions against labels from two weeks ago, because **ground truth** here takes that long to settle. Every morning he answers a question about a version of the world where *Drift* is not noticed yet.
 
 *Status* posts his five numbers like he does every day: requests per second, latency, error rate, accuracy, uptime. All green.
 
-"Do not blame me," *Status* would say. "Nobody told me to watch the input features. I watch what I was told to watch, and what I was told to watch has not moved."
-
-He is right, and that is the problem. The average of three input features has crept up 15% since *Drift* walked in, and there is no chart for it, because nobody thought they would need one.
-
-```mermaid
-sequenceDiagram
-    participant D as Drift
-    participant I as Input Data
-    participant M as Monitor
-    participant Out as Downstream Metric
-    D->>I: shifts distribution, day by day
-    I->>M: feature values quietly change
-    M->>M: checks lagging output metric only
-    Note over M: still green, labels have not arrived
-    I->>Out: predictions slowly degrade
-    Out->>Out: breaks, three weeks later
-```
-
-Week two passes like week one. *Status* stays green. *Monitor* stays confident. Underneath them both, the inputs keep walking further from where the model was trained, one day of users at a time. Neither guard is technically wrong, so neither one raises a hand.
+Week two passes like week one. *Status* stays green. *Monitor* stays confident. Underneath them both, the inputs keep walking further from where the model was trained. The average of three input features has crept up 15%, but nobody caught the intruder, *Drift*.
 
 Then week three arrives, and conversion rate falls off a cliff.
 
@@ -90,11 +74,13 @@ The engineer pulls up *Status*. Green. Green. Green. Green. Red.
 
 "Wait," the engineer says. "You were green this whole time?"
 
-"I was," *Status* says. "Still am, mostly."
+"Do not blame me," *Status* says. "Nobody told me to watch the input features. I watch what I was told to watch, and what I was told to watch had not moved."
+
+He is right, and that is the problem.
 
 The team starts at the wound and works backward. They pull conversion rate apart by user segment and notice it is not falling evenly. It is collapsing hardest in the exact segment that grew fastest over the last three weeks.
 
-That is the thread. They compare this week's input distribution against the training distribution from three months back, and there it is: the 15% creep *Drift* caused in week one, sitting right where nobody was looking.
+That is the thread. They compare this week's **input distribution** against the training distribution from three months back, and there it is: the 15% creep *Drift* caused in week one, sitting right where nobody was looking.
 
 "You could have told us," the engineer says to *Monitor*.
 
@@ -112,9 +98,9 @@ It only shows the squares you drew,
 So measure what the model sees,
 Not just the outcomes trickling through."
 
-The fix is not a bigger model or a faster retrain. It is a question nobody had been asking. *Monitor* gets a second job. Instead of only checking lagging accuracy against stale labels, he now watches whether today's inputs still look like the inputs the model trained on, continuously, against a rolling baseline.
+The fix is simple. *Monitor* gets a second job. Instead of only checking lagging accuracy against stale labels, he now watches whether today's inputs still look like the inputs the model trained on, continuously, against a **rolling baseline**.
 
-*Drift* does not need to be stopped at the door. He needs to be visible the moment he walks in, not three weeks and one crashed metric later.
+The team is now equipped to stop *Drift* at the door the moment he walks in, not three weeks and one crashed metric later.
 
 ## Terminology
 
