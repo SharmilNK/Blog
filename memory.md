@@ -120,6 +120,12 @@ resetting every time.
     `public/images/mlops/week-02/`) and will tell you the exact path/filename to
     reference (e.g. `/images/mlops/week-02/Concepts1.jpeg`). Reference that path
     directly; do not reorganize images into per-story folders.
+  - 2026-06-28: The subscribe box is now wired to Beehiiv via the hosted form
+    embed in `src/components/SubscribeForm.astro` (loader.js +
+    `data-beehiiv-form="036a14ee-c795-49fa-a987-0921eb51e5bf"`, rendered with
+    `is:inline`). Do not revert it to the old placeholder alert. Still pending:
+    the auto-email workflow needs `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID`
+    repo secrets before the crosspost GitHub Action can create drafts.
   - 2026-06-28: Quiz questions must be COMPLETELY TECHNICAL. They test the
     concept, its real world failure modes, and the fix, never recall of the
     story. Do not reference characters, plot, or setting (no "what does Query
