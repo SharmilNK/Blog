@@ -5,7 +5,7 @@
 // `data-beehiiv-form` id and `async` attribute survive verbatim.
 ---
 
-<div class="beehiiv-embed w-full max-w-md">
+<div class="beehiiv-embed w-full max-w-md text-left">
   <script
     is:inline
     async
@@ -13,3 +13,11 @@
     data-beehiiv-form="036a14ee-c795-49fa-a987-0921eb51e5bf"
   ></script>
 </div>
+
+<style is:global>
+  /* Left-align Beehiiv's embedded form instead of letting it auto-center. */
+  .beehiiv-embed iframe {
+    margin-left: 0 !important;
+    max-width: 100% !important;
+  }
+</style>
