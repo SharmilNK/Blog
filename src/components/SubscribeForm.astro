@@ -1,35 +1,15 @@
 ---
-interface Props {
-  buttonLabel?: string;
-}
-const { buttonLabel = 'Subscribe' } = Astro.props;
+// Beehiiv subscribe form embed. Beehiiv's loader.js injects the hosted
+// subscribe form (styled in the Beehiiv form builder) wherever this renders.
+// `is:inline` keeps Astro from bundling/altering the third-party script so the
+// `data-beehiiv-form` id and `async` attribute survive verbatim.
 ---
 
-<!--
-  Placeholder UI only — not wired to Beehiiv yet. Point the form's `action`
-  at your Beehiiv embed endpoint once you have a publication set up, or
-  swap this for Beehiiv's own embed snippet.
--->
-<form class="flex w-full max-w-md flex-col gap-2 sm:flex-row" data-subscribe-form>
-  <input
-    type="email"
-    required
-    placeholder="your@email.com"
-    class="flex-1 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-200"
-  />
-  <button
-    type="submit"
-    class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-violet-300 hover:text-violet-600"
-  >
-    {buttonLabel}
-  </button>
-</form>
-
-<script>
-  document.querySelectorAll<HTMLFormElement>('[data-subscribe-form]').forEach((form) => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert("Thanks! Email subscriptions aren't wired up to Beehiiv yet — coming soon.");
-    });
-  });
-</script>
+<div class="beehiiv-embed w-full max-w-md">
+  <script
+    is:inline
+    async
+    src="https://subscribe-forms.beehiiv.com/v3/loader.js"
+    data-beehiiv-form="036a14ee-c795-49fa-a987-0921eb51e5bf"
+  ></script>
+</div>
