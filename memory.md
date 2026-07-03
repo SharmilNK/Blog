@@ -135,3 +135,13 @@ resetting every time.
     topic. Also vary which option is correct across the three tiers rather than
     always putting the answer first. All four existing stories' quizzes were
     rewritten this way; same rule now lives in `SKILL.md`.
+  - 2026-06-28: "AI Governance" and "AI for Artists" are two special tiles on
+    the Select a Story page (`src/pages/stories.astro`, the `comingSoon` array).
+    They are NOT tracks and must stay out of the track/quiz system:
+    - Do NOT add them to `TRACKS` in `src/lib/tracks.ts` or define content
+      collections for them in `src/content/config.ts`.
+    - They must NOT appear in the `/quiz` hub or have any quiz questions.
+    - They are standalone, read-only stories (no 3-tier quiz, no week
+      numbering like the tracks). When real content is added for them, keep
+      them as read-only pages linked from these tiles, separate from the
+      concepts/evaluation/mlops track+quiz machinery.

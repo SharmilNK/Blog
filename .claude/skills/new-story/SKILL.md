@@ -214,6 +214,13 @@ Vercel to deploy.
 
 ## Notes
 
+- **"AI Governance" and "AI for Artists" are not tracks.** They are two
+  special read-only tiles on the Select a Story page (`src/pages/stories.astro`,
+  the `comingSoon` array). Never add them to `TRACKS`, never create content
+  collections for them, and never give them quiz questions or include them in
+  the `/quiz` hub. They are standalone read-only stories, separate from the
+  `concepts`/`evaluation`/`mlops` track and quiz machinery. Only the three real
+  tracks get the full story-plus-quiz treatment described above.
 - Never invent a track if the brief is genuinely ambiguous — ask the user.
 - If `src/content/<track>/` has no existing stories, start at `week-01`.
 - Images come only from what the user uploads with the brief — never
