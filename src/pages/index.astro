@@ -21,7 +21,7 @@ import SubscribeForm from '../components/SubscribeForm.astro';
         </h1>
 
         <p class="mt-6 max-w-md text-lg leading-relaxed text-slate-600">
-          Understand Machine Learning, LLMs, evaluation methods, model architecture and AI Governance through short stories you'll actually remember.
+          Understand Machine Learning, LLMs, evaluation methods, model architecture and AI Governance through short stories you'll remember.
         </p>
 
         <div class="mt-8">
@@ -37,23 +37,25 @@ import SubscribeForm from '../components/SubscribeForm.astro';
         </div>
 
         <div class="mt-10 max-w-md">
-          <p class="font-display font-semibold text-slate-900">Why stories?</p>
-          <p class="mt-2 leading-relaxed text-slate-600">We forget formulas. We remember stories.</p>
+          <p class="leading-relaxed text-slate-600">We forget formulas. We remember stories.</p>
           <p class="mt-2 leading-relaxed text-slate-600">
             That's why every lesson introduces characters, conflict and resolution before explaining the underlying AI concept.
           </p>
-        </div>
-
-        <div class="mt-10">
-          <p class="mb-2 max-w-md text-sm font-medium text-slate-500">
-            Join fellow readers. One AI story. Every two weeks. Only memorable ideas.
-          </p>
-          <SubscribeForm />
         </div>
       </div>
 
       <!-- spacer column for the decoration on large screens -->
       <div class="hidden lg:block"></div>
+    </div>
+
+    <!-- Subscribe row, pulled down and centered, just above the form -->
+    <div class="mt-24 flex flex-col items-center text-center">
+      <p class="text-sm font-medium text-slate-500 sm:whitespace-nowrap">
+        Join fellow readers. One AI story. Every two weeks. Only memorable ideas.
+      </p>
+      <div class="mt-4">
+        <SubscribeForm />
+      </div>
     </div>
   </section>
 </BaseLayout>
