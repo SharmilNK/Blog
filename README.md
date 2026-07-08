@@ -141,13 +141,13 @@ Beehiiv" loop above is now mostly automated:
    `src/components/SEO.astro`
    sets canonical/OG/Twitter-card meta tags on every page using the
    auto-generated OG image.
-6. **Cross-post to Beehiiv.** `.github/workflows/beehiiv-crosspost.yml` runs
-   on every push to `main` that adds a story file, and calls
-   `scripts/crosspost-beehiiv.mjs` to create a matching Beehiiv draft via
-   their API (`BEEHIIV_API_KEY` / `BEEHIIV_PUBLICATION_ID` repo secrets
-   required). It creates a draft, not a send — review and hit send in Beehiiv
-   manually for now. Verify field names against Beehiiv's current API docs
-   before relying on this; it hasn't been exercised against a live account.
+6. **Newsletter (manual).** Publishing to the site and emailing subscribers are
+   fully decoupled. There is no auto-email on push. About once every 15 days,
+   pick the top story from `social/newsletter-queue.md`, compose a post in
+   Beehiiv (reuse the blurb from `social/linkedin-posts.md`, link to the story
+   on `https://www.orivale.com`), send it, and move the item to "Sent". The
+   subscribe box on the site is the Beehiiv hosted form embed
+   (`src/components/SubscribeForm.astro`).
 
 No feedback loop (quiz analytics, reader tracking) is implemented yet —
 quizzes are reveal-on-click and entirely client-side.

@@ -188,14 +188,19 @@ Vercel to deploy.
    `social/linkedin-posts.md`:
    ```
    ## <title> (Week <NN>, <track>)
-   <link, once domain is known: /<track>/<slug>>
+   https://www.orivale.com/<track>/<slug>
 
    <2-4 line summary>
    ```
+   Then **append the story to the "Pending" list in
+   `social/newsletter-queue.md`** (`- [ ] <title> — https://www.orivale.com/<track>/<slug>`).
+   Do NOT send any email or create any Beehiiv draft — newsletters are sent
+   manually, about one story every 15 days, decoupled from git pushes (see the
+   note in `memory.md`). There is no auto-crosspost workflow anymore.
 
 7. **Commit and push**:
    ```
-   git add src/content/<track>/week-<NN>-<kebab-title>.md social/linkedin-posts.md public/images/<track>/week-<NN>/
+   git add src/content/<track>/week-<NN>-<kebab-title>.md social/linkedin-posts.md social/newsletter-queue.md
    git commit -m "Add story: <title>"
    git push -u origin <current-branch>
    ```
