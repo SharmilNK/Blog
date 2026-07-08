@@ -1,7 +1,7 @@
 # Blog
 AI/ML concepts as stories
 
-**Live at:** https://blog-1smbo67bd-sharmilnks-projects.vercel.app/
+**Live at:** https://www.orivale.com
 
 Here's a clean write-up you can use as your foundation doc — save this as README.md in your repo.
 
@@ -46,7 +46,7 @@ homepage) that pulls from every story's frontmatter. Over time they build
 into a full concept bank.
 
 Tech stack
-LayerToolPurposeSite frameworkAstroStatic site, markdown-native, fastStylingTailwind CSSClean, responsive designDeploymentVercelAuto-deploys on every git pushEmail subscribersBeehiiv (free tier)Subscriber list, email sendsVersion controlGitHubEvery article is a .md fileDomainVercelLive at https://blog-1smbo67bd-sharmilnks-projects.vercel.app/
+LayerToolPurposeSite frameworkAstroStatic site, markdown-native, fastStylingTailwind CSSClean, responsive designDeploymentVercelAuto-deploys on every git pushEmail subscribersBeehiiv (free tier)Subscriber list, email sendsVersion controlGitHubEvery article is a .md fileDomainPorkbun + VercelLive at https://www.orivale.com
 
 Folder structure (planned)
 /Blog
