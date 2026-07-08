@@ -17,29 +17,37 @@ import SubscribeForm from '../components/SubscribeForm.astro';
     <div class="relative grid items-center gap-10 py-12 lg:grid-cols-2 lg:py-20">
       <div>
         <h1 class="max-w-xl font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl">
-          AI and ML concepts, told as stories.
+          Every AI Concept<br />Has a Story.
         </h1>
 
-        <div class="mt-6 max-w-md space-y-1 text-lg leading-relaxed text-slate-600">
-          <p>The model has a motive. The data has a flaw.</p>
-          <p>Every character you meet keeps you held in awe.</p>
-          <p>Beneath every metric, a drama that awaits.</p>
-          <p>Read a story and watch as the concept resonates.</p>
-        </div>
+        <p class="mt-6 max-w-md text-lg leading-relaxed text-slate-600">
+          Understand Machine Learning, LLMs, evaluation methods, model architecture and AI Governance through short stories you'll actually remember.
+        </p>
 
         <div class="mt-8">
           <a
             href="/stories"
             class="inline-flex items-center gap-2 rounded-xl bg-violet-600 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition hover:bg-violet-700"
           >
-            Read Story
+            Start Reading
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </a>
         </div>
 
-        <div class="mt-3">
+        <div class="mt-10 max-w-md">
+          <p class="font-display font-semibold text-slate-900">Why stories?</p>
+          <p class="mt-2 leading-relaxed text-slate-600">We forget formulas. We remember stories.</p>
+          <p class="mt-2 leading-relaxed text-slate-600">
+            That's why every lesson introduces characters, conflict and resolution before explaining the underlying AI concept.
+          </p>
+        </div>
+
+        <div class="mt-10">
+          <p class="mb-2 max-w-md text-sm font-medium text-slate-500">
+            Join fellow readers. One AI story. Every two weeks. Only memorable ideas.
+          </p>
           <SubscribeForm />
         </div>
       </div>
