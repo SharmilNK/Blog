@@ -3,6 +3,12 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## The Stranger at the Gates (AI Governance)
+https://www.orivale.com/governance/the-stranger-at-the-gates
+
+A kingdom that never needed magic must decide whether to welcome a stranger named AI. Instead of rushing the gates, the queen's council walks the whole build lifecycle: purpose before power, design for failure, review before you build, and never mistake a beautiful gift for a safe one.
+Adopting AI responsibly is less about speed and more about the questions you ask before you open the gates.
+
 ## The Production Relay (Week 2, mlops)
 /mlops/week-02-the-production-relay
 

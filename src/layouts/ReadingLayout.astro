@@ -1,0 +1,33 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+// Layout for standalone read-only stories (e.g. AI Governance) that are NOT
+// part of the concepts/evaluation/mlops track+quiz machinery. Used by markdown
+// pages under src/pages/governance/ via their `layout` frontmatter.
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <article class="mx-auto max-w-2xl">
+    <p class="text-sm font-medium uppercase tracking-wide text-slate-400">
+      {frontmatter.eyebrow ?? 'AI Governance'}
+    </p>
+    <h1 class="mt-2 font-display text-4xl font-extrabold tracking-tight">{frontmatter.title}</h1>
+
+    <div class="mt-6 prose-story">
+      <slot />
+    </div>
+
+    <div class="mt-10 border-t border-slate-100 pt-6">
+      <button
+        data-back
+        class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 transition hover:text-violet-600"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+        Back
+      </button>
+    </div>
+  </article>
+</BaseLayout>
