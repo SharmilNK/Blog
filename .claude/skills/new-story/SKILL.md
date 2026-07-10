@@ -197,6 +197,11 @@ Vercel to deploy.
    Do NOT send any email or create any Beehiiv draft — newsletters are sent
    manually, about one story every 15 days, decoupled from git pushes (see the
    note in `memory.md`). There is no auto-crosspost workflow anymore.
+   The reusable email body lives at `social/email-template.html` (paste into a
+   Beehiiv HTML block). When the user is about to send a story, fill its five
+   placeholders (`{{TRACK_WEEK}}`, `{{TITLE}}`, `{{IMAGE_URL}}`, `{{TEASER}}`,
+   `{{LINK}}`) — the teaser reuses the LinkedIn blurb; the image is the story's
+   image on `https://www.orivale.com/images/...`.
 
 7. **Commit and push**:
    ```

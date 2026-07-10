@@ -1,0 +1,93 @@
+<!--
+  orivale.ideas newsletter email template
+  =======================================
+  Paste this into a Beehiiv post's HTML block. Replace the 5 placeholders:
+
+    {{TRACK_WEEK}}  e.g. Design &amp; Operations · Week 2
+    {{TITLE}}       e.g. The Production Relay
+    {{IMAGE_URL}}   full URL, e.g. https://www.orivale.com/images/mlops/week-02/MLOps1.jpeg
+    {{TEASER}}      2-4 sentences (reuse the blurb from social/linkedin-posts.md;
+                    HTML like <em>...</em> for italics is allowed)
+    {{LINK}}        full story URL, e.g. https://www.orivale.com/mlops/week-02-the-production-relay
+
+  Notes:
+  - Email clients can't load custom fonts (Sora) or external CSS, so styles are
+    inline and use a system font stack. Colors match the site (violet #7c3aed).
+  - Turn OFF the post's "Show in email" title toggle so it doesn't duplicate the
+    title below.
+  - Send a test to yourself first, then send to All active subscribers.
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f3ff;margin:0;padding:24px 0;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#ffffff;border:1px solid #ede9fe;border-radius:20px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+
+        <!-- Wordmark -->
+        <tr>
+          <td style="padding:24px 32px 0 32px;">
+            <span style="font-size:18px;font-weight:800;letter-spacing:-0.5px;color:#0f172a;">orivale<span style="color:#7c3aed;">.ideas</span></span>
+          </td>
+        </tr>
+
+        <!-- Hero image -->
+        <tr>
+          <td style="padding:20px 32px 0 32px;">
+            <img src="{{IMAGE_URL}}" width="536" alt="{{TITLE}}" style="width:100%;height:auto;border-radius:14px;display:block;" />
+          </td>
+        </tr>
+
+        <!-- Eyebrow -->
+        <tr>
+          <td style="padding:24px 32px 0 32px;">
+            <span style="display:inline-block;background:#f5f3ff;color:#7c3aed;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:999px;">{{TRACK_WEEK}}</span>
+          </td>
+        </tr>
+
+        <!-- Title -->
+        <tr>
+          <td style="padding:16px 32px 0 32px;">
+            <h1 style="margin:0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-0.5px;color:#0f172a;">{{TITLE}}</h1>
+          </td>
+        </tr>
+
+        <!-- Teaser -->
+        <tr>
+          <td style="padding:16px 32px 0 32px;">
+            <p style="margin:0;font-size:16px;line-height:1.6;color:#475569;">{{TEASER}}</p>
+          </td>
+        </tr>
+
+        <!-- Button -->
+        <tr>
+          <td style="padding:28px 32px 8px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0">
+              <tr>
+                <td align="center" bgcolor="#7c3aed" style="border-radius:12px;">
+                  <a href="{{LINK}}" target="_blank" style="display:inline-block;padding:14px 30px;font-size:16px;font-weight:700;color:#ffffff;text-decoration:none;border-radius:12px;">Read the full story &nbsp;&rarr;</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Divider -->
+        <tr>
+          <td style="padding:24px 32px 0 32px;">
+            <div style="border-top:1px solid #ede9fe;"></div>
+          </td>
+        </tr>
+
+        <!-- Signoff -->
+        <tr>
+          <td style="padding:16px 32px 32px 32px;">
+            <p style="margin:0;font-size:13px;line-height:1.6;color:#94a3b8;">
+              <span style="color:#7c3aed;font-weight:700;">Learn AI through stories</span><br />
+              orivale.ideas
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
