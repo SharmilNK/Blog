@@ -104,14 +104,14 @@ The team is now equipped to stop *Drift* at the door the moment he walks in, not
 
 ## Terminology
 
-**Data Drift** — a gradual change in the input data over time, so production data no longer looks like the training data.
+**Data Drift**: a gradual change in the input data over time, so production data no longer looks like the training data.
 
-**Input Distribution** — the typical range and shape of the feature values the model receives.
+**Input Distribution**: the typical range and shape of the feature values the model receives.
 
-**Lagging Metric** — a measure like accuracy that can only be computed once slow ground truth labels arrive.
+**Lagging Metric**: a measure like accuracy that can only be computed once slow ground truth labels arrive.
 
-**Ground Truth** — the real outcome a prediction is eventually checked against.
+**Ground Truth**: the real outcome a prediction is eventually checked against.
 
-**Rolling Baseline** — a continuously updated reference for what normal inputs look like, used to spot drift early.
+**Rolling Baseline**: a continuously updated reference for what normal inputs look like, used to spot drift early.
 
-**Downstream Metric** — a business outcome, like conversion rate, that reflects model quality only after the fact.
+**Downstream Metric**: a business outcome, like conversion rate, that reflects model quality only after the fact.

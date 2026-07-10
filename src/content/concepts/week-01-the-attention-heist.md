@@ -131,16 +131,16 @@ By the end of the night, *Query*, *Key*, *Value*, and *Softmax* have run the job
 
 ## Terminology
 
-**Self Attention** — a mechanism where each position in a sequence learns to weight every other position by relevance to its own question.
+**Self Attention**: a mechanism where each position in a sequence learns to weight every other position by relevance to its own question.
 
-**Query** — the question each position asks about what it needs from the rest of the sequence.
+**Query**: the question each position asks about what it needs from the rest of the sequence.
 
-**Key** — the label for each position that decides how relevant it is to an incoming query.
+**Key**: the label for each position that decides how relevant it is to an incoming query.
 
-**Value** — the actual content at each position that gets weighted and combined based on attention scores.
+**Value**: the actual content at each position that gets weighted and combined based on attention scores.
 
-**Softmax** — a function that turns raw scores into normalized weights that sum to one, so every position contributes a fair share.
+**Softmax**: a function that turns raw scores into normalized weights that sum to one, so every position contributes a fair share.
 
-**Attention Weight** — the final normalized score that sets how much each position influences the output.
+**Attention Weight**: the final normalized score that sets how much each position influences the output.
 
-**Quadratic Cost** — the scaling problem where compute grows with the square of the sequence length, making long inputs expensive.
+**Quadratic Cost**: the scaling problem where compute grows with the square of the sequence length, making long inputs expensive.

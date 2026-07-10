@@ -139,11 +139,12 @@ Vercel to deploy.
       introduced by a `## Terminology` heading. Under it, list each technical
       term, model, feature, or method used in the story, named plainly,
       followed by a one-line plain-language summary of what it actually is.
-      Format as a short list, e.g.:
+      Separate the term from its summary with a **colon**, not a dash. Format
+      as a short list, e.g.:
       ```
       ## Terminology
 
-      **BLEU** — counts overlapping words between an answer and a reference.
+      **BLEU**: counts overlapping words between an answer and a reference.
       ```
 
    ### Writing rules

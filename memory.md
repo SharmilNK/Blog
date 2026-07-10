@@ -152,3 +152,8 @@ resetting every time.
       numbering like the tracks). When real content is added for them, keep
       them as read-only pages linked from these tiles, separate from the
       concepts/evaluation/mlops track+quiz machinery.
+  - 2026-07-10: In the `## Terminology` glossary, separate each term from its
+    summary with a COLON, not a dash, e.g. `**BLEU**: counts overlapping words`
+    (not `**BLEU** — ...`). All four stories were updated; rule added to
+    `SKILL.md`. Note: this makes the glossary consistent with the no-dashes
+    style everywhere (the em dash separator was the last remaining dash usage).
