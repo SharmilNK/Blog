@@ -114,16 +114,16 @@ Three findings for the team to act on: a fabricated 91% to fix, a retrieval pipe
 
 ## Terminology
 
-**BLEU** — counts how many words and short phrases an answer shares with a reference answer.
+**BLEU**: counts how many words and short phrases an answer shares with a reference answer.
 
-**RAGAS** — checks whether an answer is faithful and relevant to the documents that were retrieved for it.
+**RAGAS**: checks whether an answer is faithful and relevant to the documents that were retrieved for it.
 
-**LLM as Judge** — using a language model to score another model's output for qualities like coherence, tone, and intent.
+**LLM as Judge**: using a language model to score another model's output for qualities like coherence, tone, and intent.
 
-**Faithfulness** — whether an answer stays true to its source material instead of inventing facts.
+**Faithfulness**: whether an answer stays true to its source material instead of inventing facts.
 
-**Relevance** — whether an answer actually addresses the question that was asked.
+**Relevance**: whether an answer actually addresses the question that was asked.
 
-**Retrieval** — the step that fetches source documents for the model to answer from.
+**Retrieval**: the step that fetches source documents for the model to answer from.
 
-**Ground Truth** — a verified correct answer that a metric can be trusted against.
+**Ground Truth**: a verified correct answer that a metric can be trusted against.

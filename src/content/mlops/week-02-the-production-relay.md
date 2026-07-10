@@ -188,20 +188,20 @@ They had won.
 
 ## Terminology
 
-**MLOps** — the discipline of deploying, monitoring, and maintaining ML models in production reliably and at scale.
+**MLOps**: the discipline of deploying, monitoring, and maintaining ML models in production reliably and at scale.
 
-**Reproducible Pipelines** — versioning data, code, and models so any result can be recreated exactly.
+**Reproducible Pipelines**: versioning data, code, and models so any result can be recreated exactly.
 
-**Automated Deployment** — CI/CD for models, pushing to production with confidence and tests built in.
+**Automated Deployment**: CI/CD for models, pushing to production with confidence and tests built in.
 
-**Continuous Monitoring** — tracking performance, data quality, and drift across system metrics, model metrics, and business metrics.
+**Continuous Monitoring**: tracking performance, data quality, and drift across system metrics, model metrics, and business metrics.
 
-**Operational Governance** — access control, audit trails, and compliance, tracking who changed what and when.
+**Operational Governance**: access control, audit trails, and compliance, tracking who changed what and when.
 
-**Reliability** — handling failure gracefully through fallbacks, circuit breakers, retries, and health checks.
+**Reliability**: handling failure gracefully through fallbacks, circuit breakers, retries, and health checks.
 
-**Observability** — seeing what is actually happening inside a system across all three layers: system, model, and business.
+**Observability**: seeing what is actually happening inside a system across all three layers: system, model, and business.
 
-**Infrastructure and Scalability** — load balancing and auto scaling that let a system grow from 10 requests per minute to 10,000 without breaking.
+**Infrastructure and Scalability**: load balancing and auto scaling that let a system grow from 10 requests per minute to 10,000 without breaking.
 
-**Cost Management** — tracking and optimizing what a system spends on compute, storage, API calls, and data transfer.
+**Cost Management**: tracking and optimizing what a system spends on compute, storage, API calls, and data transfer.
