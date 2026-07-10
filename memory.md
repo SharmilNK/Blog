@@ -152,6 +152,16 @@ resetting every time.
       numbering like the tracks). When real content is added for them, keep
       them as read-only pages linked from these tiles, separate from the
       concepts/evaluation/mlops track+quiz machinery.
+  - 2026-07-10: Implemented the read-only pattern for these tiles. AI Governance
+    now has its first story, "The Stranger at the Gates", at
+    `src/pages/governance/the-stranger-at-the-gates.md` (a plain markdown page,
+    NOT a content collection) rendered by `src/layouts/ReadingLayout.astro`. The
+    tile in `stories.astro`'s `comingSoon` array gets an `href` to switch its
+    button from "Coming soon" to "Read". Follow this same pattern for future
+    Governance / AI-for-Artists stories: markdown page under `src/pages/<topic>/`
+    + ReadingLayout + an `href` on the tile. No quiz, no frontmatter schema, no
+    entry in `src/content/config.ts`. Story still gets a LinkedIn + newsletter
+    queue entry like any published piece.
   - 2026-07-10: In the `## Terminology` glossary, separate each term from its
     summary with a COLON, not a dash, e.g. `**BLEU**: counts overlapping words`
     (not `**BLEU** — ...`). All four stories were updated; rule added to
