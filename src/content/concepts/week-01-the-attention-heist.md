@@ -1,5 +1,5 @@
 ---
-title: "The Attention Question"
+title: "Self Attention, KQV in Transformers"
 track: "concepts"
 week: 1
 description: "Query, Key, and Value resolve a coreference puzzle using self attention, only to discover an explosive cost when they scale."
