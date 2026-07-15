@@ -1,5 +1,5 @@
 ---
-title: "The Model on Trial"
+title: "Model & Metrics: BLEU, RAGAS, LLM Judge"
 track: "evaluation"
 week: 1
 description: "Three witnesses, BLEU, RAGAS, and Judge, put one model answer on trial and cannot agree on whether it is actually good."
