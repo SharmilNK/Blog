@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ReadingLayout.astro
-title: "The Stranger at the Gates"
+title: "AI Product Process Flow"
 description: "A kingdom that never needed magic must decide whether to welcome a stranger named AI, and how to govern it wisely."
 eyebrow: "AI Governance"
 ---
