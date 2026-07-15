@@ -1,8 +1,8 @@
 ---
-title: "The Weapons of the Kingdom"
+title: "AI Tools : When to use what?"
 track: "concepts"
 week: 2
-description: "Prince Vikram tours the kingdom's arsenal of AI tools and learns that power lies not in owning every weapon, but in knowing which one to draw."
+description: "Prince Vikram tours the kingdom's arsenal of AI tools (MCP, n8n, LangChain, Celery, Redis, Railway, Vercel, Gamma, Metabase, Langfuse) and learns that power lies not in owning every weapon, but in knowing which one to draw."
 tagline: "which weapon to draw"
 icon: "⚔️"
 characters: ["Prince Vikram", "The Adviser", "MCP", "LangChain", "Celery", "n8n", "Redis", "Railway", "Vercel", "Gamma", "Metabase", "Langfuse"]
