@@ -46,7 +46,14 @@ Vercel to deploy.
 4. **Write the story** directly into
    `src/content/<track>/week-<NN>-<kebab-title>.md` matching the schema in
    `src/content/config.ts`:
-   - `title`, `track`, `week`, `description` (<=160 chars, SEO-facing),
+   - `title`: name the **technical topic covered**, not the characters or the
+     story's plot. The title should tell a reader (and a search engine) exactly
+     what concept the piece teaches, e.g. "Self Attention, KQV in Transformers",
+     "Data Drift and Model Monitoring", "LLM Evaluation: BLEU, RAGAS, and LLM
+     as Judge". Do NOT use the narrative name (not "The Attention Heist", not
+     "Drift Walks the Night Shift"). Keep the story's characters and plot inside
+     the body; the title stays purely technical. The `tagline` can stay playful.
+   - `track`, `week`, `description` (<=160 chars, SEO-facing),
      `tagline` (<=40 chars, short hook shown on the story's gradient card),
      `icon` (a single emoji, <=8 chars, shown on the card and story header),
      `characters` (array), `publishDate` (next Monday from today, ISO date),

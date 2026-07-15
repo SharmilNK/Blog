@@ -167,3 +167,11 @@ resetting every time.
     (not `**BLEU** — ...`). All four stories were updated; rule added to
     `SKILL.md`. Note: this makes the glossary consistent with the no-dashes
     style everywhere (the em dash separator was the last remaining dash usage).
+  - 2026-07-10: Story `title` must name the TECHNICAL TOPIC covered, not the
+    characters or the narrative, e.g. "Self Attention, KQV in Transformers" (the
+    user's own rename), not "The Attention Heist". The characters and plot stay
+    in the body; the title is what a reader or search engine sees, so it must
+    say what concept is taught. The `tagline` can stay playful. Rule added to
+    `SKILL.md`. Existing story-based titles to migrate to technical ones (pending
+    user's preferred wording): The Weapons of the Kingdom, The Model on Trial,
+    Drift Walks the Night Shift, The Production Relay, The Stranger at the Gates.
