@@ -1,5 +1,5 @@
 ---
-title: "Drift Walks the Night Shift"
+title: "Model Drift : Detect & Remedy"
 track: "mlops"
 week: 1
 description: "An intruder named Drift slips past every dashboard for three weeks while the model quietly decays, until one downstream metric breaks."
