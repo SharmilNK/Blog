@@ -3,6 +3,12 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## The Weapons of the Kingdom (Week 2, concepts)
+https://www.orivale.com/concepts/week-02-the-weapons-of-the-kingdom
+
+Prince Vikram owns every weapon in the kingdom, yet an old woman warns he is not yet a king: he doesn't know which weapon to draw. His adviser walks him through the whole AI tool stack, MCP, LangChain, Celery, n8n, Redis, Railway, Vercel, Gamma, Metabase, and Langfuse, each doing one job well.
+The lesson: strength isn't owning every tool, it's knowing which should lead, which should assist, and when they work together.
+
 ## The Stranger at the Gates (AI Governance)
 https://www.orivale.com/governance/the-stranger-at-the-gates
 
