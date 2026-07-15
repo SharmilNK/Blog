@@ -1,5 +1,5 @@
 ---
-title: "The Production Relay"
+title: "Five Pillars of MLOps"
 track: "mlops"
 week: 2
 description: "A relay race through the four hurdles of MLOps: reproducible pipelines, automated deployment, continuous monitoring, and operational governance."
