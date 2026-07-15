@@ -18,6 +18,7 @@ subscribers are fully decoupled.
 
 - [ ] The Attention Question — https://www.orivale.com/concepts/week-01-the-attention-heist
 - [ ] The Stranger at the Gates (AI Governance) — https://www.orivale.com/governance/the-stranger-at-the-gates
+- [ ] The Weapons of the Kingdom — https://www.orivale.com/concepts/week-02-the-weapons-of-the-kingdom
 - [ ] The Model on Trial — https://www.orivale.com/evaluation/week-01-the-model-on-trial
 - [ ] Drift Walks the Night Shift — https://www.orivale.com/mlops/week-01-drift-walks-the-night-shift
 - [ ] The Production Relay — https://www.orivale.com/mlops/week-02-the-production-relay

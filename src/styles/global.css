@@ -11,3 +11,13 @@
 .prose-story pre {
   @apply rounded-lg p-4 overflow-x-auto bg-slate-900 text-slate-100;
 }
+.prose-story table {
+  @apply my-6 w-full border-collapse overflow-hidden rounded-lg text-sm;
+}
+.prose-story th,
+.prose-story td {
+  @apply border border-slate-200 px-3 py-2 text-left align-top;
+}
+.prose-story th {
+  @apply bg-violet-50 font-semibold text-slate-900;
+}
