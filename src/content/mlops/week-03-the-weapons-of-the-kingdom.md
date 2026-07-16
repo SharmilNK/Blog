@@ -1,7 +1,7 @@
 ---
 title: "AI Tools : When to use what?"
-track: "concepts"
-week: 2
+track: "mlops"
+week: 3
 description: "Prince Vikram tours the kingdom's arsenal of AI tools (MCP, n8n, LangChain, Celery, Redis, Railway, Vercel, Gamma, Metabase, Langfuse) and learns that power lies not in owning every weapon, but in knowing which one to draw."
 tagline: "which weapon to draw"
 icon: "⚔️"
@@ -229,6 +229,8 @@ The Royal Observatory (**Metabase**) revealed the truth.
 The Royal Watchtower (**Langfuse**) ensured the kingdom learned from every decision."
 
 The adviser smiled. "And none of them can save the kingdom alone."
+
+![The kingdom's arsenal of AI tools and the wisdom to choose wisely](/images/mlops/week-02/The%20Weapons%20of%20the%20Kingdom.jpg)
 
 *Vikram* finally understood what the old woman had meant.
 
