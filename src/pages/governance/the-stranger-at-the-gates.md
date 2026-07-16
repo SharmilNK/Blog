@@ -157,6 +157,8 @@ The path they followed, from first question to open gates:
 
 **PRD** → **Design** → **HLD / Eng.md** → **Review** → **LLD / Spec.md** → **Review** → **Implement** → **Deployment**
 
+![AI Product Process Flow: from requirements through design, review, implementation, to deployment](/images/mlops/week-02/AI%20Product%20Process%20Flow.png)
+
 ## Terminology
 
 **PRD (Product Requirements Document)**: defines what problem a product solves, who it serves, and where its scope ends, before any building starts.
