@@ -53,7 +53,7 @@ Vercel to deploy.
      as Judge". Do NOT use the narrative name (not "The Attention Heist", not
      "Drift Walks the Night Shift"). Keep the story's characters and plot inside
      the body; the title stays purely technical. The `tagline` can stay playful.
-   - `track`, `week`, `description` (<=160 chars, SEO-facing),
+   - `track`, `week`, `description` (<=800 chars, SEO-facing),
      `tagline` (<=40 chars, short hook shown on the story's gradient card),
      `icon` (a single emoji, <=8 chars, shown on the card and story header),
      `characters` (array), `publishDate` (next Monday from today, ISO date),

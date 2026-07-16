@@ -11,7 +11,7 @@ const storySchema = z.object({
   title: z.string(),
   track: z.enum(['concepts', 'evaluation', 'mlops']),
   week: z.number().int().positive(),
-  description: z.string().max(160),
+  description: z.string().max(800),
   // Short punchy badge for the story card, e.g. "the heist", "production down".
   tagline: z.string().max(40),
   // A single emoji used on the story card and the story header.
