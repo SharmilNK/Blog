@@ -125,29 +125,19 @@ First, we retrieve the most relevant memories from the Vector Database, then, we
 
 Nimmi laughed, "So my wardrobe doesn't remember everything, it simply knows where to look."
 
-Before he left, he handed Nimmi a checklist.
-
-✓ Keep each chunk focused on one clothing item.
-
-✓ Include meaningful attributes like weather, occasion, material, comfort, and style.
-
-✓ Don't make chunks too large, or unrelated information gets mixed together.
-
-✓ Add metadata such as season, destination type, and temperature range.
-
-✓ Update the wardrobe whenever new clothes are added.
-
-
 A week later Nimmi boarded her flight to Mumbai. For the first time she packed in minutes!
 
 ## Terminology
 
+**Document Indexing**: Preparing your documents so they can be searched efficiently. This usually involves parsing files, breaking them into chunks, adding useful metadata, removing duplicates, and storing them in a Vector Database.
+
 **Chunk**: A small, meaningful piece of information stored independently for retrieval.
+Techniques: Fixed-size chunking, LangChain's RecursiveCharacterTextSplitter, Semantic chunking, Parent-child chunking.
 
 **Token**: The smaller units (words or subwords) that AI models process internally.
 
 **Embedding**: A numerical representation of meaning that places similar concepts close together in vector space.
-
+ 
 **Vector Database**: A specialized database that stores embeddings and retrieves semantically similar items efficiently.
 
 **Cosine Similarity**: A distance metric that measures how similar two embeddings are based on their direction rather than their size.
@@ -159,3 +149,20 @@ A week later Nimmi boarded her flight to Mumbai. For the first time she packed i
 **Semantic Search**: Searching by meaning rather than exact keyword matching.
 
 **Nearest Neighbor Search**: The process of finding the vectors that are closest to a query embedding in vector space.
+
+**Retrieval Pipeline**: The process of finding the most relevant chunks for a user's question. Common techniques include Dense Retrieval, Hybrid Search, Metadata Filtering, Query Expansion, and Reranking to improve search quality.
+
+**Grounding**: Ensuring the LLM answers using the retrieved documents instead of relying only on its own memory. Supply the model with the relevant evidence/chunks and instruct it to base its answer on that evidence.
+Techniques: Context Injection, Prompt Constraints, Citation Grounding, Reranking, Metadata Grounding, Context Compression, Knowledge Graph Grounding.
+
+**Dense Retrieval**: Finding documents by comparing the semantic meaning of embeddings rather than matching exact keywords.
+
+**BM25**: A traditional keyword-based search algorithm that ranks documents based on how well they match the search terms.
+
+**Hybrid Search**: Combining keyword search (BM25) with semantic search (embeddings) to improve retrieval accuracy.
+
+**Metadata Filtering**: Filtering documents using attributes like category, date, author, location, or tags before performing semantic search.
+
+**Query Expansion**: Improving a user's search by automatically adding related words or phrases to retrieve more relevant documents.
+
+**Reranking**: Reordering the retrieved documents so the most relevant ones appear at the top before they are sent to the LLM.
