@@ -9,6 +9,31 @@ characters: ["Nimmi", "Keeper of Memories"]
 publishDate: 2026-01-12
 draft: false
 socialSnippet: "What if your wardrobe could retrieve the perfect outfit the same way AI retrieves knowledge? Learn Vector Databases and RAG through a travel story."
+quiz:
+  - tier: "basic"
+    question: "What is a chunk in a Vector Database context?"
+    options:
+      - "A small, meaningful piece of information stored independently for retrieval"
+      - "The entire collection of all documents combined into one large file"
+      - "A single character in a document"
+      - "A backup copy of the original document"
+    answer: 0
+  - tier: "intermediate"
+    question: "Why does semantic search using embeddings outperform exact keyword matching?"
+    options:
+      - "It searches for keywords faster than BM25"
+      - "It finds semantically similar content even when exact words don't match, capturing meaning rather than just word overlap"
+      - "It requires less storage space than keyword indexing"
+      - "It works only with English language documents"
+    answer: 1
+  - tier: "expert"
+    question: "In a Retrieval-Augmented Generation (RAG) system, what is the primary purpose of grounding?"
+    options:
+      - "To make the vector database physically stable during storage"
+      - "To ensure the LLM answers using retrieved documents as evidence instead of relying solely on its own memory"
+      - "To compress embeddings for faster computation"
+      - "To remove low-quality chunks from the retrieval results"
+    answer: 1
 ---
 
 # Vector DB & RAG

@@ -167,6 +167,12 @@ resetting every time.
     (not `**BLEU** — ...`). All four stories were updated; rule added to
     `SKILL.md`. Note: this makes the glossary consistent with the no-dashes
     style everywhere (the em dash separator was the last remaining dash usage).
+  - 2026-07-16: NEVER edit the user's story content or frontmatter to satisfy a
+    length limit. If a story fails the content-collection schema on length, raise
+    the SCHEMA limit, not the story. The `description` max in
+    `src/content/config.ts` was raised from 160 to 800 chars for exactly this
+    reason (SKILL.md updated to match). The user does not care about description
+    length and does not want stories trimmed, ever.
   - 2026-07-10: Story `title` must name the TECHNICAL TOPIC covered, not the
     characters or the narrative, e.g. "Self Attention, KQV in Transformers" (the
     user's own rename), not "The Attention Heist". The characters and plot stay
