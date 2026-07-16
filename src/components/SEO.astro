@@ -9,7 +9,7 @@ interface Props {
 const { title, description, image, canonicalPath = Astro.url.pathname } = Astro.props;
 const canonicalURL = new URL(canonicalPath, Astro.site);
 const ogImage = image ? new URL(image, Astro.site).toString() : undefined;
-const siteTitle = 'Orivale.ideas';
+const siteTitle = 'Orivale.Ideas';
 const fullTitle = title === siteTitle ? siteTitle : `${title} — ${siteTitle}`;
 ---
 
