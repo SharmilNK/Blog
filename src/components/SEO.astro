@@ -18,13 +18,13 @@ const fullTitle = title === siteTitle ? siteTitle : `${title} — ${siteTitle}`;
 <link rel="canonical" href={canonicalURL} />
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content={fullTitle} />
+<meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalURL} />
 {ogImage && <meta property="og:image" content={ogImage} />}
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 {ogImage && <meta name="twitter:image" content={ogImage} />}
 
