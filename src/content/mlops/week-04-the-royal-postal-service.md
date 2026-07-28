@@ -2,7 +2,7 @@
 title: "LangGraph vs LangChain: Stateful Agent Orchestration"
 track: "mlops"
 week: 4
-description: "Two ways to orchestrate LLM workflows, compared. LangChain runs a fixed linear chain, simple and fast for a straight sequence. LangGraph models the work as a stateful graph: nodes that each do one job, edges (static and conditional) that route the work, state that travels and accumulates through reducers, checkpointing and persistence for recovery, error handling with retries, thread IDs for parallel runs, and an LLM deciding the next node. A postal system parable covering when a chain is enough and when you need a graph."
+description: "Two ways to orchestrate LLM workflows, compared. LangChain runs a fixed linear chain, simple and fast for a straight sequence. LangGraph models the work as a stateful graph: nodes that each do one job, edges (static and conditional) that route the work, state that travels and accumulates through reducers, checkpointing and persistence for recovery, error handling with retries, thread IDs for parallel runs, and an LLM deciding the next node. It also places two ecosystem tools: Langflow, a visual builder for flows, and LangSmith, for tracing, debugging, and evaluating runs. A postal system parable covering when a chain is enough and when you need a graph."
 tagline: "when a chain needs a map"
 icon: "📮"
 characters: ["Queen Leela", "The Royal Postmaster", "The Royal Courier", "The Royal Advisor"]
@@ -141,6 +141,18 @@ That evening the Queen asks the hardest question.
 
 The Postmaster pulls its checkpoints and replays the whole journey: every office it entered, every road it took, every stamp it earned, every error it survived. Because each checkpoint was stored, nothing has to be guessed. That stored, replayable history is the system's **memory**.
 
+Before she leaves, the Queen notices two rooms she does not recognize.
+
+In the first, the whole network is laid out on a great table, painted offices and roads that the Postmaster had slid into place by hand until the map looked right, never once writing an order in code.
+
+"When I want to see the system at a glance, or let someone shape a route without a scribe, I build it here by hand. This drafting table is **Langflow**."
+
+In the second room, watchers study every letter in the kingdom at once, not to route them, but to record them: which routes ran slow, which offices failed most often, which decisions the Advisor got wrong.
+
+"The checkpoints let one letter recover. This watchtower lets me trace any journey end to end, watch the whole kingdom, and measure which routes are worth keeping. That watchtower is **LangSmith**."
+
+The Queen understands. One room to design the system, one room to watch it.
+
 *Queen Leela* smiles.
 
 "I always thought the strength of this kingdom was its horses."
@@ -164,6 +176,10 @@ He lifts the delivered medicine letter, thick with stamps.
 **LangChain**: a framework for composing language model calls as a mostly linear chain of steps, simple and quick for a straight sequence.
 
 **LangGraph**: a framework for building language model workflows as a stateful graph of nodes and edges, with branching, loops, memory, and recovery.
+
+**Langflow**: a visual, drag and drop builder for assembling LangChain and LangGraph flows without writing code.
+
+**LangSmith**: an observability and evaluation platform that traces, debugs, monitors, and scores language model app runs, across both LangChain and LangGraph.
 
 **State**: the shared object that travels through the graph, carrying everything the workflow needs and growing as it goes.
 
