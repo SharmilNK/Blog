@@ -24,6 +24,7 @@ subscribers are fully decoupled.
 - [ ] The Production Relay — https://www.orivale.com/mlops/week-02-the-production-relay
 - [ ] The Spy Master's Letters — https://www.orivale.com/evaluation/week-02-the-spy-masters-letters
 - [ ] The Royal Postal Service — https://www.orivale.com/mlops/week-04-the-royal-postal-service
+- [ ] The Library That Became a Kingdom — https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom
 
 ## Sent
 

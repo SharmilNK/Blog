@@ -3,6 +3,12 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## The Library That Became a Kingdom (Week 5, mlops)
+https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom
+
+A RAG demo that works on a laptop quietly falls apart at real scale. This story splits one Royal Library into a network of branches and walks the whole production problem: sharding and distributed retrieval, coordination overhead, tail latency (the whole answer waits on the slowest shard), metadata filtering, tenant isolation and permissions, incremental indexing, versioning and freshness, and caching the hot queries everyone repeats.
+The hard truth at the end: better recall costs higher latency and more infrastructure. Speed, accuracy, cost, pick two.
+
 ## The Royal Postal Service (Week 4, mlops)
 https://www.orivale.com/mlops/week-04-the-royal-postal-service
 
