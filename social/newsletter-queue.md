@@ -23,6 +23,7 @@ subscribers are fully decoupled.
 - [ ] Drift Walks the Night Shift — https://www.orivale.com/mlops/week-01-drift-walks-the-night-shift
 - [ ] The Production Relay — https://www.orivale.com/mlops/week-02-the-production-relay
 - [ ] The Spy Master's Letters — https://www.orivale.com/evaluation/week-02-the-spy-masters-letters
+- [ ] The Royal Postal Service — https://www.orivale.com/mlops/week-04-the-royal-postal-service
 
 ## Sent
 
