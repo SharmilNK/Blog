@@ -1,9 +1,8 @@
 ---
-title: "LangGraph vs LangChain: Stateful Agent Orchestration"
+title: "Stateful Agent Orchestration"
 track: "mlops"
 week: 4
-description: "Two ways to orchestrate LLM workflows, compared. LangChain runs a fixed linear chain, simple and fast for a straight sequence. LangGraph models the work as a stateful graph: nodes that each do one job, edges (static and conditional) that route the work, state that travels and accumulates through reducers, checkpointing and persistence for recovery, error handling with retries, thread IDs for parallel runs, and an LLM deciding the next node. It also places two ecosystem tools: Langflow, a visual builder for flows, and LangSmith, for tracing, debugging, and evaluating runs. A postal system parable covering when a chain is enough and when you need a graph."
-tagline: "when a chain needs a map"
+description: "Orchestrate LLM workflows using LangChain, LangGraph, Langflow, LangSmith."
 icon: "📮"
 characters: ["Queen Leela", "The Royal Postmaster", "The Royal Courier", "The Royal Advisor"]
 publishDate: 2026-08-10
