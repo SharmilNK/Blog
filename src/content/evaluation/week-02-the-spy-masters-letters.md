@@ -2,7 +2,7 @@
 title: "Retrieval Evaluation & the Utilization Score"
 track: "evaluation"
 week: 2
-description:|
+description: |
   The Dragon returned a confident, fluent answer, but it was fetched from the wrong context.
 
   Retrieval Utilization Score
