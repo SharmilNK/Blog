@@ -2,10 +2,16 @@
 title: "Retrieval Evaluation & the Utilization Score"
 track: "evaluation"
 week: 2
-description: "The Dragon returned a confident, fluent answer but it was fetched from the wrong context! 
+description:|
+  The Dragon returned a confident, fluent answer, but it was fetched from the wrong context.
 
--Retrieval Utilization Score -Precision@k -Recall@K -chunk attribution and utilization 
--context adherence and grounding -reranking with a cross encoder -embedding visualization "
+  Retrieval Utilization Score
+  Precision@k
+  Recall@K
+  chunk attribution and utilization
+  context adherence and grounding
+  reranking with a cross encoder
+  embedding visualization
 tagline: "was the right letter retrieved?"
 icon: "📜"
 characters: ["Queen Leela", "The Royal Librarian", "The Dragon", "General Vikram", "The Second Dragon"]
