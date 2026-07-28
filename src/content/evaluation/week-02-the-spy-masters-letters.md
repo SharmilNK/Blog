@@ -2,7 +2,8 @@
 title: "Retrieval Evaluation & the Utilization Score"
 track: "evaluation"
 week: 2
-description: "A RAG system can return a confident, fluent answer while the retriever quietly fetches the wrong context. This story separates similarity from relevance and builds a Retrieval Utilization Score (RUS) from a normalized DCR, the correlation between similarity and relevance, and a waste penalty. Along the way it covers Precision@k and Recall@K, chunk attribution and utilization, context adherence and grounding, reranking with a cross encoder, embedding visualization with PCA, t-SNE and UMAP, and LLM as Judge."
+description: "The Dragon returned a confident, fluent answer but it was fetched the wrong context! 
+-Retrieval Utilization Score -Precision@k -Recall@K -chunk attribution and utilization -context adherence and grounding -reranking with a cross encoder -embedding visualization "
 tagline: "was the right letter retrieved?"
 icon: "📜"
 characters: ["Queen Leela", "The Royal Librarian", "The Dragon", "General Vikram", "The Second Dragon"]
