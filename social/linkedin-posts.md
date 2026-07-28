@@ -8,6 +8,7 @@ https://www.orivale.com/mlops/week-04-the-royal-postal-service
 
 LangChain runs a fixed chain: one straight route, no memory, restart on failure. Great for a simple errand.
 But real agent workflows branch, wait, fail, and come back. This story rebuilds a kingdom's postal system as a LangGraph: nodes that each do one job, edges that route the work, state that travels and remembers, checkpoints that survive a fire, and retries that recover from one bad stamp instead of starting over.
+Plus two ecosystem tools: Langflow, a visual builder for flows, and LangSmith, for tracing, debugging, and evaluating runs.
 The lesson: a chain is enough for a straight line, but stateful work needs a graph.
 
 ## The Spy Master's Letters (Week 2, evaluation)
