@@ -3,6 +3,13 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## The Royal Postal Service (Week 4, mlops)
+https://www.orivale.com/mlops/week-04-the-royal-postal-service
+
+LangChain runs a fixed chain: one straight route, no memory, restart on failure. Great for a simple errand.
+But real agent workflows branch, wait, fail, and come back. This story rebuilds a kingdom's postal system as a LangGraph: nodes that each do one job, edges that route the work, state that travels and remembers, checkpoints that survive a fire, and retries that recover from one bad stamp instead of starting over.
+The lesson: a chain is enough for a straight line, but stateful work needs a graph.
+
 ## The Spy Master's Letters (Week 2, evaluation)
 https://www.orivale.com/evaluation/week-02-the-spy-masters-letters
 
