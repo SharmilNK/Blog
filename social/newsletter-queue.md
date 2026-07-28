@@ -22,6 +22,7 @@ subscribers are fully decoupled.
 - [ ] The Model on Trial — https://www.orivale.com/evaluation/week-01-the-model-on-trial
 - [ ] Drift Walks the Night Shift — https://www.orivale.com/mlops/week-01-drift-walks-the-night-shift
 - [ ] The Production Relay — https://www.orivale.com/mlops/week-02-the-production-relay
+- [ ] The Spy Master's Letters — https://www.orivale.com/evaluation/week-02-the-spy-masters-letters
 
 ## Sent
 
