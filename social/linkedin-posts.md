@@ -3,6 +3,12 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## The Spy Master's Letters (Week 2, evaluation)
+https://www.orivale.com/evaluation/week-02-the-spy-masters-letters
+
+Your RAG answer sounds perfect. But did the retriever fetch the right context, or did the model just get lucky?
+A story about why "similar" is not "relevant", how a weak retrieval hides behind a right sounding answer, and a Retrieval Utilization Score that measures whether the fetched documents actually helped, alongside Precision@k, chunk attribution, grounding, and LLM as Judge.
+
 ## The Weapons of the Kingdom (Week 2, concepts)
 https://www.orivale.com/concepts/week-02-the-weapons-of-the-kingdom
 
