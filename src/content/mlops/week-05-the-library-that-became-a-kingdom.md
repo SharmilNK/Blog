@@ -2,7 +2,7 @@
 title: "Scaling RAG: Sharding, Distributed Retrieval & Latency"
 track: "mlops"
 week: 5
-description: "A RAG system that works on a laptop breaks at the scale of a kingdom. This story scales retrieval across a network of branch libraries and covers sharding and distributed retrieval, coordination overhead, tail latency, metadata filtering, tenant isolation and permission constraints, ingestion with incremental indexing, versioning and freshness, caching for hot repeated queries, the tradeoff that better recall costs higher latency, and the infrastructure bill underneath it all."
+description: "Scaling RAG in production. This story covers sharding and distributed retrieval, coordination overhead, tail latency, metadata filtering, tenant isolation and permission constraints, ingestion with incremental indexing, versioning and freshness, caching for hot repeated queries, the tradeoff that better recall costs higher latency, and the infrastructure bill underneath it all."
 tagline: "one room can't serve a kingdom"
 icon: "🏛️"
 characters: ["Queen Leela", "The Royal Librarian", "The Dispatcher", "The Gatekeeper", "The Scribe", "The Memory Clerk"]
