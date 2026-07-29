@@ -8,6 +8,9 @@
 .prose-story p {
   @apply mb-4 leading-relaxed;
 }
+.prose-story a {
+  @apply font-medium text-violet-600 underline underline-offset-2 hover:text-violet-700;
+}
 .prose-story pre {
   @apply rounded-lg p-4 overflow-x-auto bg-slate-900 text-slate-100;
 }

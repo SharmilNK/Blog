@@ -2,10 +2,16 @@
 title: "Retrieval Evaluation & the Utilization Score"
 track: "evaluation"
 week: 2
-description: "The Dragon returned a confident, fluent answer but it was fetched from the wrong context! 
+description: |
+  The Dragon returned a confident, fluent answer, but it was fetched from the wrong context.
 
--Retrieval Utilization Score -Precision@k -Recall@K -chunk attribution and utilization 
--context adherence and grounding -reranking with a cross encoder -embedding visualization "
+  Retrieval Utilization Score
+  Precision@k
+  Recall@K
+  chunk attribution and utilization
+  context adherence and grounding
+  reranking with a cross encoder
+  embedding visualization
 tagline: "was the right letter retrieved?"
 icon: "📜"
 characters: ["Queen Leela", "The Royal Librarian", "The Dragon", "General Vikram", "The Second Dragon"]
@@ -47,7 +53,7 @@ It is past midnight in the fortress of Aurelia, and a single lamp burns in the R
 
 Her spies have sent home millions of encrypted letters over the years, and somewhere in that mountain of scrolls the true answer is waiting. Moments after she asks, the retrieval system slides 5 letters onto the table: Letter 7, Letter 18, Letter 42, Letter 103, and Letter 145. From those 5, an answer will be built. The only thing that matters is whether the right letter is among them, and whether it is actually read.
 
-*New to the kingdom? This tale follows [Vector DB & RAG](https://www.orivale.com/concepts/week-03-vectordb-rag), where the library first learned to turn its letters into searchable meaning. Here, the question is whether the right ones come back.*
+Pre-read: [Vector DB & RAG](https://www.orivale.com/concepts/week-03-vectordb-rag), *What is RAG? How does it work?*
 
 *The Royal Librarian* runs the retrieval system, and he is meticulous to the point of obsession, because he alone decides which 5 letters out of millions reach the table. *The Dragon* is the one who reads them and speaks the answer, fast and supremely confident, though he can hold only 5 letters in his head at once and knows nothing beyond what he is handed. *General Vikram* trusts only his scouts on the ground, and he plays the part of reality, the truth against which every answer is checked. Later a second dragon will arrive, calm and analytical, whose only task is to grade the work of the others.
 
