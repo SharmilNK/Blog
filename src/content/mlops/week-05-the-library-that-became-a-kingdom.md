@@ -1,8 +1,8 @@
 ---
-title: "Scaling RAG: Sharding, Distributed Retrieval & Latency"
+title: "Scaling RAG in Production"
 track: "mlops"
 week: 5
-description: "Scaling RAG in production. This story covers sharding and distributed retrieval, coordination overhead, tail latency, metadata filtering, tenant isolation and permission constraints, ingestion with incremental indexing, versioning and freshness, caching for hot repeated queries, the tradeoff that better recall costs higher latency, and the infrastructure bill underneath it all."
+description: "Explore distributed retrieval, indexing, caching, permissions, and the engineering trade-offs behind fast, reliable RAG systems."
 tagline: "one room can't serve a kingdom"
 icon: "🏛️"
 characters: ["Queen Leela", "The Royal Librarian", "The Dispatcher", "The Gatekeeper", "The Scribe", "The Memory Clerk"]
@@ -44,7 +44,7 @@ The kingdom has grown to 10,000,000 letters and 1,000,000 citizens, and tonight 
 
 One Librarian, one room, and a line of citizens out the door and around the courtyard. The letter with tonight's true grain count arrived only an hour ago, and it is buried somewhere in 10,000,000 others. The task was no longer finding the answer. It was finding it for thousands of people at once, in the time it takes to draw a breath, without ever handing anyone a letter they were not allowed to read.
 
-*This continues [Vector DB & RAG](https://www.orivale.com/concepts/week-03-vectordb-rag): once the library could search by meaning, the next problem was serving a whole kingdom at once.*
+*Pre-read : [Vector DB & RAG](https://www.orivale.com/concepts/week-03-vectordb-rag) , [Retrieval Evaluation & the Utilization Score](https://www.orivale.com/evaluation/week-02-the-spy-masters-letters)
 
 *Queen Leela* needs the grain number before dawn and needs it correct, and she does not care how many rooms it takes. *The Royal Librarian* has run the single library since it was small, and he has finally accepted that one room and one keeper cannot serve a kingdom this size. *The Dispatcher* is the runner at the door, quick and anxious, who takes each question, sends copies sprinting to every branch at once, and cannot rest until the last one returns. *The Gatekeeper* stands watch over who may read what, suspicious by trade, refusing any letter to anyone not cleared for it. *The Scribe* handles the river of new letters arriving every hour, tireless and precise, and frets constantly over which copy is the current one. *The Memory Clerk* sits by the entrance with a small box of answers to the questions everyone keeps asking, and she smiles every time she hears one she already knows.
 
