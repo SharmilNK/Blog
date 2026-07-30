@@ -173,6 +173,13 @@ resetting every time.
     `src/content/config.ts` was raised from 160 to 800 chars for exactly this
     reason (SKILL.md updated to match). The user does not care about description
     length and does not want stories trimmed, ever.
+  - 2026-07-28: `tagline` is now OPTIONAL in `src/content/config.ts`
+    (`z.string().max(40).optional()`) and StoryCard's prop is `tagline?`. The
+    user edited a story's frontmatter and dropped the tagline line, which broke
+    the Vercel build (`tagline: Required`). tagline is passed to StoryCard but
+    never actually rendered, so relaxing the schema (rather than re-adding a
+    field the user removed) was the right fix. Same principle as the description
+    limit: adapt the schema, don't force the user's content.
   - 2026-07-10: Story `title` must name the TECHNICAL TOPIC covered, not the
     characters or the narrative, e.g. "Self Attention, KQV in Transformers" (the
     user's own rename), not "The Attention Heist". The characters and plot stay
