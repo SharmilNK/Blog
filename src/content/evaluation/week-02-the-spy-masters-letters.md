@@ -196,4 +196,4 @@ The second Dragon steps forward and is handed everything: the retrieved letters,
 
 **NDCG (Normalized Discounted Cumulative Gain)**: scores a ranking by how many useful documents sit near the top, discounting ones buried lower.
 
-Suggested Read : [Scaling RAG in Production]([https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom])
+Suggested Reading : [Scaling RAG in Production](https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom)
