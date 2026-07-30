@@ -36,31 +36,35 @@ quiz:
     answer: 2
 ---
 
-It is festival eve in Aurelia, and the Royal Library is under siege, not by an army, but by questions.
+It is festival eve in Aurelia, and the Royal Library is under siege, not by an army, but by questions regarding the grain tax.
 
-The kingdom has grown to 10,000,000 letters and 1,000,000 citizens, and tonight thousands of them want the same thing before the grain tax is set at dawn.
+The kingdom has grown to 10,000,000 letters and 1,000,000 citizens, and tonight they all  want to know, *"How much grain remains in the Eastern Province today?"*
 
-"How much grain remains in the Eastern Province today?"
-
-One Librarian, one room, and a line of citizens out the door and around the courtyard. The letter with tonight's true grain count arrived only an hour ago, and it is buried somewhere in 10,000,000 others. The task was no longer finding the answer. It was finding it for thousands of people at once, in the time it takes to draw a breath, without ever handing anyone a letter they were not allowed to read.
+The *The Royal Librarian* rushed into his library, carefully balancing his glass in one hand. He needed his liquor to answer the different village respresentatives, that had gather outside. The letter with tonight's true grain count arrived only an hour ago, and it is buried somewhere in 10,000,000 others. He sighed, if only he had recorded it instead of running off to celebrate the festivities. The task now was no longer finding the answer. It was finding it for multiple representatives at once, in the time it takes to draw a breath, without ever handing anyone a letter they were not allowed to read.
 
 *Pre-read : [Vector DB & RAG](https://www.orivale.com/concepts/week-03-vectordb-rag) , [Retrieval Evaluation & the Utilization Score](https://www.orivale.com/evaluation/week-02-the-spy-masters-letters)
 
-*Queen Leela* needs the grain number before dawn and needs it correct, and she does not care how many rooms it takes. *The Royal Librarian* has run the single library since it was small, and he has finally accepted that one room and one keeper cannot serve a kingdom this size. *The Dispatcher* is the runner at the door, quick and anxious, who takes each question, sends copies sprinting to every branch at once, and cannot rest until the last one returns. *The Gatekeeper* stands watch over who may read what, suspicious by trade, refusing any letter to anyone not cleared for it. *The Scribe* handles the river of new letters arriving every hour, tireless and precise, and frets constantly over which copy is the current one. *The Memory Clerk* sits by the entrance with a small box of answers to the questions everyone keeps asking, and she smiles every time she hears one she already knows.
+*The Royal Librarian* has run the single library since it was small, and as he looks at the enormous data around him, he acceptes that one room and one keeper cannot serve a kingdom this size. It is time to inform the Queen about his latest invention. He gets his team ready.
 
-The Librarian leads the Queen out to the courtyard, where he has built something new: not one library, but many.
+*The Dispatcher* is the runner at the door. He is quick and anxious, ready to take each question, send copies sprinting to every branch at once, and does not rest until the last one returns. 
+
+*The Gatekeeper* stands watch over who may read what, suspicious by trade, refusing any letter to anyone not cleared for it. 
+
+*The Scribe* handles the river of new letters arriving every hour, tireless and precise, and frets constantly over which copy is the current one. 
+
+*The Memory Clerk* sits by the entrance with a small box of answers to the questions everyone keeps asking, and she smiles every time she hears one she already knows.
+
+Then the Librarian leads the Queen out to the courtyard, where he has built something new: not one library, but many.
 
 "I could not make one room bigger forever. So I split the 10,000,000 letters across 20 branch libraries, each holding a slice. That splitting is **sharding**, and each branch is a shard."
 
 "Then where does my question go?" the Queen asks.
 
-The Dispatcher answers by doing it. He takes her grain question, copies it 20 times, and sends a runner to every branch at once. Each branch searches only its own slice and returns its best letters. He gathers all 20 replies and merges them into one answer.
+The Dispatcher takes the question *"How much grain remains in the Eastern Province today?"*, copies it 20 times, and sends a runner to every branch at once. Each branch searches only its own slice and returns its best letters. He gathers all 20 replies and merges them into one answer.
 
 "Asking every branch at the same time and combining what comes back is **distributed retrieval**," the Librarian says.
 
-The Queen notices the Dispatcher sweating.
-
-"He looks exhausted."
+The Queen notices the Dispatcher sweating, "He looks exhausted."
 
 "Because someone must send all 20 runners, track who has returned, and stitch the replies together for every single question. That managing, the sending and the waiting and the merging, is **coordination overhead**. One library needed none of it. 20 branches never stop paying it."
 
@@ -78,51 +82,38 @@ Distributed retrieval (fan-out)
    (the answer cannot return until the slowest branch does)
 ```
 
-Then, mid festival, disaster. A question goes out to all 20 branches. 19 reply in a heartbeat. The 20th does not.
 
-The line at the door stops moving. Citizens grumble, then shout.
-
-"19 branches are done! Why are we still waiting?" the Queen demands.
+"So even if 1 branch doesn't respond, we make our village representative wait?" The Queen was not happy.
 
 "Because the answer is not ready until the slowest branch replies," the Librarian says. "One branch had a jammed door, and the whole kingdom waits on it. Most branches are fast. It is the slowest few that citizens actually feel, and we call that **tail latency**."
 
 "Must we truly ask all 20 every time?" the Queen asks.
 
-"No," says the Dispatcher, calmer now. "Every letter is tagged with its province, its month, its subject. Your question is Eastern Province grain, so I wake only the branches that hold Eastern grain letters and skip the rest. Narrowing by those tags before we search is **metadata filtering**. Fewer branches, fewer runners, a faster answer."
+"No," says the Dispatcher, calmer now. "Every letter is tagged with its province, its month, its subject. Since the question is regarding Eastern Province's grains, I wake only the branches that hold Eastern grain letters and skip the rest. Narrowing by those tags before we search is **metadata filtering**. Fewer branches, fewer runners, a faster answer."
 
-A merchant pushes to the front and demands the royal army's supply letters.
+A guard hastily rushes in. He bows to the Queen and says, 'There are a dozen merchants demanding the food supply letters to the Royal Army.".
 
-The Gatekeeper does not move.
+The Queen raised her eyebrow, "They do not have that authority. I believe, the wall is strong?"
 
-"The merchants' guild and the crown share my libraries, but never each other's letters. No guild may ever read another's. That wall is **tenant isolation**."
+The Gatekeeper promptly agrees, "Yes, my Queen. The Merchants' guild and the Army share my libraries, but never each other's letters. No guild may ever read another's. That strong wall is **tenant isolation**."
 
-Then a junior clerk of the crown asks for those same army letters.
+The junior clerk of the Crown suggests, " If you show me those letters, I can answer the merchant's questions and pacify them."
 
-"You are of the right house," the Gatekeeper says, "but not of the right rank."
+"You are of the right house," the Gatekeeper says, "but not of the right rank, so I cannot share all the Army letters with you." He hands back only the letters the clerk is cleared to see. "Even inside one house, each reader sees only what they are permitted. Filtering results by who is asking is a **permission constraint**. An answer built from a letter someone was never allowed to read is worse than no answer at all."
 
-He hands back only the letters the clerk is cleared to see.
-
-"Even inside one house, each reader sees only what they are permitted. Filtering results by who is asking is a **permission constraint**. An answer built from a letter someone was never allowed to read is worse than no answer at all."
-
-The Scribe hurries over with the night's new letters.
-
-"Fresh reports arrive every hour, harvests, prices, warnings. Letting them into the library is **ingestion**."
+The Scribe walks over with the night's new letters. "Fresh reports arrive every hour, harvests, prices, warnings. Letting them into the library is **ingestion**."
 
 "And you rebuild all 20 branches each time?" the Queen asks, alarmed.
 
-"Never. That would take all night. I add only the new letter to its branch and leave the rest untouched. Adding just the change is **incremental indexing**."
+"That would take all night. I add only the new letter to its branch and leave the rest untouched. Adding just the change is **incremental indexing**."
 
-He holds up two grain letters for the same province.
-
-"This is the trouble I fear most. Yesterday's count and today's count both exist. I keep both, marked in order, so we always know which is current and can return to the older one if we must. Keeping that order is **versioning**."
+He holds up two grain letters for the same province. "This is the trouble I fear most. Yesterday's count and today's count both exist. I keep both, marked in order, so we always know which is current and can return to the older one if we must. Keeping that order is **versioning**."
 
 "And my grain number?" the Queen presses. "Is it tonight's, or last week's?"
 
 "Tonight's," the Scribe says. "The moment a new count lands, I make certain the branches answer with it and not the stale one. Serving the latest instead of the outdated is **freshness**."
 
-The Memory Clerk finally speaks, lifting her small box.
-
-"May I? A thousand citizens tonight asked the very same question: how much grain remains. I do not send that to 20 branches 1,000 times. I answer it once, keep the answer in my box, and hand the copy to everyone who asks again."
+The Memory Clerk comes forward with her small box. "May I? A thousand village representatives tonight asked the very same question: how much grain remains in the Eastern province? Once we have the answer, I keep the answer in my box, and hand a copy to everyone who asks again."
 
 "And when the count changes?" the Queen asks.
 
@@ -134,28 +125,25 @@ The Queen sits, taking it in.
 
 "So make it search everything, every branch, every letter, and I get the best answer."
 
-"You do," the Librarian says, "and you wait longer for it, and you pay more for it. That is the bargain no keeper escapes."
+"You do," the Librarian says, "and you wait longer for it, and you pay more for it. That is the bargain we cannot escape."
 
-He says it the way the old keepers always said hard truths, in a verse.
+*"Search wider and deeper, and more you will find,
 
-"Search wider and deeper, and more you will find,
 but the answer comes slower, the runners fall behind.
+
 Search narrow and shallow, and swift you will be,
+
 yet the letter you needed may hide from thee.
+
 More branches, more runners, more roads, more gold,
-for recall has a price, and the price must be told."
+
+for recall has a price, and the price must be told."*
 
 "Every branch is a real building," he adds, "every runner a real wage, every road a real cost. More recall means more **infrastructure**, and more infrastructure means more coin. Speed, accuracy, and cost: you may choose two, rarely all three."
 
-The grain answer arrives at last, fresh, permitted, and fast, drawn from only the Eastern branches and cached for the thousand who asked again.
+The grain answer arrives, fresh, permitted, and fast, drawn from only the Eastern branches and cached for the thousand who asked again.
 
-*Queen Leela* smiles.
-
-"I thought scaling the library meant a bigger room."
-
-"No, Your Majesty," the Librarian says.
-
-"It means many rooms, a runner to reach them all, a gate to guard them, a scribe to keep them current, and a clerk who remembers what everyone keeps asking. The letter was always in here. At the size of a kingdom, the art is handing it back in time, to the right person, and without going broke."
+*Queen Leela* smiles, "The letter was always in here. At the size of a kingdom, the art is handing it back in time, to the right person, and without going broke."
 
 ## Terminology
 
@@ -165,7 +153,7 @@ The grain answer arrives at last, fresh, permitted, and fast, drawn from only th
 
 **Coordination Overhead**: the cost of fanning a query out to many shards, tracking replies, and merging them, paid on every request.
 
-**Tail Latency**: the slowest responses, like p99, which set how slow a fan out query feels because the merge waits for the slowest shard.
+**Tail Latency**: the slowest responses,  which set how slow a fan out query feels because the merge waits for the slowest shard.
 
 **Metadata Filtering**: narrowing a search by tags such as date, source, or topic so fewer documents and shards are searched.
 
