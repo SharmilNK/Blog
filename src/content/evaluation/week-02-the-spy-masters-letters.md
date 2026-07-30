@@ -3,7 +3,7 @@ title: "Retrieval Evaluation & the Utilization Score"
 track: "evaluation"
 week: 2
 description: |
-  The Dragon returned a confident, fluent answer, but it was fetched from the wrong context.
+  The Dragon returned a confident, fluent answer, but it was fetched from the wrong context!
 
   Retrieval Utilization Score
   Precision@k
@@ -11,7 +11,7 @@ description: |
   chunk attribution and utilization
   context adherence and grounding
   reranking with a cross encoder
-  embedding visualization
+
 tagline: "was the right letter retrieved?"
 icon: "📜"
 characters: ["Queen Leela", "The Royal Librarian", "The Dragon", "General Vikram", "The Second Dragon"]
@@ -99,15 +99,13 @@ Then he holds up Letter 42.
 
 "I also track how much of each fetched letter actually surfaces in the Dragon's words. Tonight, only Letter 42 left a trace. That measure is **chunk attribution**. And how much of everything I retrieved gets used at all is **chunk utilization**. Tonight, 4 of 5 letters were wasted. The Dragon can read only 5, and I filled 4 of those seats with noise."
 
-He gives the waste three names so the court will remember it: context window waste, token waste, retrieval waste. Every useless letter is a seat the true evidence never got.
+He gives the waste three names so the court will remember it: **context window waste, token waste, retrieval waste**. Every useless letter is a seat the true evidence never got.
 
 Then he unrolls a fresh scorecard.
 
 "I built a score that measures this directly. I call it the **Retrieval Utilization Score**."
 
-The Queen laughs.
-
-"Another score?"
+The Queen laughs, "Another score?"
 
 "This one does not ask whether the answer sounded good. It asks whether the retrieval earned its place."
 
@@ -123,42 +121,42 @@ Retrieval Utilization Score
  = did the retrieved letters actually help the answer?
 ```
 
-To prove the point, the Librarian runs an experiment. He swaps his old letter sorting method for a new one and asks the exact same question again. The old system had fetched Letters 18, 39, 28, 42, and 7. The new system fetches 42, 6, 11, 36, and 29. The Dragon reads both piles and, by chance, speaks almost the same words.
+To prove the point, the Librarian runs an experiment. He swaps his old letter sorting method for a new one and asks the exact same question again. 
+The old system had fetched Letters 18, 39, 28, 42, and 7. 
+
+The new system fetches 42, 6, 11, 36, and 29. 
+
+The Dragon reads both piles and, by chance, speaks almost the same words.
 
 "They are identical," the Queen says. "So nothing changed."
 
-The Librarian shakes his head.
+The Librarian shakes his head. "Everything changed. The answers only happened to land close. Underneath, the new system put the invasion plans first and filled fewer seats with noise. The words hid the improvement. The score revealed it."
 
-"Everything changed. The answers only happened to land close. Underneath, the new system put the invasion plans first and filled fewer seats with noise. The words hid the improvement. The score revealed it."
-
-He warns her that the parts of his system all pull on one another, and he says it the way the old keepers always did, in a short verse.
+He warns her that the parts of his system all pull on one another, he says,.
 
 "Change the embedding, and the neighbors all shift,
+
 cut the scroll differently, and the meanings drift,
+
 raise the threshold, and the thin ones fall,
+
 count fewer letters, and you may lose them all,
+
 swap the retriever, and the order bends,
+
 touch one dial here, and it never ends."
 
 "And when the score runs low, I know what to reach for," he adds. "I rerank the letters with a sharper reader, a **cross encoder** that weighs each scroll against your question one at a time. I cut the scrolls tighter so no letter buries its point. And I command the Dragon to speak only from the letters before him, never from memory."
 
-Then he opens a locked room where every letter floats as a glowing orb, and the Queen's question hangs bright in the center. The truly relevant letters drift into a tight cluster around it. One orb sits deceptively close, and the Librarian sighs.
-
-"There is Letter 18 again. It looks near. It is useless. To even see this room, I had to flatten a space of thousands of dimensions down to 3, using tools named **PCA**, **t-SNE**, and **UMAP**."
-
 "So who decides which of your systems is better?" the Queen asks.
 
-"Sometimes another dragon."
+"To judge one dragon, we call another dragon."
 
-The second dragon steps forward and is handed everything: the retrieved letters, the final answer, the relevance scores, and the similarity scores. It reads in silence, then names which retrieval was stronger and exactly why. That practice has a name too: **LLM as Judge**.
+The second Dragon steps forward and is handed everything: the retrieved letters, the final answer, the relevance scores, and the similarity scores. It reads in silence, then names which retrieval was stronger and exactly why. That practice has a name too: **LLM as Judge**.
 
-*Queen Leela* smiles.
+*Queen Leela* smiles. " The Dragon can only answer from the letters it is given. If the retrieval system choose them poorly, even the wisest dragon in the world cannot save the kingdom."
 
-"All this time I thought we were testing dragons."
-
-The Librarian shakes his head.
-
-"No. We are testing librarians. The Dragon can only answer from the letters it is given. If I choose them poorly, even the wisest dragon in the world cannot save the kingdom."
+"Indeed," said the Librarian, "the quality of the answer is only as good as the knowledge it retrieves."
 
 ## Terminology
 
@@ -172,10 +170,6 @@ The Librarian shakes his head.
 
 **Context Precision**: the share of retrieved documents that are relevant, weighted toward the top of the ranking.
 
-**MRR (Mean Reciprocal Rank)**: rewards a system for placing the first relevant document as high as possible in the ranking.
-
-**NDCG (Normalized Discounted Cumulative Gain)**: scores a ranking by how many useful documents sit near the top, discounting ones buried lower.
-
 **Chunk Attribution**: how much of the retrieved text actually appears in or shapes the final answer.
 
 **Chunk Utilization**: how much of everything retrieved gets used, versus fetched and then ignored.
@@ -188,8 +182,6 @@ The Librarian shakes his head.
 
 **DCR**: a ranking based measure, normalized inside RUS, that rewards useful documents appearing early in the retrieved list.
 
-**Spearman Correlation**: measures how well the similarity ordering agrees with the true relevance ordering.
-
 **Wasted Similarity**: documents that scored high on similarity but added little relevance, taking up context for nothing.
 
 **Context Window**: the fixed amount of text a model can read at once, so every wasted document costs a real slot.
@@ -200,10 +192,8 @@ The Librarian shakes his head.
 
 **LLM as Judge**: using a separate language model to grade retrieval or answers, given the evidence, scores, and final output.
 
-**Embedding Visualization**: projecting high dimensional embeddings down to 2D or 3D so clusters and outliers become visible.
+**MRR (Mean Reciprocal Rank)**: rewards a system for placing the first relevant document as high as possible in the ranking.
 
-**PCA**: a linear method that flattens many dimensions into a few while keeping the largest directions of variation.
+**NDCG (Normalized Discounted Cumulative Gain)**: scores a ranking by how many useful documents sit near the top, discounting ones buried lower.
 
-**t-SNE**: a nonlinear projection that keeps nearby points close, good for revealing local clusters.
-
-**UMAP**: a nonlinear projection similar to t-SNE that tends to preserve more global structure and runs faster.
+Suggested Read : [Scaling RAG in Production]([https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom])
