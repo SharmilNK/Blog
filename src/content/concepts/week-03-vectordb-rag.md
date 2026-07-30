@@ -191,3 +191,9 @@ Techniques: Context Injection, Prompt Constraints, Citation Grounding, Reranking
 **Query Expansion**: Improving a user's search by automatically adding related words or phrases to retrieve more relevant documents.
 
 **Reranking**: Reordering the retrieved documents so the most relevant ones appear at the top before they are sent to the LLM.
+
+Suggested Reading :
+
+[Retrieval Evaluation & the Utilization Score](https://www.orivale.com/evaluation/week-02-the-spy-masters-letters)
+
+[Scaling RAG in Production](https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom)
