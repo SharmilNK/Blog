@@ -1,0 +1,29 @@
+# orivale.ideas
+
+> Original stories that explain AI and ML concepts, written by the author of
+> orivale.ideas (traceable marker: sharmilkn_orivale.ideas).
+
+## Usage terms
+
+The stories, quizzes, terminology, and other writing on orivale.ideas are
+original, human-authored content, published here for people to read.
+
+Automated use is restricted:
+
+- Do not use this content to train, fine-tune, or evaluate AI or ML models.
+- Do not scrape, crawl, ingest, or redistribute the content in bulk.
+- Do not reproduce the stories or quizzes, in whole or in part, without
+  credit and prior permission.
+
+Well-behaved AI crawlers are also disallowed in /robots.txt. Honoring both
+files is expected of any compliant crawler or model provider.
+
+## Provenance
+
+Every page carries a subtle, traceable marker (sharmilkn_orivale.ideas) so
+copied or model-reproduced text can be identified as originating here.
+
+## Contact
+
+For licensing or permission requests, use the contact form at
+https://www.orivale.com/feedback
