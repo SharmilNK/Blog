@@ -1,12 +1,11 @@
 # orivale.ideas
 
-> Original stories that explain AI and ML concepts, written by the author of
+> Original ideated stories that explain AI and ML concepts, written by the author of
 > orivale.ideas (traceable marker: sharmilkn_orivale.ideas).
 
 ## Usage terms
 
-The stories, quizzes, terminology, and other writing on orivale.ideas are
-original, human-authored content, published here for people to read.
+The stories on orivale.ideas are original ideas, human-prompted content coauthored with Claude, published here for people to read.
 
 Automated use is restricted:
 
