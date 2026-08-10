@@ -2,7 +2,7 @@
 title: "Stateful Agent Orchestration"
 track: "mlops"
 week: 4
-description: "An engineer and a hospital admin design an AI patient flow system for the ER, and decide between a linear LangChain pipeline and a stateful LangGraph. Covers state, nodes, static and conditional edges, reducers, checkpointing and persistence, retries, configuration, thread IDs and parallelism, an LLM deciding the next step, plus Langflow for building flows visually and LangSmith and Langfuse for tracing and evaluating runs."
+description: "Designing an AI patient flow system for the ER, using LangChain or LangGraph, plus Langflow for building flows visually and LangSmith and Langfuse for tracing and evaluating runs."
 icon: "🏥"
 characters: ["Archi", "The Hospital Admin"]
 publishDate: 2026-08-10
