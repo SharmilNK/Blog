@@ -41,6 +41,8 @@ On the table is an example : Jo walks in with chest pain. He fills in the Intake
 
 Deksa, *The Hospital Admin* has run this Emergency Department for 15 years, knows exactly how a real patient moves, which is rarely in a straight line.
 
+![LangChain vs LangGraph: designing the Emergency Department's patient flow](/images/mlops/week-02/LangChain_fly.jpg)
+
 Archi decides to start simple, "The quickest version is a straight pipeline. Intake, then triage, tests, diagnosis, and then discharge. That would be one fixed sequence for every patient from start to finish. We call this shape a **LangChain**, a chain of steps."
 
 The Admin shakes her head before she finishes, "Alright, but no patient goes straight through. Like the chest pain case? Triage would send her to cardiology, and not the fixed sequence queue."
