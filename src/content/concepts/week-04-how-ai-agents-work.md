@@ -36,8 +36,6 @@ quiz:
     answer: 3
 ---
 
-*Grandma's Bakery*
-
 Grandma's bakery was the busiest in town. Every morning hundreds of customers lined up outside at sunrise. Some wanted birthday cakes, others wanted fresh bread, while a few came with complicated custom orders. Yet despite the crowd, Grandma never seemed rushed.
 
 One morning her grandson Aarav asked, "Grandma, everyone says your bakery is magical. How do your staff work together without getting confused by all the orders?"
@@ -52,7 +50,7 @@ The cashier went over and wrote the request carefully.
 
 "Birthday cake," she whispered. "Chocolate. Peanut allergy. Delivery tomorrow."
 
-"The cashier's first job is understanding what the customer actually wants. This is called Intent Classification. If she misunderstands the request, every step after this will be wrong." Grandma said as she handed the written order to the Head Baker.
+"The cashier's first job is understanding what the customer actually wants. This is called **Intent Classification**. If she misunderstands the request, every step after this will be wrong." Grandma said as she handed the written order to the Head Baker.
 
 "Can every baker make this cake?" Aarav asked.
 
@@ -60,11 +58,11 @@ Grandma shook her head, "No. Every baker has different strengths."
 
 She pointed across the kitchen.
 
-"The young baker makes simple cookies very quickly. The master baker creates wedding cakes. Another specializes in pastries. Choosing the right baker is called the Model Layer."
+"The young baker makes simple cookies very quickly. The master baker creates wedding cakes. Another specializes in pastries. Choosing the right baker is called the **Model Layer**."
 
 Each baker also carried a recipe card. The recipe didn't just describe the cake. It explained what ingredients the baker expected, what the finished cake should look like, what to do if strawberries weren't available, and when to ask for help instead of guessing.
 
-"Those," Grandma smiled, "are our Model Contracts. Every baker knows exactly what they're responsible for."
+"Those," Grandma smiled, "are our **Model Contracts**. Every baker knows exactly what they're responsible for."
 
 The master baker looked at the order. "I'll need fresh strawberries" he announced.
 
@@ -72,33 +70,33 @@ Instead of searching the entire bakery himself, he picked up a bell. Taking the 
 
 "They're all helping him," Aarav noticed.
 
-"Exactly," Grandma replied. "Those are Tools. A baker becomes much more capable when he knows how to use the right tool."
+"Exactly," Grandma replied. "Those are **Tools**. A baker becomes much more capable when he knows how to use the right tool."
 
 Every tool had its own instruction card. For example, the oven accepts dough, not frosting. The mixer only accepted measured ingredients. The pantry returned ingredients only if they were in stock.
 
-"If a tool fails," Grandma explained, "the baker either retries, chooses another tool, or asks for help. Those rules are called Tool Contracts."
+"If a tool fails," Grandma explained, "the baker either retries, chooses another tool, or asks for help. Those rules are called **Tool Contracts**."
 
 As the cake moved through the kitchen, Aarav noticed a small card travelling with it.
 
 Every station added something.
 
-Order received.
+*Order received.*
 
-Ingredients collected.
+*Ingredients collected.*
 
-Ingredients mixed.
+*Ingredients mixed.*
 
-Cake baked.
+*Cake baked.*
 
-Decorated.
+*Decorated.*
 
-Awaiting delivery.
+*Awaiting delivery.*
 
-"That's the cake's State," Grandma explained. "It tells everyone exactly where the cake is in its journey."
+"That's the cake's **State**," Grandma explained. "It tells everyone exactly where the cake is in its journey."
 
 The card also contained today's order, the customer's allergies, previous purchases, tool results, and approvals.
 
-"This is the Execution Context," she continued. "Every baker only sees the information needed for the current step."
+"This is the **Execution Context**," she continued. "Every baker only sees the information needed for the current step."
 
 Aarav nodded. 'The card is just like you! You keep track of so much information like all of today's orders without looking, the wedding cake from last month, preparing the fifty cupcakes for tomorrow and all your recipes too."
 
@@ -106,19 +104,19 @@ Grandma laughed, "I have different types of memory just like every good AI agent
 
 She counted on her fingers.
 
-"Working Memory remembers the cake currently in front of me."
+"**Working Memory** remembers the cake currently in front of me."
 
-"Episodic Memory remembers cakes we've baked before."
+"**Episodic Memory** remembers cakes we've baked before."
 
-"Semantic Memory remembers baking knowledge."
+"**Semantic Memory** remembers baking knowledge."
 
-"Procedural Memory remembers recipes."
+"**Procedural Memory** remembers recipes."
 
-"Retrieval Memory is my recipe book. I only open it when I need it."
+"**Retrieval Memory** is my recipe book. I only open it when I need it."
 
-"Parametric Memory is everything I've learned through experience."
+"**Parametric Memory** is everything I've learned through experience."
 
-"And Prospective Memory reminds me of what still needs to happen."
+"And **Prospective Memory** reminds me of what still needs to happen."
 
 "Ahh-" Grandma said mid-sentence as she watched the apprentice reached for peanut frosting. She stopped him immediately.
 
@@ -128,39 +126,39 @@ She counted on her fingers.
 
 "Oh yes," he said as he kept the frosting aside.
 
-"This is why we add our Guardrails," she explained. "Some mistakes must never happen."
+"This is why we add our **Guardrails**," she explained. "Some mistakes must never happen."
 
 A voice called out, "The delivery team needs the address."
 
-Before handing the order to delivery, Grandma covered the customer's phone number and payment details. "They don't need this information and that's how we protect Sensitive Information."
+Before handing the order to delivery, Grandma covered the customer's phone number and payment details. "They don't need this information and that's how we protect **Sensitive Information**."
 
 Aarav asked, "So the cake is ready to leave the bakery?"
 
 "Not yet, the Quality Inspector must examine it first.
 
-Correct flavor?
+*Correct flavor?*
 
-Correct decorations?
+*Correct decorations?*
 
-Correct customer?
+*Correct customer?*
 
-No peanut contamination?
+*No peanut contamination?*
 
 Only then can I sign the order.
 
-This is our Approval Layer," she smiled. "Some decisions should always involve a human."
+This is our **Approval Layer**," she smiled. "Some decisions should always involve a human."
 
 "We don't just evaluate the final cake. We evaluate every step on the way,
 
-How long before baking started?
+*How long before baking started?*
 
-Did every baker choose the correct tools?
+*Did every baker choose the correct tools?*
 
-Did anyone refuse unsafe requests?
+*Did anyone refuse unsafe requests?*
 
-Did every order reach the customer?
+*Did every order reach the customer?*
 
-Were there delays?
+*Were there delays?*
 
 That's how we improve tomorrow," Grandma smiled.
 
