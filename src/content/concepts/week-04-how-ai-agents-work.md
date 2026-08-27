@@ -2,7 +2,7 @@
 title: "How AI Agents Work: Memory, Tools & Guardrails"
 track: "concepts"
 week: 3
-description: "A warm bakery parable for the full anatomy of an AI agent: intent classification, choosing the right model, model and tool contracts, tools, state and execution context, the many types of agent memory (working, episodic, semantic, procedural, retrieval, parametric, prospective), guardrails, protecting sensitive information, human approval, and evaluating every step, not just the final result."
+description: "Anatomy of an AI agent: intent classification, choosing the right model, model and tool contracts, tools, state and execution context, types of agent memory, guardrails, protecting sensitive information, human approval and evaluation."
 tagline: "how an AI agent really works"
 icon: "🧠"
 characters: ["Grandma", "Aarav", "The Cashier", "The Master Baker", "The Apprentice", "The Quality Inspector"]
