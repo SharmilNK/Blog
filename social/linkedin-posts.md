@@ -3,6 +3,12 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## How AI Agents Work: Memory, Tools & Guardrails (Week 3, concepts)
+https://www.orivale.com/concepts/week-04-how-ai-agents-work
+
+How does an AI agent actually work? Grandma runs the busiest bakery in town and never gets rushed, because her kitchen is the exact anatomy of a good agent: understanding the real request, picking the right baker for the job, clear contracts, tools that help, a card that carries state and context, and no fewer than seven kinds of memory.
+Then the parts most people skip: guardrails that stop the peanut-allergy mistake, hiding the customer's private details, a human sign-off before anything ships, and evaluating every step, not just the final cake.
+
 ## The Library That Became a Kingdom (Week 5, mlops)
 https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom
 
