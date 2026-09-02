@@ -165,3 +165,42 @@ This is our **Approval Layer**," she smiled. "Some decisions should always invol
 That's how we improve tomorrow," Grandma smiled.
 
 Aarav nodded, "Grandma, your bakery is magical because it is built around good memory, the right tools, clear rules, careful coordination, constant evaluation, and people who know exactly when to think, when to ask for help, and when to refuse."
+
+
+## Terminology
+
+**Intent Classification**: working out what the user is actually asking for before anything else runs, so every later step acts on the right goal.
+
+**Model Layer**: choosing which model handles a request, matching the task to a model with the right strength, speed, or cost.
+
+**Model Contracts**: a clear specification of what a model is given, what it must return, and how it should behave, including when to ask for help instead of guessing.
+
+**Tools**: external functions or services a model can call (search, lookups, calculators) to do things it cannot do on its own.
+
+**Tool Contracts**: the rules for each tool, what input it accepts, what it returns, and what to do when it fails (retry, switch tools, or escalate).
+
+**State**: the record of where a task is in its journey and what has happened so far, passed from step to step.
+
+**Execution Context**: the slice of information a given step actually needs to do its job, rather than everything the system knows.
+
+**Working Memory**: short term memory holding the details of the task currently in progress.
+
+**Episodic Memory**: memory of specific past events or interactions the agent has had before.
+
+**Semantic Memory**: general knowledge and facts, independent of any single past event.
+
+**Procedural Memory**: knowledge of how to carry out steps and procedures, the "how to" rather than the "what".
+
+**Retrieval Memory**: information kept in an external store and fetched only when needed, rather than held in the model.
+
+**Parametric Memory**: knowledge baked into the model's trained weights, learned during training.
+
+**Prospective Memory**: memory for what still needs to happen, the pending actions and future intentions.
+
+**Guardrails**: hard rules that block unsafe or forbidden actions, no matter what the model would otherwise do.
+
+**Sensitive Information**: private data such as contact or payment details that must be hidden from steps that do not need it.
+
+**Approval Layer**: a human sign off required before certain high stakes actions are allowed to proceed.
+
+**Evaluation**: measuring not just the final output but every step along the way (latency, tool choices, refusals, delivery) to improve the system over time.
