@@ -38,6 +38,8 @@ quiz:
 
 Grandma's bakery was the busiest in town. Every morning hundreds of customers lined up outside at sunrise. Some wanted birthday cakes, others wanted fresh bread, while a few came with complicated custom orders. Yet despite the crowd, Grandma never seemed rushed.
 
+![Grandma's bakery mapped to the anatomy of an AI agent system](/images/mlops/week-02/Bakery_AIsystem.png)
+
 One morning her grandson Aarav asked, "Grandma, everyone says your bakery is magical. How do your staff work together without getting confused by all the orders?"
 
 Grandma smiled, "It isn't magic, it's just a well-built system."
