@@ -1,0 +1,47 @@
+## ReMe: Helping AI Agents Learn From Experience
+
+ReMe, which stands for “Remember Me, Refine Me,” is a procedural-memory framework for AI agents. Its goal is to help an agent improve from previous work without retraining the underlying large language model. Instead of treating memory as a growing archive of conversations and task logs, ReMe turns useful past experience into concise, reusable instructions.
+
+This is important because raw agent histories are often long, noisy, and difficult to reuse. A successful task may contain many unnecessary steps, while a failed task may still include a useful lesson. ReMe tries to capture the part that matters: what to do, when to do it, what to avoid, and why.
+
+The framework works through three connected phases: acquiring experience, reusing it for new tasks, and refining the memory over time.
+
+## 1. Acquiring Useful Experience
+
+When an agent works on a task, it may try more than one approach. Some attempts succeed and others fail. ReMe reviews these different task runs instead of simply saving them as full transcripts.
+
+A summarizer model looks for successful patterns, such as the key decisions and actions that led to a correct result. It also looks at failed attempts to identify the early mistakes, ineffective approaches, or missing steps that caused the failure. By comparing successful and unsuccessful runs for the same task, it can identify the exact decisions that made the difference.
+
+The result is not a long conversation log. It is a short, structured lesson that an agent can use again. For example, instead of storing every action from a deployment attempt, the memory may say: “For this type of deployment, validate the environment configuration before running integration tests. Missing variables caused the deployment failure.”
+
+Before adding a lesson to memory, ReMe checks whether it is accurate, actionable, and useful. It can use another model as a judge to evaluate the quality of the lesson. It also removes duplicate entries so that the memory does not become repetitive.
+
+## 2. Reusing Experience for New Tasks
+
+When the agent receives a new task, it should not read every memory it has ever created. That would add too much irrelevant context and make the agent less effective. Instead, ReMe retrieves only the lessons that are likely to help with the current task.
+
+Each memory includes a description of the situation in which it applies, such as “debugging a database connection issue” or “updating an API with backward-compatibility requirements.” These descriptions are converted into embeddings and stored in a vector database. When a new task arrives, the system compares the task with past scenarios and retrieves the closest matches.
+
+The system can then rerank the retrieved lessons by considering the specific constraints of the new task. Finally, it rewrites or combines the selected lessons into a short set of instructions for the executing agent. This allows the agent to use past knowledge as guidance while still adapting to the current situation.
+
+For example, a coding agent working on a new API issue may retrieve a lesson from a similar task. The lesson is not copied blindly. It is adjusted to match the current codebase, requirements, and tools.
+
+## 3. Refining Memory Over Time
+
+ReMe does not assume that every stored lesson will remain useful forever. Some lessons may become outdated as systems, tools, or environments change. Others may sound useful but fail to improve the agent’s performance in practice.
+
+To manage this, ReMe tracks how often each memory is retrieved and whether it contributes to a successful outcome. Memories that are repeatedly retrieved but do not help are eventually removed. This keeps the experience pool smaller, more relevant, and higher quality.
+
+The framework also takes a careful approach to learning from failure. A single failed attempt may not provide enough information to create a reliable lesson. Instead, the agent can reflect on the failure, try a revised approach, and save the learning only if the new attempt succeeds. This prevents weak or misleading lessons from entering memory.
+
+## How ReMe Can Be Implemented
+
+A ReMe-style system needs a structured memory store. Each memory entry can include the scenario in which it applies, the procedural guidance itself, relevant keywords, a confidence score, the tools used, and simple performance metrics. These metrics can track how often the memory was retrieved and how often it helped the agent complete a task successfully.
+
+The memories can be stored in a vector database such as Elasticsearch, Pinecone, Weaviate, or another system that supports similarity search. An embedding model converts the task description and the memory scenario into vectors. The system then retrieves the most relevant memories based on similarity, often selecting only a small number of results for each task.
+
+Different LLM roles support the workflow. The executing agent performs the task and uses tools. A summarizer model reviews successful and failed trajectories to create reusable lessons. A judge model can validate new memories before they are saved, while a reranker can decide which retrieved memories are most relevant to the current task.
+
+The paper uses a small number of retrieved memories for each task, along with thresholds to decide when an underperforming memory should be removed. It also limits reflection attempts after a failure so that the agent does not continue retrying indefinitely.
+
+The main idea behind ReMe is simple: agents should not just remember what happened in the past. They should learn the useful procedure from it, apply it only when relevant, and continuously improve the quality of what they remember.
