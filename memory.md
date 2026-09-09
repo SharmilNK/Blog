@@ -180,6 +180,15 @@ resetting every time.
     never actually rendered, so relaxing the schema (rather than re-adding a
     field the user removed) was the right fix. Same principle as the description
     limit: adapt the schema, don't force the user's content.
+  - 2026-09-09: `quiz` and `characters` are now optional-ish in
+    `src/content/config.ts`: `quiz` is `.length(3).optional()`, and `characters`
+    dropped `.min(1)` (empty array allowed). Some stories are plain explainer
+    essays with no personified characters and no quiz. Both quiz pages
+    (`src/pages/quiz/index.astro`, `src/pages/quiz/[track]/[story].astro`) now
+    skip any story whose `quiz` is missing or not exactly 3, so no broken quiz
+    card or page is built. When the user says "no quiz required," omit the
+    `quiz:` frontmatter field entirely (an empty `quiz:` parses to null and
+    fails the optional check).
   - 2026-07-10: Story `title` must name the TECHNICAL TOPIC covered, not the
     characters or the narrative, e.g. "Self Attention, KQV in Transformers" (the
     user's own rename), not "The Attention Heist". The characters and plot stay

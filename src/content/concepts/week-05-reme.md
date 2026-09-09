@@ -1,7 +1,7 @@
 ---
 title: "ReMe : Helping AI Agents Learn From Experience "
 track: "concepts"
-week: 1
+week: 4
 description: "A procedural-memory framework for AI agents"
 tagline: "ReMe"
 icon: "🔐"
@@ -9,10 +9,11 @@ characters: []
 publishDate: 2026-09-09
 draft: false
 socialSnippet: "A procedural-memory framework for AI agents"
-quiz:
 ---
 
 **ReMe**, which stands for “Remember Me, Refine Me,” is a procedural-memory framework for AI agents. Its goal is to help an agent improve from previous work without retraining the underlying large language model. Instead of treating memory as a growing archive of conversations and task logs, ReMe turns useful past experience into concise, reusable instructions.
+
+![ReMe turns an agent's past experience into concise, reusable procedural memory](/images/mlops/week-02/week5.png)
 
 This is important because raw agent histories are often long, noisy, and difficult to reuse. A successful task may contain many unnecessary steps, while a failed task may still include a useful lesson. ReMe tries to capture the part that matters: what to do, when to do it, what to avoid, and why.
 

@@ -10,7 +10,9 @@ export async function getStaticPaths() {
   for (const track of trackIds) {
     const entries = await getCollection(track, ({ data }) => !data.draft);
     for (const entry of entries) {
-      paths.push({ params: { track, story: entry.slug }, props: { entry } });
+      if (entry.data.quiz && entry.data.quiz.length === 3) {
+        paths.push({ params: { track, story: entry.slug }, props: { entry } });
+      }
     }
   }
   return paths;
