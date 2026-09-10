@@ -26,6 +26,7 @@ subscribers are fully decoupled.
 - [ ] The Royal Postal Service — https://www.orivale.com/mlops/week-04-the-royal-postal-service
 - [ ] The Library That Became a Kingdom — https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom
 - [ ] How AI Agents Work: Memory, Tools & Guardrails — https://www.orivale.com/concepts/week-04-how-ai-agents-work
+- [ ] ReMe: Helping AI Agents Learn From Experience — https://www.orivale.com/concepts/week-05-reme
 
 ## Sent
 

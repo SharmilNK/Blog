@@ -3,6 +3,12 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## ReMe: Helping AI Agents Learn From Experience (Week 4, concepts)
+https://www.orivale.com/concepts/week-05-reme
+
+Agents that never learn from their own work keep repeating the same mistakes. ReMe (Remember Me, Refine Me) is a procedural-memory framework that turns messy past task histories into short, reusable lessons: it distills what worked and what failed, retrieves only the lessons relevant to a new task, and prunes memories that stop helping.
+Memory the agent actually uses, not a growing archive it ignores, and all without retraining the model.
+
 ## How AI Agents Work: Memory, Tools & Guardrails (Week 3, concepts)
 https://www.orivale.com/concepts/week-04-how-ai-agents-work
 

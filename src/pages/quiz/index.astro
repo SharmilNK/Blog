@@ -5,7 +5,7 @@ import { TRACKS } from '../../lib/tracks';
 
 const sections = await Promise.all(
   TRACKS.map(async (track) => {
-    const entries = (await getCollection(track.id, ({ data }) => !data.draft)).sort(
+    const entries = (await getCollection(track.id, ({ data }) => !data.draft && Array.isArray(data.quiz) && data.quiz.length === 3)).sort(
       (a, b) => a.data.week - b.data.week
     );
     return { track, entries };
