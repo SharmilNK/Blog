@@ -55,6 +55,7 @@ Every council begins with a single adviser. In ADK, we call this an **LLM Agent*
 
 *And optional tools* "
 
+![The ADK LLM Agent: a model, instructions, and optional tools](/images/mlops/week-02/ADK_LLMAgent.png)
 
 The engineer pointed to another scroll, "The model decides how the adviser thinks. The instructions tell the adviser what to do and the tools allow the adviser to do things beyond thinking, like searching records, calling APIs, reading files, or using Google Search."
 The Queen said, "So an adviser without tools can only answer from memory."
@@ -89,6 +90,8 @@ The Royal Engineer then drew three agents working side by side, " Suppose the ki
 The Queen asked, "What if the Royal Inspector rejects the proposal? And we need to update some changes and resubmit the proposal. Can the ADK do that?"
 "Yes, " The Royal Engineer replied, "Using a **Loop Agent**, the workflow repeats until a condition is satisfied."
 
+![Composing agents in ADK: sequential, parallel, and loop workflows](/images/mlops/week-02/ADK_workflow.png)
+
 The Queen then noticed something unusual, " But, the Research agent used Gemini, the Finance agent used GPT and the Royal Writer produced reports using Claude. So ADK supports multiple providers?"
 "Each agent may use the model best suited for the task." the Royal Engineer said as he pulled up the Royal Writer's report.
 The Queen read it, "Very good, every report followed the exact same layout."
@@ -116,6 +119,7 @@ The Queen read it, "Very good, every report followed the exact same layout."
 
 *After Agent Callback*: Once the entire task is complete, we can record metrics, log events, and measure how well the council performed."
 
+![The four ADK callbacks: before and after models, tools, and agents](/images/mlops/week-02/ADK_callbacks.png)
 
 The Queen said, "That is important and must always be done.Lets say, I submit this report to proceed with opening the trade route and the Committee comes back after few days or weeks with some questions or recommendations, will the agent remember our conversation from today?"
 "Yes. The **Session** stores the conversation. It records where the work currently stands, like : Research complete. Finance pending. Writing in progress. This is the **State**.
