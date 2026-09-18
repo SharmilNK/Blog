@@ -1,38 +1,38 @@
 ---
 title: "Google ADK"
 track: "mlops"
-week: 5
-description: "Explore distributed retrieval, indexing, caching, permissions, and the engineering trade-offs behind fast, reliable RAG systems."
+week: 6
+description: "A kingdom-council parable for Google's Agent Development Kit (ADK): the LLM Agent (model, instructions, tools), automatic tool calling, multi agent workflows with sequential, parallel, and loop agents, mixing model providers per agent, structured JSON output, callbacks before and after models, tools, and agents, session versus state, and deployment on Vertex AI Agent Engine or Cloud Run."
 tagline: "The Queen Discovers Google ADK"
-icon: "🏛️"
-characters: ["Queen Leela", "The Royal Librarian", "The Dispatcher", "The Gatekeeper", "The Scribe", "The Memory Clerk"]
+icon: "🧰"
+characters: ["Queen Leela", "The Royal Engineer", "The Research Agent", "The Finance Agent", "The Diplomacy Agent", "The Royal Writer"]
 publishDate: 2026-09-18
 draft: false
-socialSnippet: "RAG that works on a laptop breaks at kingdom scale. A story on sharding and distributed retrieval, tail latency, metadata filtering, tenant isolation, freshness, caching hot queries, and the hard tradeoff: better recall costs higher latency and more infrastructure."
+socialSnippet: "Queen Leela builds a Royal Council with Google's Agent Development Kit. A tour of ADK: LLM agents and tools, sequential, parallel and loop multi agent workflows, structured output, callbacks, session versus state, and deploying on Vertex AI Agent Engine."
 quiz:
   - tier: "basic"
-    question: "In a large retrieval system, what does 'sharding' mean?"
+    question: "In Google ADK, what are the three core parts of an LLM Agent?"
     options:
-      - "Splitting the document collection across multiple indexes or machines so no single node holds everything"
-      - "Deleting old documents to save space"
-      - "Compressing embeddings into fewer dimensions"
-      - "Merging every index into one giant file"
-    answer: 0
-  - tier: "intermediate"
-    question: "When a query fans out to many shards and the results are merged, why does tail latency (like p99) often set what users feel rather than the average?"
-    options:
-      - "Averages are never computed in distributed systems"
-      - "The merged response cannot return until the slowest shard replies, so one slow shard sets the query's latency"
-      - "Tail latency only affects writes, never reads"
-      - "Sharding removes all latency differences between nodes"
+      - "A database, a cache, and a load balancer"
+      - "A model, instructions, and optional tools"
+      - "A frontend, a backend, and a deployment script"
+      - "Three language models that vote on every answer"
     answer: 1
-  - tier: "expert"
-    question: "A team widens retrieval (more shards searched, larger k, deeper search) and recall improves. What is the usual cost?"
+  - tier: "intermediate"
+    question: "When should you use a parallel agent instead of a sequential agent in a multi agent workflow?"
     options:
-      - "Recall and latency are unrelated, so nothing changes"
-      - "Latency drops because more nodes share the work"
-      - "Higher latency and more infrastructure cost, since more work must be searched and coordinated for each query"
-      - "The index becomes permanently smaller"
+      - "When each step depends on the previous step's output and must run in order"
+      - "When you need the workflow to repeat until a condition is met"
+      - "Parallel and sequential agents behave identically"
+      - "When several independent subtasks can run at the same time and do not depend on each other"
+    answer: 3
+  - tier: "expert"
+    question: "In ADK, what is the difference between a session and state?"
+    options:
+      - "The session stores the model's weights while state stores the prompt"
+      - "They are two names for the same object"
+      - "The session stores the ongoing conversation, while state tracks the current progress of the work such as what is done, pending, or in progress"
+      - "State only exists after the agent is deployed to Vertex AI"
     answer: 2
 ---
 
@@ -126,4 +126,38 @@ The session remembers the conversation. The state remembers the current progress
 
 The Queen smiled satisfied. "I see Google ADK as a valuable architect that allows my entire council to think as one."
 
-##Terminology
+## Terminology
+
+**Agent Development Kit (ADK)**: Google's framework for building, orchestrating, and deploying AI agents and multi agent systems.
+
+**LLM Agent**: a single agent defined by a model, instructions, and optional tools; the model decides how it thinks, the instructions what it does, and the tools what it can act on.
+
+**Tools**: capabilities an agent can call beyond reasoning, such as searching records, calling APIs, reading files, or using Google Search; the model decides on its own when to invoke one.
+
+**Sequential Agent**: a workflow where agents run one after another, each starting only after the previous one finishes.
+
+**Parallel Agent**: a workflow where independent agents run at the same time on subtasks that do not depend on each other.
+
+**Loop Agent**: a workflow that repeats until a stopping condition is met, useful for revise and resubmit cycles.
+
+**Multi Provider Support**: each agent can use whichever model best suits its task, for example Gemini, GPT, or Claude, within the same system.
+
+**Structured Output**: agents exchange predictable, schema conforming data (typically JSON) instead of free form text, so other agents can reliably parse it.
+
+**Callbacks**: hooks that run before or after agents, models, and tools, used to inspect, modify, validate, clean, or log what passes through.
+
+**Before Model Callback**: runs before a request reaches the model, to inspect it, strip sensitive information, or add instructions.
+
+**Before Tool Callback**: runs before a tool is called, to validate the request and ensure the tool has everything it needs.
+
+**After Tool Callback**: runs after a tool returns, to clean or reorganize its results, for example removing duplicates or sorting, before the agent reads them.
+
+**After Agent Callback**: runs once an agent finishes its task, to record metrics, log events, and measure performance.
+
+**Session**: the stored record of a conversation, so an agent can pick up a past exchange later.
+
+**State**: the record of where the work currently stands within a session, such as what is complete, pending, or in progress.
+
+**Vertex AI Agent Engine**: a managed Google Cloud service for deploying and running ADK agents.
+
+**Cloud Run**: a serverless Google Cloud option for deploying an agent as a container, as an alternative to running it on your own infrastructure.

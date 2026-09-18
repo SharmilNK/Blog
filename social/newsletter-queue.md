@@ -27,6 +27,7 @@ subscribers are fully decoupled.
 - [ ] The Library That Became a Kingdom — https://www.orivale.com/mlops/week-05-the-library-that-became-a-kingdom
 - [ ] How AI Agents Work: Memory, Tools & Guardrails — https://www.orivale.com/concepts/week-04-how-ai-agents-work
 - [ ] ReMe: Helping AI Agents Learn From Experience — https://www.orivale.com/concepts/week-05-reme
+- [ ] Google ADK — https://www.orivale.com/mlops/week-06-google-adk
 
 ## Sent
 

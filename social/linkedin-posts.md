@@ -3,6 +3,12 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## Google ADK (Week 6, mlops)
+https://www.orivale.com/mlops/week-06-google-adk
+
+Queen Leela can't run the whole kingdom alone, so her engineer hands her a blue box: Google's Agent Development Kit. What follows is a clean tour of how ADK actually builds a "Royal Council" of agents: an LLM agent is a model plus instructions plus tools, and the model calls those tools itself.
+Then the good part, composing agents: sequential, parallel, and loop workflows, mixing model providers per agent, structured JSON output, callbacks to strip secrets and de-duplicate results, session vs state, and deploying on Vertex AI Agent Engine or Cloud Run.
+
 ## ReMe: Helping AI Agents Learn From Experience (Week 4, concepts)
 https://www.orivale.com/concepts/week-05-reme
 
