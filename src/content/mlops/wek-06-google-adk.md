@@ -47,9 +47,14 @@ The Queen smiled. "Can it solve my kingdom's problems?"
 The engineer shook his head, "No. But it helps you build agents that can."
 He opened the box and unrolled the first scroll, "Think of it as instructions for building your own Royal Council.
 Every council begins with a single adviser. In ADK, we call this an **LLM Agent**. It has three things,
+
+
 *A model*
+
 *Instructions*
+
 *And optional tools* "
+
 
 The engineer pointed to another scroll, "The model decides how the adviser thinks. The instructions tell the adviser what to do and the tools allow the adviser to do things beyond thinking, like searching records, calling APIs, reading files, or using Google Search."
 The Queen said, "So an adviser without tools can only answer from memory."
@@ -64,10 +69,15 @@ The Queen looked surprised, ""So the LLM chose the tool itslef."
 The Queen leaned back, "But can one LLM do everything?"
 The engineer smiled, "And that is where ADK becomes interesting." He drew four circles.
 
+
 *Research*
+
 *Finance*
+
 *Diplomacy*
+
 *Writing*
+
 
 "Instead of one, we build a team. So every LLMagent has one responsibility."
 
@@ -83,19 +93,29 @@ The Queen then noticed something unusual, " But, the Research agent used Gemini,
 "Each agent may use the model best suited for the task." the Royal Engineer said as he pulled up the Royal Writer's report.
 The Queen read it, "Very good, every report followed the exact same layout."
 
-*Problem
-Analysis
-Recommendation
-Risk*
+
+*Problem*
+
+*Analysis*
+
+*Recommendation*
+
+*Risk*
+
 
 "They all write the same way, so every other agent can understand the output. In ADK this is called **Structured Output**. Instead of free-form text, agents exchange predictable JSON."
 "Oh! but wait, see here, along with mentioning their excerpts the report also mentions the code names of the spies! we do not want the Committee having that information. And I se some duplicate values here too," the Queen said.
 " Then we must use **Callbacks**, they let us inspect what happens before and after agents, models, and tools execute," the Engineer replied, "We have,
 
+
 *Before Model Callback*: Before the request reaches the agent, we can inspect it, remove sensitive information, or even add additional instructions.
+
 *Before Tool Callback*: Before a tool is used, we can validate the request and make sure it has everything the tool needs.
+
 *After Tool Callback*: After the tool has finished its work, we can now clean and organize the results like removing duplicate reports, sorting them by date before the agent reads them.
+
 *After Agent Callback*: Once the entire task is complete, we can record metrics, log events, and measure how well the council performed."
+
 
 The Queen said, "That is important and must always be done.Lets say, I submit this report to proceed with opening the trade route and the Committee comes back after few days or weeks with some questions or recommendations, will the agent remember our conversation from today?"
 "Yes. The **Session** stores the conversation. It records where the work currently stands, like : Research complete. Finance pending. Writing in progress. This is the **State**.
