@@ -1,4 +1,40 @@
-The Queen Discovers Google ADK
+---
+title: "Google ADK"
+track: "mlops"
+week: 5
+description: "Explore distributed retrieval, indexing, caching, permissions, and the engineering trade-offs behind fast, reliable RAG systems."
+tagline: "The Queen Discovers Google ADK"
+icon: "🏛️"
+characters: ["Queen Leela", "The Royal Librarian", "The Dispatcher", "The Gatekeeper", "The Scribe", "The Memory Clerk"]
+publishDate: 2026-09-18
+draft: false
+socialSnippet: "RAG that works on a laptop breaks at kingdom scale. A story on sharding and distributed retrieval, tail latency, metadata filtering, tenant isolation, freshness, caching hot queries, and the hard tradeoff: better recall costs higher latency and more infrastructure."
+quiz:
+  - tier: "basic"
+    question: "In a large retrieval system, what does 'sharding' mean?"
+    options:
+      - "Splitting the document collection across multiple indexes or machines so no single node holds everything"
+      - "Deleting old documents to save space"
+      - "Compressing embeddings into fewer dimensions"
+      - "Merging every index into one giant file"
+    answer: 0
+  - tier: "intermediate"
+    question: "When a query fans out to many shards and the results are merged, why does tail latency (like p99) often set what users feel rather than the average?"
+    options:
+      - "Averages are never computed in distributed systems"
+      - "The merged response cannot return until the slowest shard replies, so one slow shard sets the query's latency"
+      - "Tail latency only affects writes, never reads"
+      - "Sharding removes all latency differences between nodes"
+    answer: 1
+  - tier: "expert"
+    question: "A team widens retrieval (more shards searched, larger k, deeper search) and recall improves. What is the usual cost?"
+    options:
+      - "Recall and latency are unrelated, so nothing changes"
+      - "Latency drops because more nodes share the work"
+      - "Higher latency and more infrastructure cost, since more work must be searched and coordinated for each query"
+      - "The index becomes permanently smaller"
+    answer: 2
+---
 
 The Kingdom of Aurelia had grown too large for Queen Leela to manage alone. 
 Every morning, merchants requested trade advice, generals asked for military intelligence, scholars searched ancient records, and diplomats negotiated treaties. By noon, her desk was buried under scrolls.
@@ -69,3 +105,5 @@ The session remembers the conversation. The state remembers the current progress
 "Of course not, your Majesty. We deploy it. Based on where you are, we could use **Vertex AI Agent Engine** or a Cloud Run or deploy it on the East palace's own infrastructure."
 
 The Queen smiled satisfied. "I see Google ADK as a valuable architect that allows my entire council to think as one."
+
+##Terminology
