@@ -2,7 +2,7 @@
 title: "Google ADK"
 track: "mlops"
 week: 6
-description: "Google's Agent Development Kit (ADK): the LLM Agent (model, instructions, tools), automatic tool calling, multi agent workflows, structured output, callbacks and deployment"
+description: "Agent Development Kit (ADK): the LLM Agent (model, instructions, tools), automatic tool calling, multi agent workflows, structured output, callbacks and deployment."
 tagline: "The Queen Discovers Google ADK"
 icon: "🧰"
 characters: ["Queen Leela", "The Royal Engineer", "The Research Agent", "The Finance Agent", "The Diplomacy Agent", "The Royal Writer"]
