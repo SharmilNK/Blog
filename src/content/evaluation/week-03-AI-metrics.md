@@ -2,39 +2,38 @@
 title: "AI Product metrics"
 track: "evaluation"
 week: 3
-description: |
-  
+description: "A city planning parable for AI product metrics. Queen Leela's council measures business and product metrics such as cost, time to resolution, handle time, and effort scores, and forgets to check whether the AI is actually correct. Her grandmother walks her through the metrics that matter, AI quality (accuracy, hallucination, groundedness), agent metrics (tool success rate, trajectory evaluation), plus RAG, performance, safety, and observability metrics."
 tagline: "was the right metric used?"
-icon: "📜"
-characters: ["Queen Leela", "The Royal Librarian", "The Dragon", "General Vikram", "The Second Dragon"]
+icon: "📊"
+characters: ["Queen Leela", "LuNa", "The Treasurer", "The Minister of Public Services", "The Minister of Public Affairs"]
 publishDate: 2026-09-23
 draft: false
-socialSnippet: "A RAG answer can sound perfect while the retriever fetched the wrong context. A story about similarity vs relevance, wasted context windows, and a Retrieval Utilization Score that tells you whether the fetched documents actually helped."
+socialSnippet: "Your AI project can look cheaper, faster, and better loved, and still be sorting glass into the compost. Why business and product metrics are not enough, and the AI quality, agent, RAG, safety, and observability metrics that tell you if the intelligence itself works."
 quiz:
   - tier: "basic"
-    question: "In a retrieval system, what does a high similarity score actually guarantee about a document?"
+    question: "What does the 'accuracy' metric measure for an AI system?"
     options:
-      - "That the document is relevant to the question"
-      - "That the document will be used by the model"
-      - "Only that its embedding is close to the query's, which may or may not be useful"
-      - "That the document contains the correct answer"
-    answer: 2
-  - tier: "intermediate"
-    question: "Why can retrieving five documents that all look similar to the query still produce weak answers?"
-    options:
-      - "Retrieving more than three documents always lowers quality"
-      - "High similarity does not imply relevance, so look alike distractors crowd out the few documents that truly answer the question and waste the context window"
-      - "Similar documents cancel each other out mathematically"
-      - "The model can only read documents ranked last"
+      - "How fast the system returns a response"
+      - "The share of the AI's predictions or responses that are correct"
+      - "How much each request costs to serve"
+      - "How satisfied users are with the experience"
     answer: 1
-  - tier: "expert"
-    question: "Two embedding models return different retrieved sets, but the final generated answers are nearly identical. Why might the newer model still be the better retriever?"
+  - tier: "intermediate"
+    question: "Why are business and product metrics such as cost, latency, and satisfaction not enough to know an AI system is actually working well?"
     options:
-      - "Identical answers prove the two retrievers are equally good"
-      - "A newer model is better only if it returns more documents"
-      - "The final answer text is the only signal that matters"
-      - "Answer text can mask retrieval quality; context precision and the correlation between similarity and relevance can improve even when the wording is unchanged"
-    answer: 3
+      - "They are too expensive to measure"
+      - "They only apply to RAG systems"
+      - "They measure the outcome and user experience, not whether the AI's outputs are correct, so a fast, cheap, well liked system can still be frequently wrong"
+      - "They cannot be measured until the system is deployed"
+    answer: 2
+  - tier: "expert"
+    question: "What does trajectory evaluation add over only scoring an agent's final answer?"
+    options:
+      - "It scores each intermediate reasoning and tool use step, so you can pinpoint which step fails rather than only seeing that the final answer was wrong"
+      - "It makes the agent run faster"
+      - "It removes the need for any accuracy metric"
+      - "It only measures the cost of the final answer"
+    answer: 0
 ---
 
 Queen Leela had spent nearly a year planning one of the largest projects the kingdom had ever attempted, a cleaner, greener, automated City. As part of this project she had the Royal Council assembled to discuss on automated waste segregation.
@@ -92,6 +91,8 @@ Leela nodded, "We had just been measuring the ** Business, Product, Cost and Per
 
 She flipped the pages of the metrics to read about the AI product metrics on **AI Quality, Agent, Performance and Safety metrics**, "There is still a lot to measure" she said as she slowly closed the notebook.
 
+![AI product metrics: business, product, AI quality, agent, RAG, performance, safety, and observability](/images/mlops/week-02/AI%20product%20metrics.png)
+
 
 LuNa smiled, "Exactly." She wasn't finished, "Finally, how will you know what happened after your AI has been working for six months?"
 
@@ -111,110 +112,110 @@ Leela smiled. "So before I ask, did the kingdom benefit? I should first ask did 
 
 LuNa raised her cup, "Exactly."
 
+## Terminology
 
-Terminology
-1.Business Metrics
+**1. Business Metrics**
 
-Self-Service Deflection Rate: The percentage of requests resolved by the AI without requiring a human.
+**Self-Service Deflection Rate**: The percentage of requests resolved by the AI without requiring a human.
 
-Time-to-Resolution (TTR): The total time taken to completely solve a user's problem.
+**Time-to-Resolution (TTR)**: The total time taken to completely solve a user's problem.
 
-Average Handle Time (AHT): The average time spent handling one request from start to finish.
+**Average Handle Time (AHT)**: The average time spent handling one request from start to finish.
 
-Cost per Query: The average cost of serving one AI request, including model and infrastructure costs.
+**Cost per Query**: The average cost of serving one AI request, including model and infrastructure costs.
 
-Revenue Generated: The revenue directly or indirectly influenced by the AI system.
+**Revenue Generated**: The revenue directly or indirectly influenced by the AI system.
 
-Time Saved: The reduction in manual work due to AI automation.
+**Time Saved**: The reduction in manual work due to AI automation.
 
-Support Cost Reduction: The decrease in customer support costs after deploying AI.
+**Support Cost Reduction**: The decrease in customer support costs after deploying AI.
 
-2.Product Metrics
+**2. Product Metrics**
 
-Customer Effort Score (CES): Measures how easy it was for users to accomplish their task.
+**Customer Effort Score (CES)**: Measures how easy it was for users to accomplish their task.
 
-Customer Satisfaction (CSAT): Measures how satisfied users are with the AI experience.
+**Customer Satisfaction (CSAT)**: Measures how satisfied users are with the AI experience.
 
-Net Promoter Score (NPS): Measures how likely users are to recommend the product.
+**Net Promoter Score (NPS)**: Measures how likely users are to recommend the product.
 
-Task Completion Rate: The percentage of users who successfully complete their intended task.
+**Task Completion Rate**: The percentage of users who successfully complete their intended task.
 
-User Retention: Measures whether users return to use the product again.
+**User Retention**: Measures whether users return to use the product again.
 
-3.AI Quality Metrics
+**3. AI Quality Metrics**
 
-Accuracy: The percentage of correct AI predictions or responses.
+**Accuracy**: The percentage of correct AI predictions or responses.
 
-Hallucination Rate: The percentage of responses containing fabricated or incorrect information.
+**Hallucination Rate**: The percentage of responses containing fabricated or incorrect information.
 
-Groundedness: Measures whether answers are supported by trusted sources or retrieved documents.
+**Groundedness**: Measures whether answers are supported by trusted sources or retrieved documents.
 
-Relevance: Measures how well the response answers the user's question.
+**Relevance**: Measures how well the response answers the user's question.
 
-Faithfulness: Ensures the generated response stays true to the provided evidence.
+**Faithfulness**: Ensures the generated response stays true to the provided evidence.
 
-4.Agent Metrics
+**4. Agent Metrics**
 
-Tool Success Rate: Measures how often the agent selects and executes the correct tool successfully.
+**Tool Success Rate**: Measures how often the agent selects and executes the correct tool successfully.
 
-Tool Failure Rate: The percentage of tool calls that fail or return unusable results.
+**Tool Failure Rate**: The percentage of tool calls that fail or return unusable results.
 
-Intent Classification Accuracy: Measures how correctly the agent understands the user's goal.
+**Intent Classification Accuracy**: Measures how correctly the agent understands the user's goal.
 
-Trajectory Evaluation: Evaluates every reasoning and execution step, not just the final answer.
+**Trajectory Evaluation**: Evaluates every reasoning and execution step, not just the final answer.
 
-Retry Count: The number of times an agent retries failed actions.
+**Retry Count**: The number of times an agent retries failed actions.
 
-Human Intervention Rate: The percentage of tasks requiring manual assistance.
+**Human Intervention Rate**: The percentage of tasks requiring manual assistance.
 
-5.RAG Metrics
+**5. RAG Metrics**
 
-Context Precision: How relevant the retrieved documents are.
+**Context Precision**: How relevant the retrieved documents are.
 
-Context Recall: Whether all important documents were successfully retrieved.
+**Context Recall**: Whether all important documents were successfully retrieved.
 
-Retrieval Precision@K: Measures how many of the top retrieved documents are actually relevant.
+**Retrieval Precision@K**: Measures how many of the top retrieved documents are actually relevant.
 
-Mean Reciprocal Rank (MRR): Measures how highly the first relevant document appears in the search results.
+**Mean Reciprocal Rank (MRR)**: Measures how highly the first relevant document appears in the search results.
 
-Normalized Discounted Cumulative Gain (NDCG): Evaluates the quality of document ranking.
+**Normalized Discounted Cumulative Gain (NDCG)**: Evaluates the quality of document ranking.
 
-Groundedness: Ensures answers are based on retrieved evidence.
+**Groundedness**: Ensures answers are based on retrieved evidence.
 
-Retrieval Utilization Score (RUS): Measures whether the retrieved documents genuinely contributed to the final answer.
+**Retrieval Utilization Score (RUS)**: Measures whether the retrieved documents genuinely contributed to the final answer.
 
-6.Performance Metrics
+**6. Performance Metrics**
 
-Time to First Token (TTFT): The time before the AI starts generating its response.
+**Time to First Token (TTFT)**: The time before the AI starts generating its response.
 
-Latency: The total response time from request to final answer.
+**Latency**: The total response time from request to final answer.
 
-Throughput: The number of requests the system can process per second.
+**Throughput**: The number of requests the system can process per second.
 
-Error Rate: The percentage of failed requests.
+**Error Rate**: The percentage of failed requests.
 
-Cache Hit Rate: The percentage of requests served directly from cache instead of recomputation.
+**Cache Hit Rate**: The percentage of requests served directly from cache instead of recomputation.
 
-7.Safety & Governance Metrics
+**7. Safety and Governance Metrics**
 
-Refusal Accuracy: Measures how correctly the AI refuses unsafe or restricted requests.
+**Refusal Accuracy**: Measures how correctly the AI refuses unsafe or restricted requests.
 
-Prompt Injection Success Rate: Measures how resistant the system is to prompt injection attacks.
+**Prompt Injection Success Rate**: Measures how resistant the system is to prompt injection attacks.
 
-PII Leakage Rate: Measures how often sensitive information is accidentally exposed.
+**PII Leakage Rate**: Measures how often sensitive information is accidentally exposed.
 
-Policy Violation Rate: Measures how often the AI breaks organizational or safety policies.
+**Policy Violation Rate**: Measures how often the AI breaks organizational or safety policies.
 
-8.Observability Metrics
+**8. Observability Metrics**
 
-Trace Success Rate: Measures whether complete workflows execute successfully.
+**Trace Success Rate**: Measures whether complete workflows execute successfully.
 
-Agent Execution Time: Time taken by each individual agent.
+**Agent Execution Time**: Time taken by each individual agent.
 
-Tool Call Count: Number of tools invoked during a request.
+**Tool Call Count**: Number of tools invoked during a request.
 
-Token Usage: The number of input and output tokens consumed.
+**Token Usage**: The number of input and output tokens consumed.
 
-Failure Root Cause: Identifies where and why failures occurred within the workflow.
+**Failure Root Cause**: Identifies where and why failures occurred within the workflow.
 
-Observability: The ability to monitor, trace, and understand the behavior of an AI system by recording its decisions, tool calls, performance, and failures. It helps engineers diagnose issues, improve reliability, and understand how the system behaves in production.
+**Observability**: The ability to monitor, trace, and understand the behavior of an AI system by recording its decisions, tool calls, performance, and failures. It helps engineers diagnose issues, improve reliability, and understand how the system behaves in production.

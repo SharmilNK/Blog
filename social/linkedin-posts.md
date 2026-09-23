@@ -3,6 +3,12 @@
 One entry per published story: title, link, and a 2-4 line summary ready
 to paste into LinkedIn. Newest first.
 
+## AI Product Metrics (Week 3, evaluation)
+https://www.orivale.com/evaluation/week-03-AI-metrics
+
+Queen Leela's council proves her new AI is cheaper, faster, and loved by workers, and she still isn't satisfied: none of it says whether the AI is actually correct. A fast, cheap, popular system can still throw glass in the compost and batteries in the food waste.
+Her grandmother lays out the metrics that actually matter, business and product metrics tell you if the project created value and people liked it, but AI quality, agent, RAG, performance, safety, and observability metrics tell you if the intelligence itself can be trusted.
+
 ## Google ADK (Week 6, mlops)
 https://www.orivale.com/mlops/week-06-google-adk
 

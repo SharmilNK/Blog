@@ -28,6 +28,7 @@ subscribers are fully decoupled.
 - [ ] How AI Agents Work: Memory, Tools & Guardrails — https://www.orivale.com/concepts/week-04-how-ai-agents-work
 - [ ] ReMe: Helping AI Agents Learn From Experience — https://www.orivale.com/concepts/week-05-reme
 - [ ] Google ADK — https://www.orivale.com/mlops/week-06-google-adk
+- [ ] AI Product Metrics — https://www.orivale.com/evaluation/week-03-AI-metrics
 
 ## Sent
 
