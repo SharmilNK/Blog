@@ -2,7 +2,7 @@
 title: "AI Product metrics"
 track: "evaluation"
 week: 3
-description: "A city planning parable for AI product metrics. Queen Leela's council measures business and product metrics such as cost, time to resolution, handle time, and effort scores, and forgets to check whether the AI is actually correct. Her grandmother walks her through the metrics that matter, AI quality (accuracy, hallucination, groundedness), agent metrics (tool success rate, trajectory evaluation), plus RAG, performance, safety, and observability metrics."
+description: "Metrics that matter: AI quality (accuracy, hallucination, groundedness), Agent metrics (tool success rate, trajectory evaluation), RAG, Performance, Safety, and Observability metrics."
 tagline: "was the right metric used?"
 icon: "📊"
 characters: ["Queen Leela", "LuNa", "The Treasurer", "The Minister of Public Services", "The Minister of Public Affairs"]
@@ -87,11 +87,13 @@ She pointed toward the workers outside. "The AI doesn't simply produce one answe
 
 "If one of those steps repeatedly fails you should know exactly where. That is **Trajectory Evaluation.**"
 
-Leela nodded, "We had just been measuring the ** Business, Product, Cost and Performance metrics**." 
+Leela nodded, "We had just been measuring the **Business, Product, Cost and Performance metrics**." 
 
 She flipped the pages of the metrics to read about the AI product metrics on **AI Quality, Agent, Performance and Safety metrics**, "There is still a lot to measure" she said as she slowly closed the notebook.
 
+
 ![AI product metrics: business, product, AI quality, agent, RAG, performance, safety, and observability](/images/mlops/week-02/AI%20product%20metrics.png)
+
 
 
 LuNa smiled, "Exactly." She wasn't finished, "Finally, how will you know what happened after your AI has been working for six months?"
@@ -100,19 +102,20 @@ The Queen said, "**Observability metrics**, we need to record every production d
 
 "Indeed," LuNa said, 
 
+*Business metrics* tell you whether the project created value.
 
-Business metrics tell you whether the project created value.
+*Product metrics* tell you whether citizens liked using it.
 
-Product metrics tell you whether citizens liked using it.
-
-But AI metrics tell you whether the intelligence itself can be trusted."
+and *AI metrics* tell you whether the intelligence itself can be trusted."
 
 
 Leela smiled. "So before I ask, did the kingdom benefit? I should first ask did the AI actually work?"
 
 LuNa raised her cup, "Exactly."
 
+
 ## Terminology
+
 
 **1. Business Metrics**
 
@@ -130,6 +133,7 @@ LuNa raised her cup, "Exactly."
 
 **Support Cost Reduction**: The decrease in customer support costs after deploying AI.
 
+
 **2. Product Metrics**
 
 **Customer Effort Score (CES)**: Measures how easy it was for users to accomplish their task.
@@ -142,6 +146,7 @@ LuNa raised her cup, "Exactly."
 
 **User Retention**: Measures whether users return to use the product again.
 
+
 **3. AI Quality Metrics**
 
 **Accuracy**: The percentage of correct AI predictions or responses.
@@ -153,6 +158,7 @@ LuNa raised her cup, "Exactly."
 **Relevance**: Measures how well the response answers the user's question.
 
 **Faithfulness**: Ensures the generated response stays true to the provided evidence.
+
 
 **4. Agent Metrics**
 
@@ -167,6 +173,7 @@ LuNa raised her cup, "Exactly."
 **Retry Count**: The number of times an agent retries failed actions.
 
 **Human Intervention Rate**: The percentage of tasks requiring manual assistance.
+
 
 **5. RAG Metrics**
 
@@ -184,6 +191,7 @@ LuNa raised her cup, "Exactly."
 
 **Retrieval Utilization Score (RUS)**: Measures whether the retrieved documents genuinely contributed to the final answer.
 
+
 **6. Performance Metrics**
 
 **Time to First Token (TTFT)**: The time before the AI starts generating its response.
@@ -195,6 +203,7 @@ LuNa raised her cup, "Exactly."
 **Error Rate**: The percentage of failed requests.
 
 **Cache Hit Rate**: The percentage of requests served directly from cache instead of recomputation.
+
 
 **7. Safety and Governance Metrics**
 
