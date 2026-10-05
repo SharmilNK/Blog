@@ -13,9 +13,13 @@ Vercel to deploy.
 
 ## Steps
 
-0. **Read `memory.md`** at the repo root first. It holds corrections and
-   preferences learned across past runs of this skill (tone, conventions,
-   things to avoid). Apply anything relevant before writing.
+0. **Read `memory.md` and `writer.md`** at the repo root first. `memory.md`
+   holds corrections and preferences learned across past runs of this skill
+   (tone, conventions, things to avoid). `writer.md` is the author's persona:
+   the voice, story arc, world, dialogue style, and formatting distilled from
+   every published story and from the author's edits to machine drafts.
+   Write the whole story *as that writer*. Where this skill describes what a
+   story must contain, `writer.md` decides how it sounds.
 
 1. **Parse the brief.** Identify:
    - `track`: one of `concepts`, `evaluation`, `mlops`. If not stated, infer
@@ -70,8 +74,8 @@ Vercel to deploy.
      issues and fixes, not the narrative. Write questions exactly as you would
      for a plain technical quiz on that topic, and vary which option index is
      correct across the three tiers (do not always put the answer first).
-   - Body: 800-1200 words, structured as a fixed sequence of paragraphs
-     (see "Story structure" below). No `## Scene` headings.
+   - Body: 1000-1600 words, following the beats in "Story structure" below
+     and the arc in `writer.md`. No `## Scene` headings.
    - **Diagram**: if the concept has a structure, flow, or sequence worth
      visualizing (most do), include one ` ```mermaid ` fenced code block
      using `flowchart`, `sequenceDiagram`, or similar — written as part of
@@ -81,12 +85,8 @@ Vercel to deploy.
      if AI/ml concept, then theme = fantasy or action
      if evaluation , then theme = mystery or battleground
      if ML Ops, then theme = building a city/kingdom
-   - Body: 800-1200 words, written as **flowing narrative prose with
-     dialogue between characters** — no `## Scene` headings. Let the concept
-     come out through what the characters say to each other and what
-     happens, paragraph by paragraph, the way a short story reads, not a
-     slide deck with section breaks.
-   - **Diagram**: use the user's uploaded images for anything they specifically wanted shown.
+   - Let the concept come out through what the characters say to each other
+     and what happens, the way a short story reads, not a slide deck.
    - Do not reuse character names or plot devices from existing stories in
      the same track unless the brief explicitly asks for a sequel.
 
@@ -165,17 +165,17 @@ Vercel to deploy.
      percent", "1,000 clones" not "a thousand clones". Use the numeral plus
      the symbol (`%`, `$`, etc.) every time a score, weight, percentage, or
      count appears in the prose.
-   - **Dialogue always goes on its own line**, never embedded inside a
-     paragraph of narration. Any line in quotes is its own line, e.g.:
+   - **Every speaker turn is its own paragraph**, never buried inside a
+     longer paragraph of narration. A short action or attribution may lead
+     straight into the quote on the same line, which is the author's own
+     habit, e.g.:
      ```
-     Query walked in and looked around the room.
+     The Queen laughs, "Another score?"
 
-     "I need to know what's behind every door in this building."
-
-     Nobody answered right away.
+     Grandma shook her head, "No. Every baker has different strengths."
      ```
-     Don't write `Query said, "I need to know..." and then turned to leave`
-     as one inline sentence; break the quoted part onto its own line.
+     Don't write `Query walked to the door, looked at the map, said "I need
+     to know..." and then turned to leave` as one long narration paragraph.
 
 5. **Validate before moving on**: quiz has exactly 3 entries with one of
    each tier, `answer` indices are in range, `description`, `tagline`, and
@@ -184,8 +184,10 @@ Vercel to deploy.
    structure" above (scene, then characters, then situation, then tools,
    then resolution, then glossary), no dialogue line is embedded inside a
    narration paragraph, and no hyphen or dash joins two words anywhere in
-   the body (search for `-` and `—` and rewrite any hit). **Count the body's
-   words** (frontmatter excluded) — if it's under 800, expand the prose with
+   the body (search for `-` and `—` and rewrite any hit). Then run the
+   self check at the end of `writer.md` and revise anything that
+   reads like documentation instead of the writer's voice. **Count the body's
+   words** (frontmatter excluded) — if it's under 1000, expand the prose with
    more concrete detail and dialogue rather than padding; don't finalize a
    short draft and call it done. (A first real run of this skill produced
    442 words by stopping once the plot beats were covered — see

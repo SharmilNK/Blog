@@ -197,3 +197,12 @@ resetting every time.
     `SKILL.md`. Existing story-based titles to migrate to technical ones (pending
     user's preferred wording): The Weapons of the Kingdom, The Model on Trial,
     Drift Walks the Night Shift, The Production Relay, The Stranger at the Gates.
+  - 2026-10-05: Machine drafts still read too technical and machine like, so
+    `writer.md` (repo root) now defines the author's persona, built from all 14
+    published stories and from diffing machine drafts against the author's
+    edits. Read it before writing any story; the `new-story` skill now
+    requires it. Two older skill rules were relaxed to match how the author
+    actually writes: a short beat may lead into a quote on the same line
+    (`The Queen laughs, "Another score?"`) as long as each speaker turn is its
+    own paragraph, and the body target is now 1000 to 1600 words (published
+    stories run 950 to 1,900).
